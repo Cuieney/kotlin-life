@@ -1,0 +1,50 @@
+apply plugin: 'com.android.application'
+apply plugin: 'me.tatarka.retrolambda'
+
+project.ext.supportLib = "24.1.1"
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "25.0.0"
+    defaultConfig {
+        applicationId "org.cuieney.videolife"
+        minSdkVersion 16
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testCompile 'junit:junit:4.12'
+    compile "com.android.support:appcompat-v7:$supportLib"
+    compile "com.android.support:cardview-v7:$supportLib"
+    compile "com.android.support:recyclerview-v7:$supportLib"
+    compile "com.android.support:design:$supportLib"
+    compile "com.android.support:palette-v7:$supportLib"
+    compile "com.android.support:customtabs:$supportLib"
+    compile "com.android.support:support-v4:$supportLib"
+
+    compile 'io.reactivex:rxjava:1.1.0'
+    compile 'io.reactivex:rxandroid:1.1.0'
+    compile 'com.jakewharton.rxbinding:rxbinding:0.3.0'
+
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+
+    compile 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.4.1'
+}
