@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'me.tatarka.retrolambda'
 
-project.ext.supportLib = "24.1.1"
+project.ext.supportLib = "25.0.0"
 
 android {
     compileSdkVersion 24
@@ -9,7 +9,7 @@ android {
     defaultConfig {
         applicationId "org.cuieney.videolife"
         minSdkVersion 16
-        targetSdkVersion 24
+        targetSdkVersion 25
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -23,6 +23,11 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+    allprojects {
+        repositories {
+            maven { url "https://jitpack.io" }
+        }
     }
 }
 
@@ -39,6 +44,10 @@ dependencies {
     compile "com.android.support:palette-v7:$supportLib"
     compile "com.android.support:customtabs:$supportLib"
     compile "com.android.support:support-v4:$supportLib"
+
+
+    compile 'com.ashokvarma.android:bottom-navigation-bar:1.3.0'
+    compile 'com.github.mancj:MaterialSearchBar:0.6'
 
     compile 'io.reactivex:rxjava:1.1.0'
     compile 'io.reactivex:rxandroid:1.1.0'

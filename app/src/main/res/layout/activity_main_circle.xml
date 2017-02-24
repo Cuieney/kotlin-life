@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="20dp"
+    android:padding="16dp"
+    android:gravity="center"
+    tools:context="org.cuieney.videolife.activities.MainActivity">
+
+    <org.cuieney.videolife.RainbowProgressBar
+        android:id="@+id/progress4"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        app:progress_max="100"
+        app:progress_start_color="#ff0000"
+        app:progress_end_color="#00ff00"
+        app:progress_type="circle"
+        app:progress_height="7dp"
+        app:progress_current="30"
+        app:progress_radius="25dp"
+        />
+
+    <org.cuieney.videolife.RainbowProgressBar
+        android:id="@+id/progress1"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="15dp"
+        app:progress_max="100"
+        app:progress_start_color="#00ff00"
+        app:progress_end_color="#0000ff"
+        app:progress_type="circle"
+        app:progress_height="7dp"
+        app:progress_current="50"
+        app:progress_radius="35dp"
+        />
+
+    <org.cuieney.videolife.RainbowProgressBar
+        android:id="@+id/progress2"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
+        android:layout_marginTop="15dp"
+        app:progress_max="100"
+        app:progress_start_color="#ff00ff"
+        app:progress_end_color="#ffffff"
+        app:progress_type="circle"
+        app:progress_height="7dp"
+        app:progress_current="70"
+        app:progress_radius="45dp"
+        />
+
+    <org.cuieney.videolife.RainbowProgressBar
+        android:id="@+id/progress"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="15dp"
+        app:progress_max="100"
+        app:progress_start_color="#ff00ff"
+        app:progress_end_color="#ffff00"
+        app:progress_type="circle"
+        app:progress_height="7dp"
+        app:progress_current="70"
+        app:progress_radius="55dp"
+        />
+
+</LinearLayout>

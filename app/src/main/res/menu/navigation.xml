@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:enabled="true"
+        app:showAsAction="ifRoom"
+        android:id="@+id/add"
+        android:icon="@mipmap/ic_launcher"
+        android:title="call" />
+    <item
+        android:enabled="true"
+        app:showAsAction="ifRoom"
+        android:id="@+id/delete"
+        android:icon="@mipmap/ic_launcher"
+        android:title="message" />
+    <item
+        android:enabled="true"
+        app:showAsAction="ifRoom"
+        android:id="@+id/setting"
+        android:icon="@mipmap/ic_launcher"
+        android:title="setting" />
+    <item
+        android:enabled="true"
+        app:showAsAction="ifRoom"
+        android:id="@+id/me"
+        android:icon="@mipmap/ic_launcher"
+        android:title="me" />
+</menu>

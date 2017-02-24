@@ -1,18 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    android:layout_marginTop="20dp"
+    android:padding="16dp"
     tools:context="org.cuieney.videolife.activities.MainActivity">
 
-    <org.cuieney.videolife.RainbowProgress
+    <org.cuieney.videolife.RainbowProgressBar
         android:id="@+id/progress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
-</RelativeLayout>
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:progress_max="100"
+        app:progress_start_color="#fff000"
+        app:progress_end_color="#00fff0"
+        app:progress_type="line"
+        app:progress_height="10dp"
+        app:progress_current="10"
+        />
+
+    <org.cuieney.videolife.RainbowProgressBar
+        android:id="@+id/progress1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:progress_max="100"
+        app:progress_start_color="#00ff00"
+        app:progress_end_color="#0000ff"
+        app:progress_type="line"
+        app:progress_height="10dp"
+        app:progress_current="20"
+        />
+
+    <org.cuieney.videolife.RainbowProgressBar
+        android:id="@+id/progress2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:progress_max="100"
+        app:progress_start_color="#0000ff"
+        app:progress_end_color="#00ff00"
+        app:progress_type="line"
+        app:progress_height="10dp"
+        app:progress_current="30"
+        />
+
+    <org.cuieney.videolife.RainbowProgressBar
+        android:id="@+id/progress3"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:progress_max="100"
+        app:progress_start_color="#00ff00"
+        app:progress_end_color="#0000ff"
+        app:progress_type="line"
+        app:progress_height="10dp"
+        app:progress_current="40"
+        />
+
+    <org.cuieney.videolife.RainbowProgressBar
+        android:id="@+id/progress4"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:progress_max="100"
+        app:progress_start_color="#0000ff"
+        app:progress_end_color="#ff0000"
+        app:progress_type="line"
+        app:progress_height="10dp"
+        app:progress_current="50"
+        />
+
+    <org.cuieney.videolife.RainbowProgressBar
+        android:id="@+id/progress5"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:progress_max="100"
+        app:progress_start_color="#00ffff"
+        app:progress_end_color="#ff0000"
+        app:progress_type="line"
+        app:progress_height="10dp"
+        app:progress_current="60"
+        />
+
+    <org.cuieney.videolife.RainbowProgressBar
+        android:id="@+id/progress6"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:progress_max="100"
+        app:progress_start_color="#ff00ff"
+        app:progress_end_color="#ffff00"
+        app:progress_type="line"
+        app:progress_height="10dp"
+        app:progress_current="70"
+        />
+
+    <org.cuieney.videolife.RainbowProgressBar
+        android:id="@+id/progress7"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:progress_max="100"
+        app:progress_start_color="#ff00ff"
+        app:progress_end_color="#ffffff"
+        app:progress_type="line"
+        app:progress_height="10dp"
+        app:progress_current="80"
+        />
+
+</LinearLayout>

@@ -1,0 +1,18 @@
+<resources>
+    <declare-styleable name="RainbowProgressBar">
+        <attr name="progress_current" format="integer"/>
+        <attr name="progress_max" format="integer"/>
+
+        <attr name="progress_start_color" format="color"/>
+        <attr name="progress_end_color" format="color"/>
+        <attr name="progress_unreached_color" format="color"/>
+
+        <attr name="progress_height" format="dimension"/>
+        <attr name="progress_radius" format="dimension"/>
+
+        <attr name="progress_type" format="enum">
+            <enum name="circle" value="0"/>
+            <enum name="line" value="1"/>
+        </attr>
+    </declare-styleable>
+</resources>
