@@ -1,19 +1,28 @@
 apply plugin: 'com.android.application'
+//dagger2
+apply plugin: 'com.neenbedankt.android-apt'
+//retrolambda
 apply plugin: 'me.tatarka.retrolambda'
-
-project.ext.supportLib = "25.0.0"
+project.ext.supportLib = "25.1.0"
 
 android {
     compileSdkVersion 24
-    buildToolsVersion "25.0.0"
+    buildToolsVersion "25.0.1"
     defaultConfig {
         applicationId "org.cuieney.videolife"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
+
+    //dagger2 和 butterknife冲突
+    packagingOptions {
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -27,12 +36,20 @@ android {
     allprojects {
         repositories {
             maven { url "https://jitpack.io" }
+            maven {
+                url "https://oss.sonatype.org/content/repositories/snapshots"
+            }
+            jcenter()
         }
+    }
+
+    configurations.all {
+        resolutionStrategy.force 'com.google.code.findbugs:jsr305:1.3.9'
     }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
@@ -44,16 +61,53 @@ dependencies {
     compile "com.android.support:palette-v7:$supportLib"
     compile "com.android.support:customtabs:$supportLib"
     compile "com.android.support:support-v4:$supportLib"
-
-
+    //ui
     compile 'com.ashokvarma.android:bottom-navigation-bar:1.3.0'
-    compile 'com.github.mancj:MaterialSearchBar:0.6'
-
+    compile 'com.github.arimorty:floatingsearchview:2.0.3'
+    compile 'konifar:fab-transformation:1.0.0'
+    //network
+    compile 'com.google.code.gson:gson:2.4'
+    compile 'com.squareup.retrofit2:retrofit:2.0.2'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.2'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.2'
+    compile 'com.squareup.okhttp3:okhttp:3.2.0'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.0.1'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.github.bumptech.glide:okhttp3-integration:1.4.0@aar'
+    //dagger2
+    apt 'com.google.dagger:dagger-compiler:2.4'
+    compile 'com.google.dagger:dagger:2.4'
+    provided 'org.glassfish:javax.annotation:10.0-b28'
+    //butterknife
+    compile 'com.jakewharton:butterknife:8.2.1'
+    apt "com.jakewharton:butterknife-compiler:8.2.1"
+    //rx
     compile 'io.reactivex:rxjava:1.1.0'
     compile 'io.reactivex:rxandroid:1.1.0'
     compile 'com.jakewharton.rxbinding:rxbinding:0.3.0'
-
-    compile 'com.github.bumptech.glide:glide:3.7.0'
-
-    compile 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.4.1'
+    compile 'com.trello:rxlifecycle:1.0'
+    compile 'com.trello:rxlifecycle-android:1.0'
+    compile 'com.trello:rxlifecycle-components:1.0'
+    //eventbus
+    compile 'org.greenrobot:eventbus:3.0.0'
+    //logger
+    compile 'com.orhanobut:logger:1.15'
+    //autolayout
+    compile 'com.zhy:autolayout:1.4.5'
+    compile 'com.android.support:multidex:1.0.1'
+    //fragment manager
+    compile 'me.yokeyword:fragmentation:0.10.1'
+    //canary
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+//    //player media
+    compile 'tv.danmaku.ijk.media:ijkplayer-java:0.7.7.1'
+    compile 'tv.danmaku.ijk.media:ijkplayer-armv7a:0.7.7.1'
+    compile 'tv.danmaku.ijk.media:ijkplayer-armv5:0.7.7.1'
+    compile 'tv.danmaku.ijk.media:ijkplayer-arm64:0.7.7.1'
+    compile 'tv.danmaku.ijk.media:ijkplayer-x86:0.7.7.1'
+    compile 'tv.danmaku.ijk.media:ijkplayer-x86_64:0.7.7.1'
+    compile 'tv.danmaku.ijk.media:ijkplayer-exo:0.7.7.1'
+    compile project(':vitamio')
 }

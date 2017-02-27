@@ -10,7 +10,12 @@ buildscript {
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
+
+        //retrolambda
         classpath 'me.tatarka:gradle-retrolambda:3.2.3'
+
+        //dagger2
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
     }
 }
 
