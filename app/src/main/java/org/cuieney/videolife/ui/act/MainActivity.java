@@ -1,6 +1,7 @@
 package org.cuieney.videolife.ui.act;
 
 import android.util.Log;
+import android.view.View;
 
 import com.arlib.floatingsearchview.FloatingSearchView;
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
@@ -9,21 +10,26 @@ import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import org.cuieney.videolife.R;
 import org.cuieney.videolife.common.base.BaseFragment;
 import org.cuieney.videolife.common.base.SimpleActivity;
+import org.cuieney.videolife.common.component.EventUtil;
+import org.cuieney.videolife.common.utils.LogUtil;
+import org.cuieney.videolife.ui.fragment.base.BaseMainFragment;
 import org.cuieney.videolife.ui.fragment.book.BookFragment;
 import org.cuieney.videolife.ui.fragment.music.MusicFragment;
 import org.cuieney.videolife.ui.fragment.newstand.NewstandFragment;
 import org.cuieney.videolife.ui.fragment.video.VideoFragment;
+import org.greenrobot.eventbus.Subscribe;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import me.yokeyword.fragmentation.SupportFragment;
+import me.yokeyword.fragmentation.helper.FragmentLifecycleCallbacks;
 
 import static com.ashokvarma.bottomnavigation.BottomNavigationBar.BACKGROUND_STYLE_RIPPLE;
 import static com.ashokvarma.bottomnavigation.BottomNavigationBar.MODE_FIXED;
 
-public class MainActivity extends SimpleActivity  {
+public class MainActivity extends SimpleActivity implements BaseMainFragment.OnBackToFirstListener {
 
 
     private static final String TAG = "Main";
@@ -49,6 +55,12 @@ public class MainActivity extends SimpleActivity  {
                 ,mFragments.get(0));
 
         initView();
+        registerFragmentLifecycleCallbacks(new FragmentLifecycleCallbacks() {
+            @Override
+            public void onFragmentSupportVisible(SupportFragment fragment) {
+                Log.i("MainActivity", "onFragmentSupportVisible--->" + fragment.getClass().getSimpleName());
+            }
+        });
     }
 
 
@@ -72,7 +84,6 @@ public class MainActivity extends SimpleActivity  {
 
             @Override
             public void onTabUnselected(int position) {
-
             }
 
             @Override
@@ -80,6 +91,34 @@ public class MainActivity extends SimpleActivity  {
             }
         });
 
+    }
+
+
+    @Subscribe
+    public void hide(String isHide) {
+        if (isHide.equals("true")) {
+            mSearchView.setVisibility(View.GONE);
+        }else{
+            mSearchView.setVisibility(View.VISIBLE);
+        }
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        EventUtil.register(this);
+    }
+
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        EventUtil.unregister(this);
+    }
+
+    @Override
+    public void onBackToFirstFragment() {
+        mNavigationView.setBottom(0);
     }
 }
 

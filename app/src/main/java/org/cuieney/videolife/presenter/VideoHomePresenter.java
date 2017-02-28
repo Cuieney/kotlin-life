@@ -1,6 +1,7 @@
 package org.cuieney.videolife.presenter;
 
 import org.cuieney.videolife.common.api.ApiService;
+import org.cuieney.videolife.common.api.KyApiService;
 import org.cuieney.videolife.common.base.RxPresenter;
 import org.cuieney.videolife.common.utils.RxUtil;
 import org.cuieney.videolife.presenter.contract.VideoHomeContract;
@@ -15,10 +16,10 @@ import rx.Subscription;
 
 public class VideoHomePresenter extends RxPresenter<VideoHomeContract.View> implements VideoHomeContract.Presenter{
 
-    private ApiService mRetrofitHelper;
+    private KyApiService mRetrofitHelper;
 
     @Inject
-    public VideoHomePresenter(ApiService mRetrofitHelper) {
+    public VideoHomePresenter(KyApiService mRetrofitHelper) {
         this.mRetrofitHelper = mRetrofitHelper;
     }
 

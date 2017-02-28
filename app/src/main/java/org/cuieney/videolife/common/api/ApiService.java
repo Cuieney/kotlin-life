@@ -8,7 +8,8 @@ import retrofit2.http.Query;
 import rx.Observable;
 
 public interface ApiService {
-
-    @GET("https://baobab.kaiyanapp.com/api/v4/tabs/selected")
+    @GET("/tabs/selected")
     Observable<VideoListBean> getVideoList(@Query("date") String date);
+
+
 }

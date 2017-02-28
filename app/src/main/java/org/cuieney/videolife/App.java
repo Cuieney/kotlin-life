@@ -19,7 +19,6 @@ import org.cuieney.videolife.di.module.RetrofitModule;
 import java.util.HashSet;
 import java.util.Set;
 
-import io.vov.vitamio.Vitamio;
 
 /**
  * Created by cuieney on 17/2/21.

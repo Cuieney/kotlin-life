@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import org.cuieney.videolife.App;
+import org.cuieney.videolife.common.utils.LogUtil;
 import org.cuieney.videolife.di.component.DaggerFragmentComponent;
 import org.cuieney.videolife.di.component.FragmentComponent;
 import org.cuieney.videolife.di.module.FragmentModule;
@@ -25,7 +26,6 @@ import me.yokeyword.fragmentation.SupportFragment;
   * MVP Fragment基类
   */
  public abstract class BaseFragment<T extends BasePresenter> extends SupportFragment implements BaseView{
-
      @Inject
      protected T mPresenter;
      protected View mView;

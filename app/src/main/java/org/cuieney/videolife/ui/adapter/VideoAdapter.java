@@ -20,7 +20,6 @@ import org.cuieney.videolife.R;
 import org.cuieney.videolife.common.base.BaseRecycerViewAdapter;
 import org.cuieney.videolife.common.image.ImageLoader;
 import org.cuieney.videolife.common.utils.DateUtil;
-import org.cuieney.videolife.entity.TestRsp;
 import org.cuieney.videolife.entity.VideoListBean;
 import org.cuieney.videolife.entity.kaiyanBean.DataBean;
 import org.cuieney.videolife.entity.kaiyanBean.ItemListBean;
