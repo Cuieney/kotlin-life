@@ -14,8 +14,9 @@ life 是一个多媒体信息app，基于Material Design + MVP + RxJava + Retrof
 音乐来自：余音 <http://app.mi.com/details?id=fm.wawa.mg/>文艺骚年专属
 
 ###tips
-1.本项目目前只是在开发测试阶段，发现bug或有好的建议欢迎<a https://github.com/Cuieney/vld/issues/" title="Title">
-issue</a>，Email <cuieney@163.com> link.
+1.本项目目前只是在开发测试阶段，发现bug或有好的建议欢迎
+[issues](https://github.com/Cuieney/vld/issues/ "悬停显示")
+Email <cuieney@163.com> link.
 
 2.本项目仅作为学习交流使用，API数据内容所有权归原公司所有，请勿用于其他用途
 
@@ -30,8 +31,7 @@ issue</a>，Email <cuieney@163.com> link.
 ### Download APK
 (Android 5.0 or above)
 
-URL:<a https://github.com/Cuieney/vld/blob/master/image/app-debug.apk" title="Title">
-APK</a>
+[URL](https://github.com/Cuieney/vld/blob/master/image/app-debug.apk "悬停显示")
 
 ###Points
 	使用RxJava配合Retrofit2做网络请求
