@@ -1,15 +1,19 @@
-package org.cuieney.videolife.ui.fragment.video;
+package org.cuieney.videolife.ui.fragment.music;
 
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
 import android.graphics.Color;
-import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.graphics.Palette;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
+import android.transition.Fade;
+import android.transition.Slide;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,48 +23,45 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
+import com.jaeger.library.StatusBarUtil;
+import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.konifar.fab_transformation.FabTransformation;
+import com.ms.square.android.expandabletextview.ExpandableTextView;
 
 import org.cuieney.videolife.R;
 import org.cuieney.videolife.common.component.EventUtil;
+import org.cuieney.videolife.common.component.RxBus;
 import org.cuieney.videolife.common.image.ImageLoader;
-import org.cuieney.videolife.common.utils.DateUtil;
 import org.cuieney.videolife.common.utils.LogUtil;
+import org.cuieney.videolife.entity.MusicListBean;
+import org.cuieney.videolife.entity.VideoListBean;
 import org.cuieney.videolife.entity.kaiyanBean.DataBean;
+import org.cuieney.videolife.ui.act.PlayMusciActivity;
+import org.cuieney.videolife.ui.adapter.MusicItemAdapter;
+import org.cuieney.videolife.ui.adapter.VideoAdapter;
 import org.cuieney.videolife.ui.fragment.base.BaseBackFragment;
+import org.cuieney.videolife.ui.fragment.base.DetailTransition;
+import org.cuieney.videolife.ui.fragment.video.VideoDetailFragment;
 import org.cuieney.videolife.ui.video.JumpUtils;
 
-import java.io.IOException;
-import java.util.concurrent.ExecutionException;
-
-import tv.danmaku.ijk.media.player.IMediaPlayer;
-import tv.danmaku.ijk.media.player.IjkMediaPlayer;
-
-
 /**
- * Created by cuieney on 17/2/25.
+ * Created by cuieney on 17/3/4.
  */
 
-public class VideoDetailFragment extends BaseBackFragment {
+public class MusicDetailFragment extends BaseBackFragment {
 
     ImageView mImgDetail;
     Toolbar mToolbar;
-    ImageView bgImage;
-    TextView title;
-    TextView type;
-    TextView description;
     FloatingActionButton mFab;
-
-
-    private DataBean dataBean;
     private CollapsingToolbarLayout collToolBar;
+    private XRecyclerView recycler;
 
+    private MusicListBean dataBean;
 
-    public static VideoDetailFragment newInstance(DataBean dataBean) {
-
+    public static MusicDetailFragment newInstance(MusicListBean dataBean) {
         Bundle args = new Bundle();
         args.putParcelable(ARG_ITEM, dataBean);
-        VideoDetailFragment fragment = new VideoDetailFragment();
+        MusicDetailFragment fragment = new MusicDetailFragment();
         fragment.setArguments(args);
         return fragment;
     }
@@ -74,7 +75,7 @@ public class VideoDetailFragment extends BaseBackFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.video_home_detail_fragment, container, false);
+        View view = inflater.inflate(R.layout.music_home_detail_fragment, container, false);
         initView(view);
         return view;
     }
@@ -83,28 +84,17 @@ public class VideoDetailFragment extends BaseBackFragment {
         mToolbar = ((Toolbar) view.findViewById(R.id.toolbar));
         collToolBar = ((CollapsingToolbarLayout) view.findViewById(R.id.toolbar_layout));
         mImgDetail = (ImageView) view.findViewById(R.id.img_detail);
-        bgImage = (ImageView) view.findViewById(R.id.bg_image);
-        title = (TextView) view.findViewById(R.id.title);
-        type = (TextView) view.findViewById(R.id.type);
-        description = (TextView) view.findViewById(R.id.description);
         mFab = (FloatingActionButton) view.findViewById(R.id.fab);
-
-
-        mFab.setBackgroundTintList(new ColorStateList(new int[][]{new int[0]}, new int[]{0xffffcc00}));
-
+        recycler = ((XRecyclerView) view.findViewById(R.id.recycler));
+        recycler.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+        initColor();
         mToolbar.setTitle("");
         initToolbarNav(mToolbar);
-        ImageLoader.loadAll(getActivity(), dataBean.getCover().getDetail(), mImgDetail);
-        ImageLoader.loadAll(getActivity(), dataBean.getCover().getBlurred(), bgImage);
-        title.setText(dataBean.getTitle());
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("#").append(dataBean.getCategory())
-                .append(" ")
-                .append(" / ")
-                .append(" ")
-                .append(DateUtil.formatTime2(dataBean.getDuration()));
-        type.setText(stringBuilder.toString());
-        description.setText(dataBean.getDescription());
+        ImageLoader.loadAll(getActivity(), dataBean.getOphoto(), mImgDetail);
+        recycler.setLoadingMoreEnabled(false);
+        recycler.setPullRefreshEnabled(false);
+        recycler.setAdapter(new MusicItemAdapter(getActivity(), dataBean.getTracks()));
+        initHeadView();
 
         mFab.setOnClickListener(v -> {
             if (mFab.getVisibility() == View.VISIBLE) {
@@ -115,27 +105,35 @@ public class VideoDetailFragment extends BaseBackFragment {
 
                     @Override
                     public void onEndTransform() {
-                        JumpUtils.goToVideoPlayer(getActivity(), mImgDetail, dataBean);
+                        JumpUtils.goToMusicPlayer(getActivity(), mImgDetail, dataBean);
                     }
                 }).transformTo(mImgDetail);
             }
         });
+    }
 
-        initColor();
-
+    private void initHeadView() {
+        View inflate = LayoutInflater.from(getContext()).inflate(R.layout.music_detial_top_item, null);
+        TextView title = (TextView) inflate.findViewById(R.id.title);
+//        TextView desc = (TextView) inflate.findViewById(R.id.desc);
+        ExpandableTextView expandableTextView = (ExpandableTextView) inflate.findViewById(R.id.expand_text_view);
+        expandableTextView.setText(dataBean.getMdesc());
+        title.setText(dataBean.getMname());
+//        desc.setText(dataBean.getMdesc());
+        recycler.addHeaderView(inflate);
     }
 
     int color = 0xffffcc00;
 
     private void initColor() {
 
-        Glide.with(getContext()).load(dataBean.getCover().getBlurred()).asBitmap().into(new SimpleTarget<Bitmap>() {
+        Glide.with(getContext()).load(dataBean.getOphoto()).asBitmap().into(new SimpleTarget<Bitmap>() {
             @Override
             public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
 
                 Palette.from(resource).generate(palette -> {
                     try {
-                        color = palette.getDarkMutedSwatch().getRgb();
+                        color = palette.getLightMutedSwatch().getRgb();
                     } catch (Exception e) {
                         LogUtil.d(e.getMessage());
                     }

@@ -66,6 +66,14 @@ dependencies {
     compile 'com.ashokvarma.android:bottom-navigation-bar:1.3.0'
     compile 'com.github.arimorty:floatingsearchview:2.0.3'
     compile 'konifar:fab-transformation:1.0.0'
+    compile ('com.alibaba.android:vlayout:1.0.1@aar') {
+        transitive = true
+    }
+    compile 'com.ms-square:expandableTextView:0.1.4'
+    compile 'com.jcodecraeer:xrecyclerview:1.3.2'
+    compile 'com.jaeger.statusbaruitl:library:1.3.5'
+
+
     //network
     compile 'com.google.code.gson:gson:2.4'
     compile 'com.squareup.retrofit2:retrofit:2.0.2'
@@ -104,9 +112,19 @@ dependencies {
     testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
     compile project(':gsyVideoPlayer')
 
+
+    compile 'com.github.markzhai:blockcanary-android:1.5.0'
+
+    // 仅在debug包启用BlockCanary进行卡顿监控和提示的话，可以这么用
+    debugCompile 'com.github.markzhai:blockcanary-android:1.5.0'
+    releaseCompile 'com.github.markzhai:blockcanary-no-op:1.5.0'
+
+    //video
     def viewDependencies = rootProject.ext.viewDependencies
     compile viewDependencies.DanmakuFlameMaster
     compile viewDependencies.ndkbitmap_armv7a
     compile viewDependencies.ndkbitmap_armv5
     compile viewDependencies.ndkbitmap_x86
+
+
 }

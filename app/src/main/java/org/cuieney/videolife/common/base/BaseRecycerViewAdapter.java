@@ -16,6 +16,7 @@ import java.util.Collection;
 import java.util.List;
 
 public abstract class BaseRecycerViewAdapter<T,V extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<V> {
+    protected OnItemClickListener mClickListener;
     public static Context context;
     public List<T> list;
     public LayoutInflater inflater;
@@ -26,6 +27,11 @@ public abstract class BaseRecycerViewAdapter<T,V extends RecyclerView.ViewHolder
         this.addAll(list);
         inflater = LayoutInflater.from(context);
     }
+
+    public void setOnItemClickListener(OnItemClickListener itemClickListener) {
+        this.mClickListener = itemClickListener;
+    }
+
 
     public BaseRecycerViewAdapter(Context context) {
         this(context,null);
@@ -65,7 +71,7 @@ public abstract class BaseRecycerViewAdapter<T,V extends RecyclerView.ViewHolder
     }
 
     public interface OnItemClickListener {
-        void onItemClick(int position, View view, RecyclerView.ViewHolder vh, Bitmap bitmap);
+        void onItemClick(int position, View view, RecyclerView.ViewHolder vh);
     }
 }
 

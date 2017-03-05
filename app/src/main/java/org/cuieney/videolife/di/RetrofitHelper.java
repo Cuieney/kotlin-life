@@ -32,6 +32,7 @@ public class RetrofitHelper {
     private void init() {
         kyApiService = getApiService(UrlManager.KAIYAN_HOST,KyApiService.class);
         wyApiService = getApiService(UrlManager.WANGYI_HOST,WyApiService.class);
+
     }
     private <T> T getApiService(String baseUrl, Class<T> clz) {
         Retrofit retrofit = new Retrofit.Builder()

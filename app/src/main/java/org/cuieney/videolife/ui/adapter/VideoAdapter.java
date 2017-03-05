@@ -29,14 +29,13 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * Created by paohaile on 17/2/24.
  */
 
 public class VideoAdapter extends BaseRecycerViewAdapter<ItemListBean, RecyclerView.ViewHolder> {
-    private OnItemClickListener mClickListener;
+
     public List<Bitmap> mBitmap;
     private ExecutorService fixedThreadPool = Executors.newFixedThreadPool(5);
 
@@ -80,16 +79,11 @@ public class VideoAdapter extends BaseRecycerViewAdapter<ItemListBean, RecyclerV
         }
     }
 
-    public void setOnItemClickListener(OnItemClickListener itemClickListener) {
-        this.mClickListener = itemClickListener;
-    }
-
     @Override
     public RecyclerView.ViewHolder getCreateViewHolder(ViewGroup parent, int viewType) {
 
         if (viewType == R.layout.video_item) {
-            MyHolder myHolder = new MyHolder(inflater.inflate(viewType, parent, false));
-            return myHolder;
+            return new MyHolder(inflater.inflate(viewType, parent, false));
         }
         return new TopHolder(inflater.inflate(viewType, parent, false));
     }
@@ -109,7 +103,7 @@ public class VideoAdapter extends BaseRecycerViewAdapter<ItemListBean, RecyclerV
 
             myHolder.itemView.setOnClickListener(v -> {
                 if (mClickListener != null) {
-                    mClickListener.onItemClick(position, v, myHolder, null);
+                    mClickListener.onItemClick(position, v, myHolder);
                 }
             });
 
@@ -126,7 +120,7 @@ public class VideoAdapter extends BaseRecycerViewAdapter<ItemListBean, RecyclerV
     }
 
 
-    public class MyHolder extends RecyclerView.ViewHolder {
+    public static class MyHolder extends RecyclerView.ViewHolder {
         public TextView textView;
         public TextView description;
         public ImageView imageView;
@@ -140,7 +134,7 @@ public class VideoAdapter extends BaseRecycerViewAdapter<ItemListBean, RecyclerV
     }
 
 
-    public class TopHolder extends RecyclerView.ViewHolder {
+    public static class TopHolder extends RecyclerView.ViewHolder {
         private TextView textView;
 
         public TopHolder(View itemView) {

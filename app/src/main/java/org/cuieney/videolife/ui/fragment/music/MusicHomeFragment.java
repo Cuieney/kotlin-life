@@ -1,33 +1,36 @@
-package org.cuieney.videolife.ui.fragment.video;
+package org.cuieney.videolife.ui.fragment.music;
 
-import android.graphics.Bitmap;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.graphics.Palette;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.transition.Fade;
 import android.transition.Slide;
-import android.util.Log;
 
 import org.cuieney.videolife.R;
 import org.cuieney.videolife.common.base.BaseFragment;
 import org.cuieney.videolife.common.component.EventUtil;
-import org.cuieney.videolife.entity.VideoListBean;
+import org.cuieney.videolife.entity.MusicListBean;
+import org.cuieney.videolife.presenter.MusicHomePresenter;
 import org.cuieney.videolife.presenter.VideoHomePresenter;
+import org.cuieney.videolife.presenter.contract.MusicHomeContract;
 import org.cuieney.videolife.presenter.contract.VideoHomeContract;
+import org.cuieney.videolife.ui.adapter.MusicAdapter;
 import org.cuieney.videolife.ui.adapter.VideoAdapter;
 import org.cuieney.videolife.ui.fragment.base.DetailTransition;
+import org.cuieney.videolife.ui.fragment.video.VideoHomeFragment;
+
+import java.util.List;
 
 import butterknife.BindView;
 
 /**
- * Created by cuieney on 17/2/27.
+ * Created by cuieney on 17/3/4.
  */
 
-public class VideoHomeFragment extends BaseFragment<VideoHomePresenter> implements VideoHomeContract.View  {
+public class MusicHomeFragment extends BaseFragment<MusicHomePresenter> implements MusicHomeContract.View  {
 
     @BindView(R.id.recycler)
     RecyclerView recycler;
@@ -35,13 +38,13 @@ public class VideoHomeFragment extends BaseFragment<VideoHomePresenter> implemen
     SwipeRefreshLayout refresh;
 
 
-    public static VideoHomeFragment newInstance() {
-        Bundle bundle = new Bundle();
-        VideoHomeFragment videoFragment = new VideoHomeFragment();
-        videoFragment.setArguments(bundle);
-        return videoFragment;
-    }
 
+    public static MusicHomeFragment newInstance() {
+        Bundle bundle = new Bundle();
+        MusicHomeFragment musicHomeFragment = new MusicHomeFragment();
+        musicHomeFragment.setArguments(bundle);
+        return musicHomeFragment;
+    }
     @Override
     protected void initInject() {
         getFragmentComponent().inject(this);
@@ -49,33 +52,37 @@ public class VideoHomeFragment extends BaseFragment<VideoHomePresenter> implemen
 
     @Override
     protected int getLayoutId() {
-        return R.layout.video_home_fragment;
+        return R.layout.music_home_fragment;
     }
 
     @Override
     protected void initEventAndData() {
         refresh.setProgressViewOffset(false,100,200);
-        mPresenter.getVideoData("");
-        recycler.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
-        refresh.setOnRefreshListener(() -> mPresenter.getVideoData(""));
+        mPresenter.getMusicData("1");
+        recycler.setLayoutManager(new GridLayoutManager(getActivity(),2));
+        refresh.setOnRefreshListener(() -> mPresenter.getMusicData("1"));
     }
 
     @Override
-    public void showContent(VideoListBean videoListBean) {
+    public void showContent(List<MusicListBean> musicListBean) {
+        musicListBean.add(0,new MusicListBean());
+        musicListBean.add(0,new MusicListBean());
         if (refresh.isRefreshing()) {
             refresh.setRefreshing(false);
         }
-        VideoAdapter adapter = new VideoAdapter(getActivity(), videoListBean.getItemList());
+         MusicAdapter adapter = new MusicAdapter(getActivity(),musicListBean);
         adapter.setOnItemClickListener((position, view, vh) -> {
-            startChildFragment(videoListBean, position, (VideoAdapter.MyHolder) vh);
+            startChildFragment(musicListBean.get(position), vh);
         });
         recycler.setAdapter(adapter);
     }
 
-    private void startChildFragment(VideoListBean videoListBean, int position, VideoAdapter.MyHolder vh) {
-        EventUtil.sendEvent(true+"");
-        VideoDetailFragment fragment = VideoDetailFragment.newInstance(
-                videoListBean.getItemList().get(position).getData());
+
+    private void startChildFragment(MusicListBean musicListBean, RecyclerView.ViewHolder vh) {
+        EventUtil.sendEvent(true + "");
+        MusicDetailFragment fragment = MusicDetailFragment.newInstance(
+                musicListBean
+        );
         // 这里是使用SharedElement的用例
 
         // LOLLIPOP(5.0)系统的 SharedElement支持有 系统BUG， 这里判断大于 > LOLLIPOP
@@ -88,15 +95,17 @@ public class VideoHomeFragment extends BaseFragment<VideoHomePresenter> implemen
             // 25.1.0以下的support包,Material过渡动画只有在进栈时有,返回时没有;
             // 25.1.0+的support包，SharedElement正常
             fragment.transaction()
-                    .addSharedElement(vh.imageView, getString(R.string.image_transition))
-//                        .addSharedElement(((VideoAdapter.MyHolder) vh).textView,"tv")
+                    .addSharedElement(((MusicAdapter.MyViewHoler) vh).imageView, getString(R.string.image_transition))
                     .commit();
         }
         start(fragment);
     }
 
+
+
+
     @Override
     public void error(Throwable throwable) {
-        Log.e("oye", "error: ", throwable);
+
     }
 }

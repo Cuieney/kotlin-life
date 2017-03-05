@@ -5,7 +5,7 @@
         android:enabled="true"
         app:showAsAction="never"
         android:id="@+id/collect"
-        android:icon="@drawable/collect_menu"
+        android:icon="@drawable/play_music"
         android:title="collect" />
 
     <item

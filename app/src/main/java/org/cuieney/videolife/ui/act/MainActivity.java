@@ -1,11 +1,13 @@
 package org.cuieney.videolife.ui.act;
 
+import android.graphics.Color;
 import android.util.Log;
 import android.view.View;
 
 import com.arlib.floatingsearchview.FloatingSearchView;
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
+import com.jaeger.library.StatusBarUtil;
 
 import org.cuieney.videolife.R;
 import org.cuieney.videolife.common.base.BaseFragment;
@@ -39,6 +41,7 @@ public class MainActivity extends SimpleActivity implements BaseMainFragment.OnB
     BottomNavigationBar mNavigationView;
 
     List<SupportFragment> mFragments;
+
     @Override
     protected int getLayout() {
         return R.layout.design_layout;
@@ -52,7 +55,12 @@ public class MainActivity extends SimpleActivity implements BaseMainFragment.OnB
         mFragments.add(BookFragment.newInstance());
         mFragments.add(NewstandFragment.newInstance());
         loadMultipleRootFragment(R.id.act_container, 0
-                ,mFragments.get(0));
+                , mFragments.get(0)
+                , mFragments.get(1)
+                , mFragments.get(2)
+                , mFragments.get(3)
+
+        );
 
         initView();
         registerFragmentLifecycleCallbacks(new FragmentLifecycleCallbacks() {
@@ -79,7 +87,21 @@ public class MainActivity extends SimpleActivity implements BaseMainFragment.OnB
         mNavigationView.setTabSelectedListener(new BottomNavigationBar.OnTabSelectedListener() {
             @Override
             public void onTabSelected(int position) {
-                showHideFragment(mFragments.get(position), mFragments.get(position == 0 ? mFragments.size() - 1 : position - 1));
+                showHideFragment(mFragments.get(position));
+                switch (position) {
+                    case 0:
+                        StatusBarUtil.setColor(MainActivity.this, Color.parseColor("#6c4a41"));
+                        break;
+                    case 1:
+                        StatusBarUtil.setColor(MainActivity.this, Color.parseColor("#008867"));
+                        break;
+                    case 2:
+                        StatusBarUtil.setColor(MainActivity.this, Color.parseColor("#8b6b64"));
+                        break;
+                    case 3:
+                        StatusBarUtil.setColor(MainActivity.this, Color.parseColor("#485A66"));
+                        break;
+                }
             }
 
             @Override
@@ -98,7 +120,7 @@ public class MainActivity extends SimpleActivity implements BaseMainFragment.OnB
     public void hide(String isHide) {
         if (isHide.equals("true")) {
             mSearchView.setVisibility(View.GONE);
-        }else{
+        } else {
             mSearchView.setVisibility(View.VISIBLE);
         }
     }

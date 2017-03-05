@@ -12,6 +12,7 @@ import me.yokeyword.fragmentation.SupportFragment;
  * Created by YoKeyword on 16/2/7.
  */
 public class BaseBackFragment extends SupportFragment {
+    protected static final String ARG_ITEM = "arg_item";
 
     protected void initToolbarNav(Toolbar toolbar) {
         toolbar.setNavigationIcon(R.mipmap.ic_arrow_back_white_24dp);
@@ -21,5 +22,10 @@ public class BaseBackFragment extends SupportFragment {
         toolbar.inflateMenu(R.menu.video_menu);
     }
 
+    @Override
+    public boolean onBackPressedSupport() {
+        EventUtil.sendEvent(false + "");
+        return super.onBackPressedSupport();
 
+    }
 }

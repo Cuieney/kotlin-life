@@ -8,6 +8,7 @@ import com.google.gson.GsonBuilder;
 import org.cuieney.videolife.common.okhttp.CacheInterceptor;
 import org.cuieney.videolife.common.okhttp.CookiesManager;
 import org.cuieney.videolife.common.utils.AppConfig;
+import org.cuieney.videolife.di.HttpLoggingInterceptor;
 
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
@@ -72,8 +73,11 @@ public class RetrofitModule {
         }
         HostnameVerifier DO_NOT_VERIFY = (hostname, session) -> true;
 
+        HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
+        loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         return new OkHttpClient.Builder()
                 .cache(cache)//添加缓存
+                .addInterceptor(loggingInterceptor)
                 .addInterceptor(cacheInterceptor)
                 .sslSocketFactory(sslContext.getSocketFactory())
                 .hostnameVerifier(DO_NOT_VERIFY)
