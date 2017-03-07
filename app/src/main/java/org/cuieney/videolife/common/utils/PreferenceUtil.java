@@ -1,4 +1,4 @@
-package org.cuieney.videolife.utils;
+package org.cuieney.videolife.common.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;

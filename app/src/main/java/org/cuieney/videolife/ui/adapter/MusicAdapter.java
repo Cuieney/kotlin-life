@@ -51,6 +51,7 @@ public class MusicAdapter extends BaseRecycerViewAdapter<MusicListBean, Recycler
                 }
             });
         }
+
     }
 
     @Override

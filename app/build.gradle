@@ -10,7 +10,7 @@ android {
     buildToolsVersion "25.0.1"
     defaultConfig {
         applicationId "org.cuieney.videolife"
-        minSdkVersion 21
+        minSdkVersion 19
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -106,6 +106,7 @@ dependencies {
     compile 'com.android.support:multidex:1.0.1'
     //fragment manager
     compile 'me.yokeyword:fragmentation:0.10.1'
+
     //canary
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
@@ -114,7 +115,6 @@ dependencies {
 
 
     compile 'com.github.markzhai:blockcanary-android:1.5.0'
-
     // 仅在debug包启用BlockCanary进行卡顿监控和提示的话，可以这么用
     debugCompile 'com.github.markzhai:blockcanary-android:1.5.0'
     releaseCompile 'com.github.markzhai:blockcanary-no-op:1.5.0'
@@ -125,6 +125,4 @@ dependencies {
     compile viewDependencies.ndkbitmap_armv7a
     compile viewDependencies.ndkbitmap_armv5
     compile viewDependencies.ndkbitmap_x86
-
-
 }

@@ -2,8 +2,6 @@ package org.cuieney.videolife.ui.fragment.video;
 
 import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
-import android.graphics.Color;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.CollapsingToolbarLayout;
@@ -22,19 +20,12 @@ import com.bumptech.glide.request.target.SimpleTarget;
 import com.konifar.fab_transformation.FabTransformation;
 
 import org.cuieney.videolife.R;
-import org.cuieney.videolife.common.component.EventUtil;
 import org.cuieney.videolife.common.image.ImageLoader;
 import org.cuieney.videolife.common.utils.DateUtil;
 import org.cuieney.videolife.common.utils.LogUtil;
 import org.cuieney.videolife.entity.kaiyanBean.DataBean;
-import org.cuieney.videolife.ui.fragment.base.BaseBackFragment;
+import org.cuieney.videolife.common.base.BaseBackFragment;
 import org.cuieney.videolife.ui.video.JumpUtils;
-
-import java.io.IOException;
-import java.util.concurrent.ExecutionException;
-
-import tv.danmaku.ijk.media.player.IMediaPlayer;
-import tv.danmaku.ijk.media.player.IjkMediaPlayer;
 
 
 /**

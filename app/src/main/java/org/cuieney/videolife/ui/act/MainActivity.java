@@ -10,11 +10,9 @@ import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.jaeger.library.StatusBarUtil;
 
 import org.cuieney.videolife.R;
-import org.cuieney.videolife.common.base.BaseFragment;
 import org.cuieney.videolife.common.base.SimpleActivity;
 import org.cuieney.videolife.common.component.EventUtil;
-import org.cuieney.videolife.common.utils.LogUtil;
-import org.cuieney.videolife.ui.fragment.base.BaseMainFragment;
+import org.cuieney.videolife.common.base.BaseMainFragment;
 import org.cuieney.videolife.ui.fragment.book.BookFragment;
 import org.cuieney.videolife.ui.fragment.music.MusicFragment;
 import org.cuieney.videolife.ui.fragment.newstand.NewstandFragment;

@@ -1,4 +1,4 @@
-package org.cuieney.videolife.ui.fragment.base;
+package org.cuieney.videolife.common.base;
 
 import android.content.Context;
 

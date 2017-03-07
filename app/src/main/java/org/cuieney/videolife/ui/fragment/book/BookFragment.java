@@ -7,9 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import org.cuieney.videolife.R;
-import org.cuieney.videolife.common.base.BaseFragment;
-import org.cuieney.videolife.common.base.BasePresenter;
-import org.cuieney.videolife.ui.fragment.base.BaseMainFragment;
+import org.cuieney.videolife.common.base.BaseMainFragment;
 import org.cuieney.videolife.ui.fragment.music.MusicHomeFragment;
 
 /**

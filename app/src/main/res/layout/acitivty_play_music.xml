@@ -19,24 +19,24 @@
         android:src="@drawable/share_icon" />
 
     <TextView
-        android:maxLines="1"
-        android:ellipsize="marquee"
         android:id="@+id/title"
         android:layout_width="200dp"
-        android:gravity="center"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:ellipsize="marquee"
+        android:gravity="center"
+        android:maxLines="1"
         android:textColor="#2c2c2c"
         android:textSize="15sp" />
 
     <TextView
-        android:maxLines="1"
-        android:ellipsize="marquee"
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/title"
         android:layout_centerHorizontal="true"
+        android:ellipsize="marquee"
+        android:maxLines="1"
         android:textColor="#2c2c2c"
         android:textSize="12sp" />
 
@@ -50,19 +50,30 @@
         android:paddingRight="50dp">
 
         <ImageView
+            android:id="@+id/model"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_centerVertical="true"
             android:src="@drawable/circle_icon" />
 
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:id="@+id/play_pause"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
             android:layout_centerInParent="true"
             android:layout_centerVertical="true"
             android:src="@drawable/pause_msc_icon" />
 
+        <ProgressBar
+            android:id="@+id/progressBar1"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+
         <ImageView
+            android:id="@+id/next"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_alignParentRight="true"
@@ -97,13 +108,13 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:progress="50" />
+            android:progress="0" />
 
         <TextView
             android:id="@+id/total_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="05:10"
+            android:text="00:00"
             android:textColor="#bfbfbf"
             android:textSize="12sp" />
 

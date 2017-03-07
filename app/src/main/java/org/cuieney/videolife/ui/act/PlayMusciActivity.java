@@ -1,35 +1,68 @@
 package org.cuieney.videolife.ui.act;
 
+import android.content.ComponentName;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.RemoteException;
+import android.os.SystemClock;
+import android.support.annotation.NonNull;
+import android.support.v4.media.MediaBrowserCompat;
+import android.support.v4.media.MediaDescriptionCompat;
+import android.support.v4.media.MediaMetadataCompat;
+import android.support.v4.media.session.MediaControllerCompat;
+import android.support.v4.media.session.MediaSessionCompat;
+import android.support.v4.media.session.PlaybackStateCompat;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
+import android.text.format.DateUtils;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
 import org.cuieney.videolife.R;
 import org.cuieney.videolife.common.base.SimpleActivity;
+import org.cuieney.videolife.common.utils.DateUtil;
+import org.cuieney.videolife.common.utils.LogUtil;
 import org.cuieney.videolife.entity.MusicListBean;
 import org.cuieney.videolife.entity.wyBean.TracksBean;
 import org.cuieney.videolife.ui.adapter.CoverFlowAdapter;
 
+import java.io.IOException;
 import java.util.List;
+import java.util.Random;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
+import tv.danmaku.ijk.media.player.IMediaPlayer;
+import tv.danmaku.ijk.media.player.IjkMediaPlayer;
+
+import static android.view.View.INVISIBLE;
+import static android.view.View.VISIBLE;
 
 /**
  * Created by cuieney on 17/3/5.
  */
 
-public class PlayMusciActivity extends AppCompatActivity {
+public class PlayMusciActivity extends SimpleActivity {
+
     public static final String DATA = "DATA";
+
+    private static final String TAG = "PlayMusciActivity";
     @BindView(R.id.back)
     ImageView back;
+    @BindView(R.id.play_pause)
+    ImageView mPlayPause;
+    @BindView(R.id.model)
+    ImageView model;
+    @BindView(R.id.next)
+    ImageView next;
     @BindView(R.id.share)
     ImageView share;
     @BindView(R.id.title)
@@ -39,26 +72,33 @@ public class PlayMusciActivity extends AppCompatActivity {
     @BindView(R.id.controller)
     RelativeLayout controller;
     @BindView(R.id.current_time)
-    TextView currentTime;
+    TextView mStart;
     @BindView(R.id.progress)
-    SeekBar progress;
+    SeekBar mSeekbar;
     @BindView(R.id.total_time)
-    TextView totalTime;
+    TextView mEnd;
     @BindView(R.id.progress_controller)
     LinearLayout progressController;
     @BindView(R.id.viewpager)
     ViewPager mVpcontent;
+    @BindView(R.id.progressBar1)
+    ProgressBar mLoading;
 
     private MusicListBean tracksBean;
     private List<TracksBean> nowPlayList;
     private CoverFlowAdapter adapter;
+    private IjkMediaPlayer player;
+
+    private int playerIndex = 0;
+    public Handler mHandler;
+    public Runnable mRunnable;
+    private boolean isContainue = true;
+
+    private int mode = 0;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.acitivty_play_music);
-        ButterKnife.bind(this);
-        initEventAndData();
+    protected int getLayout() {
+        return R.layout.acitivty_play_music;
     }
 
     protected void initEventAndData() {
@@ -67,10 +107,131 @@ public class PlayMusciActivity extends AppCompatActivity {
         tracksBean = extras.getParcelable(DATA);
         initGallery();
         initListener();
+        initMeida();
+    }
+
+    private void initMeida() {
+        player = new IjkMediaPlayer();
+        player.reset();
+        player.setOnPreparedListener(iMediaPlayer -> {
+            iMediaPlayer.start();
+            mStart.setText("00:00");
+            mEnd.setText(DateUtils.formatElapsedTime(iMediaPlayer.getDuration() / 1000));
+        });
+        player.setOnErrorListener((iMediaPlayer, i, i1) -> {
+            iMediaPlayer.pause();
+            return false;
+        });
+        player.setOnCompletionListener(iMediaPlayer -> {
+            changeMusic();
+        });
+        player.setOnSeekCompleteListener(IMediaPlayer::start);
+        playMusic();
+    }
+
+    private void changeMusic() {
+        int index = playerIndex;
+        switch (mode) {
+            case 1:
+                index +=1;
+                break;
+            case 2:
+                playMusic();
+                break;
+            case 0:
+                Random random = new Random();
+                int anInt = random.nextInt(10);
+                if (anInt == index) {
+                    anInt = random.nextInt(10);
+                }
+                index = anInt;
+                break;
+        }
+        mVpcontent.setCurrentItem(index, true);
+    }
+
+    private void playMusic() {
+        try {
+            player.reset();
+            player.setDataSource(nowPlayList.get(playerIndex).getFilename());
+            player.prepareAsync();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void initListener() {
         back.setOnClickListener(v -> finish());
+        mSeekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                player.pause();
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                double time = player.getDuration() * (seekBar.getProgress() * 0.01);
+                player.seekTo((long) time);
+            }
+        });
+        mPlayPause.setOnClickListener(v -> {
+            if (player.isPlaying()) {
+                mPlayPause.setImageResource(R.drawable.play_msc_icon);
+                player.pause();
+            } else {
+                player.start();
+                mPlayPause.setImageResource(R.drawable.pause_msc_icon);
+            }
+        });
+
+        model.setOnClickListener(v -> {
+            switch (mode) {
+                case 0:
+                    mode = 1;
+                    model.setImageResource(R.drawable.circle_icon);
+                    break;
+                case 1:
+                    mode = 2;
+                    model.setImageResource(R.drawable.single_play_icon);
+                    break;
+                case 2:
+                    mode = 0;
+                    model.setImageResource(R.drawable.random_icon);
+                    break;
+            }
+        });
+
+        next.setOnClickListener(v -> {
+            changeMusic();
+        });
+        updateProgress();
+    }
+
+    private void updateProgress() {
+        mRunnable = new Runnable() {
+            @Override
+            public void run() {
+                if (isContainue) {
+                    mHandler.postDelayed(this, 1000);
+                }
+                runOnUiThread(() -> {
+                    if (player != null) {
+                        int progress = (int) ((player.getCurrentPosition() * 1f / player.getDuration() * 1f) * 100);
+                        mSeekbar.setProgress(progress);
+                        mStart.setText(DateUtils.formatElapsedTime(player.getCurrentPosition() / 1000));
+                    }
+                });
+            }
+        };
+        mHandler = new Handler();
+        if (isContainue) {
+            mHandler.postDelayed(mRunnable, 1000);
+        }
     }
 
 
@@ -87,7 +248,8 @@ public class PlayMusciActivity extends AppCompatActivity {
         mVpcontent.setAdapter(adapter);
         mVpcontent.setOffscreenPageLimit(3);
         mVpcontent.setPageTransformer(true, new ScalePageTransformer());
-
+        title.setText(nowPlayList.get(0).getSongname());
+        name.setText(nowPlayList.get(0).getSonger());
         mVpcontent.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -95,8 +257,10 @@ public class PlayMusciActivity extends AppCompatActivity {
 
             @Override
             public void onPageSelected(final int position) {
+                playerIndex = position;
                 title.setText(nowPlayList.get(position).getSongname());
                 name.setText(nowPlayList.get(position).getSonger());
+                playMusic();
             }
 
             @Override
@@ -108,7 +272,6 @@ public class PlayMusciActivity extends AppCompatActivity {
         });
 
     }
-
 
     public class ScalePageTransformer implements ViewPager.PageTransformer {
         private static final String TAG = "ScalePageTransformer";
@@ -138,4 +301,16 @@ public class PlayMusciActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        isContainue = false;
+        if (player.isPlaying()) {
+            player.pause();
+            player.stop();
+            player.release();
+            player = null;
+        }
+    }
 }
+

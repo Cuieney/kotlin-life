@@ -17,7 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:transitionName="tv"
-            android:text="@string/large_text"
+            android:text="DSDSA"
             android:layout_margin="20dp"/>
 
     </LinearLayout>

@@ -1,11 +1,8 @@
 package org.cuieney.videolife.ui.fragment.video;
 
-import android.graphics.Bitmap;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.graphics.Palette;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.transition.Fade;
@@ -19,7 +16,7 @@ import org.cuieney.videolife.entity.VideoListBean;
 import org.cuieney.videolife.presenter.VideoHomePresenter;
 import org.cuieney.videolife.presenter.contract.VideoHomeContract;
 import org.cuieney.videolife.ui.adapter.VideoAdapter;
-import org.cuieney.videolife.ui.fragment.base.DetailTransition;
+import org.cuieney.videolife.common.base.DetailTransition;
 
 import butterknife.BindView;
 

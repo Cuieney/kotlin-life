@@ -4,7 +4,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.transition.Fade;
 import android.transition.Slide;
@@ -14,13 +13,9 @@ import org.cuieney.videolife.common.base.BaseFragment;
 import org.cuieney.videolife.common.component.EventUtil;
 import org.cuieney.videolife.entity.MusicListBean;
 import org.cuieney.videolife.presenter.MusicHomePresenter;
-import org.cuieney.videolife.presenter.VideoHomePresenter;
 import org.cuieney.videolife.presenter.contract.MusicHomeContract;
-import org.cuieney.videolife.presenter.contract.VideoHomeContract;
 import org.cuieney.videolife.ui.adapter.MusicAdapter;
-import org.cuieney.videolife.ui.adapter.VideoAdapter;
-import org.cuieney.videolife.ui.fragment.base.DetailTransition;
-import org.cuieney.videolife.ui.fragment.video.VideoHomeFragment;
+import org.cuieney.videolife.common.base.DetailTransition;
 
 import java.util.List;
 

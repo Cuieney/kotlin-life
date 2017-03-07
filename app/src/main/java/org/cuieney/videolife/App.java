@@ -14,10 +14,13 @@ import com.github.moduth.blockcanary.internal.BlockInfo;
 import com.squareup.leakcanary.LeakCanary;
 import com.zhy.autolayout.config.AutoLayoutConifg;
 
+import org.cuieney.videolife.common.utils.PreferenceUtil;
 import org.cuieney.videolife.di.component.AppComponent;
 import org.cuieney.videolife.di.component.DaggerAppComponent;
 import org.cuieney.videolife.di.module.AppModule;
 import org.cuieney.videolife.di.module.RetrofitModule;
+import org.json.JSONArray;
+import org.json.JSONException;
 
 import java.io.File;
 import java.util.HashSet;
@@ -93,6 +96,8 @@ public class App extends Application {
         }
     }
 
+
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -101,12 +106,12 @@ public class App extends Application {
 //        AutoLayoutConifg.getInstance().useDeviceSize();
 //        getScreenSize();
 
-        //内存泄漏检测
-        if (LeakCanary.isInAnalyzerProcess(this)) {
-            return;
-        }
-        LeakCanary.install(this);
-        BlockCanary.install(this, new AppBlockCanaryContext()).start();
+//        //内存泄漏检测
+//        if (LeakCanary.isInAnalyzerProcess(this)) {
+//            return;
+//        }
+//        LeakCanary.install(this);
+//        BlockCanary.install(this, new AppBlockCanaryContext()).start();
 
 //        CrashHandler.getInstance().initCrashHandler(this);
     }
