@@ -42,29 +42,6 @@ public class VideoAdapter extends BaseRecycerViewAdapter<ItemListBean, RecyclerV
     public VideoAdapter(Context context, List<ItemListBean> list) {
         super(context, list);
         mBitmap = new ArrayList<>();
-//        initBitmap();
-    }
-
-    private void initBitmap() {
-        fixedThreadPool.execute(() -> {
-            for (int i = 0; i < list.size(); i++) {
-                DataBean data = list.get(i).getData();
-                if (data.getType().equals("video")) {
-
-                    try {
-                        mBitmap.add(Glide.with(context)
-                                .load(data.getCover().getDetail())
-                                .asBitmap()
-                                .into(500, 500)
-                                .get());
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    } catch (ExecutionException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-        });
     }
 
     @Override
@@ -94,10 +71,7 @@ public class VideoAdapter extends BaseRecycerViewAdapter<ItemListBean, RecyclerV
         if (holder instanceof MyHolder) {
             MyHolder myHolder = (MyHolder) holder;
             ViewCompat.setTransitionName(myHolder.imageView, String.valueOf(position) + "_image");
-//            ViewCompat.setTransitionName(myHolder.textView, String.valueOf(position) + "_tv");
-
             DataBean data = itemListBean.getData();
-
             ImageLoader.loadAll(context, data.getCover().getDetail(), myHolder.imageView);
 
 

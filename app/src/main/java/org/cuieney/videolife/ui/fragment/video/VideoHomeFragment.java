@@ -9,14 +9,22 @@ import android.transition.Fade;
 import android.transition.Slide;
 import android.util.Log;
 
+import com.jcodecraeer.xrecyclerview.XRecyclerView;
+
 import org.cuieney.videolife.R;
 import org.cuieney.videolife.common.base.BaseFragment;
 import org.cuieney.videolife.common.component.EventUtil;
+import org.cuieney.videolife.common.utils.LogUtil;
 import org.cuieney.videolife.entity.VideoListBean;
+import org.cuieney.videolife.entity.kaiyanBean.ItemListBean;
 import org.cuieney.videolife.presenter.VideoHomePresenter;
 import org.cuieney.videolife.presenter.contract.VideoHomeContract;
 import org.cuieney.videolife.ui.adapter.VideoAdapter;
 import org.cuieney.videolife.common.base.DetailTransition;
+import org.cuieney.videolife.ui.widget.EndLessOnScrollListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 
@@ -24,13 +32,16 @@ import butterknife.BindView;
  * Created by cuieney on 17/2/27.
  */
 
-public class VideoHomeFragment extends BaseFragment<VideoHomePresenter> implements VideoHomeContract.View  {
+public class VideoHomeFragment extends BaseFragment<VideoHomePresenter> implements VideoHomeContract.View {
 
     @BindView(R.id.recycler)
     RecyclerView recycler;
     @BindView(R.id.refresh)
     SwipeRefreshLayout refresh;
 
+    private String date;
+    private VideoAdapter adapter;
+    private List<ItemListBean> mVideoListBean;
 
     public static VideoHomeFragment newInstance() {
         Bundle bundle = new Bundle();
@@ -51,28 +62,52 @@ public class VideoHomeFragment extends BaseFragment<VideoHomePresenter> implemen
 
     @Override
     protected void initEventAndData() {
-        refresh.setProgressViewOffset(false,100,200);
+        refresh.setProgressViewOffset(false, 100, 200);
+        refresh.setOnRefreshListener(() -> {
+            mPresenter.getVideoData("");
+        });
+
+        LinearLayoutManager layout = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
+        recycler.setLayoutManager(layout);
+        mVideoListBean = new ArrayList<>();
+
+        adapter = new VideoAdapter(getActivity(), mVideoListBean);
+        adapter.setOnItemClickListener((position, view, vh) -> startChildFragment(mVideoListBean.get(position), (VideoAdapter.MyHolder) vh));
+        recycler.setAdapter(adapter);
+        recycler.addOnScrollListener(new EndLessOnScrollListener(layout,0) {
+            @Override
+            public void onLoadMore() {
+                mPresenter.getVideoData(date);
+            }
+        });
         mPresenter.getVideoData("");
-        recycler.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
-        refresh.setOnRefreshListener(() -> mPresenter.getVideoData(""));
+
     }
 
     @Override
     public void showContent(VideoListBean videoListBean) {
         if (refresh.isRefreshing()) {
             refresh.setRefreshing(false);
+            mVideoListBean.clear();
+            adapter.clear();
+            adapter.addAll(videoListBean.getItemList());
+            recycler.setAdapter(adapter);
+        }else{
+            adapter.addAll(videoListBean.getItemList());
         }
-        VideoAdapter adapter = new VideoAdapter(getActivity(), videoListBean.getItemList());
-        adapter.setOnItemClickListener((position, view, vh) -> {
-            startChildFragment(videoListBean, position, (VideoAdapter.MyHolder) vh);
-        });
-        recycler.setAdapter(adapter);
-    }
+        mVideoListBean.addAll(videoListBean.getItemList());
 
-    private void startChildFragment(VideoListBean videoListBean, int position, VideoAdapter.MyHolder vh) {
-        EventUtil.sendEvent(true+"");
+        int end = videoListBean.getNextPageUrl().lastIndexOf("&num");
+        int start = videoListBean.getNextPageUrl().lastIndexOf("date=");
+        date = videoListBean.getNextPageUrl().substring(start + 5, end);
+
+
+
+    }
+    private void startChildFragment(ItemListBean videoListBean, VideoAdapter.MyHolder vh) {
+        EventUtil.sendEvent(true + "");
         VideoDetailFragment fragment = VideoDetailFragment.newInstance(
-                videoListBean.getItemList().get(position).getData());
+                videoListBean.getData());
         // 这里是使用SharedElement的用例
 
         // LOLLIPOP(5.0)系统的 SharedElement支持有 系统BUG， 这里判断大于 > LOLLIPOP

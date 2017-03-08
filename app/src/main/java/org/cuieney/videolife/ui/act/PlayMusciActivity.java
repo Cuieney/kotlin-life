@@ -1,18 +1,8 @@
 package org.cuieney.videolife.ui.act;
 
-import android.content.ComponentName;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.RemoteException;
-import android.os.SystemClock;
-import android.support.annotation.NonNull;
-import android.support.v4.media.MediaBrowserCompat;
-import android.support.v4.media.MediaDescriptionCompat;
-import android.support.v4.media.MediaMetadataCompat;
-import android.support.v4.media.session.MediaControllerCompat;
-import android.support.v4.media.session.MediaSessionCompat;
-import android.support.v4.media.session.PlaybackStateCompat;
 import android.support.v4.view.ViewPager;
 import android.text.format.DateUtils;
 import android.view.View;
@@ -25,8 +15,6 @@ import android.widget.TextView;
 
 import org.cuieney.videolife.R;
 import org.cuieney.videolife.common.base.SimpleActivity;
-import org.cuieney.videolife.common.utils.DateUtil;
-import org.cuieney.videolife.common.utils.LogUtil;
 import org.cuieney.videolife.entity.MusicListBean;
 import org.cuieney.videolife.entity.wyBean.TracksBean;
 import org.cuieney.videolife.ui.adapter.CoverFlowAdapter;
@@ -34,17 +22,11 @@ import org.cuieney.videolife.ui.adapter.CoverFlowAdapter;
 import java.io.IOException;
 import java.util.List;
 import java.util.Random;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
 import tv.danmaku.ijk.media.player.IMediaPlayer;
 import tv.danmaku.ijk.media.player.IjkMediaPlayer;
 
-import static android.view.View.INVISIBLE;
-import static android.view.View.VISIBLE;
 
 /**
  * Created by cuieney on 17/3/5.
@@ -54,7 +36,6 @@ public class PlayMusciActivity extends SimpleActivity {
 
     public static final String DATA = "DATA";
 
-    private static final String TAG = "PlayMusciActivity";
     @BindView(R.id.back)
     ImageView back;
     @BindView(R.id.play_pause)
@@ -133,7 +114,7 @@ public class PlayMusciActivity extends SimpleActivity {
         int index = playerIndex;
         switch (mode) {
             case 1:
-                index +=1;
+                index += 1;
                 break;
             case 2:
                 playMusic();

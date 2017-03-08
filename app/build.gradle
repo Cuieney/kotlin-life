@@ -113,9 +113,8 @@ dependencies {
     testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
     compile project(':gsyVideoPlayer')
 
-
+    //blockcanary
     compile 'com.github.markzhai:blockcanary-android:1.5.0'
-    // 仅在debug包启用BlockCanary进行卡顿监控和提示的话，可以这么用
     debugCompile 'com.github.markzhai:blockcanary-android:1.5.0'
     releaseCompile 'com.github.markzhai:blockcanary-no-op:1.5.0'
 

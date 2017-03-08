@@ -54,7 +54,7 @@
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_centerVertical="true"
-            android:src="@drawable/circle_icon" />
+            android:src="@drawable/random_icon" />
 
         <ImageView
             android:id="@+id/play_pause"
@@ -74,8 +74,8 @@
 
         <ImageView
             android:id="@+id/next"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:src="@drawable/menu_icon" />

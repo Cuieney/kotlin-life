@@ -16,7 +16,9 @@ import org.cuieney.videolife.presenter.MusicHomePresenter;
 import org.cuieney.videolife.presenter.contract.MusicHomeContract;
 import org.cuieney.videolife.ui.adapter.MusicAdapter;
 import org.cuieney.videolife.common.base.DetailTransition;
+import org.cuieney.videolife.ui.widget.EndLessOnScrollListener;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -31,8 +33,9 @@ public class MusicHomeFragment extends BaseFragment<MusicHomePresenter> implemen
     RecyclerView recycler;
     @BindView(R.id.refresh)
     SwipeRefreshLayout refresh;
-
-
+    private List<MusicListBean> mMusicList;
+    private int pager = 1;
+    private MusicAdapter adapter;
 
     public static MusicHomeFragment newInstance() {
         Bundle bundle = new Bundle();
@@ -53,9 +56,23 @@ public class MusicHomeFragment extends BaseFragment<MusicHomePresenter> implemen
     @Override
     protected void initEventAndData() {
         refresh.setProgressViewOffset(false,100,200);
-        mPresenter.getMusicData("1");
-        recycler.setLayoutManager(new GridLayoutManager(getActivity(),2));
         refresh.setOnRefreshListener(() -> mPresenter.getMusicData("1"));
+        GridLayoutManager layout = new GridLayoutManager(getActivity(), 2);
+        recycler.setLayoutManager(layout);
+        recycler.addOnScrollListener(new EndLessOnScrollListener(layout,1) {
+            @Override
+            public void onLoadMore() {
+                mPresenter.getMusicData(pager+"");
+            }
+        });
+        mMusicList = new ArrayList<>();
+        adapter = new MusicAdapter(getActivity(),mMusicList);
+        recycler.setAdapter(adapter);
+        adapter.setOnItemClickListener((position, view, vh) -> {
+            startChildFragment(mMusicList.get(position), vh);
+        });
+
+        mPresenter.getMusicData(pager+"");
     }
 
     @Override
@@ -64,12 +81,16 @@ public class MusicHomeFragment extends BaseFragment<MusicHomePresenter> implemen
         musicListBean.add(0,new MusicListBean());
         if (refresh.isRefreshing()) {
             refresh.setRefreshing(false);
+            pager =1;
+            adapter.clear();
+            mMusicList.clear();
+            adapter.addAll(musicListBean);
+            recycler.setAdapter(adapter);
+        }else{
+            adapter.addAll(musicListBean);
+            pager++;
         }
-         MusicAdapter adapter = new MusicAdapter(getActivity(),musicListBean);
-        adapter.setOnItemClickListener((position, view, vh) -> {
-            startChildFragment(musicListBean.get(position), vh);
-        });
-        recycler.setAdapter(adapter);
+        mMusicList.addAll(musicListBean);
     }
 
 

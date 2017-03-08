@@ -116,23 +116,6 @@ public class CoverFlowAdapter extends PagerAdapter {
         }
     }
 
-    private int mChildCount = 0;
-
-//    @Override
-//    public void notifyDataSetChanged() {
-//        mChildCount = getCount();
-//        super.notifyDataSetChanged();
-//    }
-//
-//    @Override
-//    public int getItemPosition(Object object)   {
-//        if ( mChildCount > 0) {
-//            mChildCount --;
-//            return POSITION_NONE;
-//        }
-//        return super.getItemPosition(object);
-//    }
-
     @Override
     public int getCount() {
         return list.size();
@@ -172,61 +155,6 @@ public class CoverFlowAdapter extends PagerAdapter {
         }
 
 
-    }
-
-
-
-    class HomeAdapter extends PagerAdapter {
-        private List<TracksBean> list;
-        private LayoutInflater inflater;
-        public Context context;
-
-        public HomeAdapter(List<TracksBean> list, LayoutInflater inflater, Context context) {
-            this.list = list;
-            this.inflater = inflater;
-            this.context = context;
-        }
-
-        // 当前viewPager里面有多少个条目
-        LinkedList<View> convertView=new LinkedList<View>();
-        @Override
-        public int getCount() {
-            return	Integer.MAX_VALUE;
-        }
-        /* 判断返回的对象和 加载view对象的关系 */
-        @Override
-        public boolean isViewFromObject(View arg0, Object arg1) {
-            return arg0 == arg1;
-        }
-        @Override
-        public void destroyItem(ViewGroup container, int position, Object object) {
-            ImageView view=(ImageView) object;
-            convertView.add(view);// 把移除的对象 添加到缓存集合中
-            container.removeView(view);
-        }
-        @Override
-        public Object instantiateItem(ViewGroup container, int position) {
-
-            View view = null;
-            MyHolder holder = null;
-            if (view == null) {
-                view = inflater.inflate(R.layout.play_music_item, null);
-                holder = new MyHolder(view);
-                view.setTag(holder);
-            } else {
-                holder = (MyHolder) view.getTag();
-            }
-            /**
-             * 初始化数据
-             */
-            if (list != null && position < list.size()) {
-                TracksBean musicPlayerItem = list.get(position);
-//            ImageLoader.loadAll(context, musicPlayerItem.getSongphoto(), holder.bgImage);
-//            initColor(holder, musicPlayerItem);
-            }
-
-            return view;
-        }
     }
 
 }

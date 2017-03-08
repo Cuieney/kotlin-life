@@ -75,6 +75,7 @@ public class MusicDetailFragment extends BaseBackFragment {
         mImgDetail = (ImageView) view.findViewById(R.id.img_detail);
         mFab = (FloatingActionButton) view.findViewById(R.id.fab);
         recycler = ((XRecyclerView) view.findViewById(R.id.recycler));
+
         recycler.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
         initColor();
         mToolbar.setTitle("");
@@ -104,11 +105,9 @@ public class MusicDetailFragment extends BaseBackFragment {
     private void initHeadView() {
         View inflate = LayoutInflater.from(getContext()).inflate(R.layout.music_detial_top_item, null);
         TextView title = (TextView) inflate.findViewById(R.id.title);
-//        TextView desc = (TextView) inflate.findViewById(R.id.desc);
         ExpandableTextView expandableTextView = (ExpandableTextView) inflate.findViewById(R.id.expand_text_view);
         expandableTextView.setText(dataBean.getMdesc());
         title.setText(dataBean.getMname());
-//        desc.setText(dataBean.getMdesc());
         recycler.addHeaderView(inflate);
     }
 
