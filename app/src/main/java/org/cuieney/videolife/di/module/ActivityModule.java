@@ -1,9 +1,11 @@
 package org.cuieney.videolife.di.module;
 
 import android.app.Activity;
+import android.support.v4.app.Fragment;
 
 
 import org.cuieney.videolife.di.PerActivity;
+import org.cuieney.videolife.di.PerFragment;
 
 import dagger.Module;
 import dagger.Provides;

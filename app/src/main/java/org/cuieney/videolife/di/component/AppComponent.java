@@ -3,6 +3,7 @@ package org.cuieney.videolife.di.component;
 
 import android.content.Context;
 
+import org.cuieney.videolife.common.api.KyApiService;
 import org.cuieney.videolife.common.api.WyApiService;
 import org.cuieney.videolife.di.module.AppModule;
 import org.cuieney.videolife.di.module.RetrofitModule;

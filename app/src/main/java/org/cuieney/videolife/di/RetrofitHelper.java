@@ -1,6 +1,7 @@
 package org.cuieney.videolife.di;
 
 import org.cuieney.videolife.common.api.UrlManager;
+import org.cuieney.videolife.common.api.KyApiService;
 import org.cuieney.videolife.common.api.WyApiService;
 
 import javax.inject.Inject;
@@ -9,6 +10,7 @@ import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
+import rx.Observable;
 
 /**
  * Created by cuieney on 17/2/28.

@@ -4,6 +4,7 @@ import android.content.Context;
 
 
 import org.cuieney.videolife.App;
+import org.cuieney.videolife.common.api.KyApiService;
 import org.cuieney.videolife.common.api.WyApiService;
 import org.cuieney.videolife.di.RetrofitHelper;
 
@@ -11,6 +12,7 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import retrofit2.Retrofit;
 
 
 @Module
