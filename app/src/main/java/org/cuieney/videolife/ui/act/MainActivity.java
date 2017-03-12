@@ -138,7 +138,7 @@ public class MainActivity extends SimpleActivity implements BaseMainFragment.OnB
 
     @Override
     public void onBackToFirstFragment() {
-        mNavigationView.setBottom(0);
+        mNavigationView.selectTab(0);
     }
 }
 
