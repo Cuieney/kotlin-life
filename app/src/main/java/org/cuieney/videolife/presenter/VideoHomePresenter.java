@@ -1,6 +1,5 @@
 package org.cuieney.videolife.presenter;
 
-import org.cuieney.videolife.common.api.KyApiService;
 import org.cuieney.videolife.common.base.RxPresenter;
 import org.cuieney.videolife.common.utils.RxUtil;
 import org.cuieney.videolife.presenter.contract.VideoHomeContract;

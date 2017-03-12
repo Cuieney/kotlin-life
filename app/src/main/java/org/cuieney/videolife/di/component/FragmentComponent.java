@@ -3,10 +3,8 @@ package org.cuieney.videolife.di.component;
 import android.app.Activity;
 
 
-import org.cuieney.videolife.di.PerFragment;
 import org.cuieney.videolife.di.module.FragmentModule;
 import org.cuieney.videolife.ui.fragment.music.MusicHomeFragment;
-import org.cuieney.videolife.ui.fragment.video.VideoFragment;
 import org.cuieney.videolife.ui.fragment.video.VideoHomeFragment;
 
 import dagger.Component;
