@@ -13,14 +13,14 @@ life 是一个多媒体信息app，基于Material Design + MVP + RxJava + Retrof
 
 音乐来自：余音 <http://app.mi.com/details?id=fm.wawa.mg/>文艺骚年专属
 
-###tips
+### tips
 1.本项目目前只是在开发测试阶段，发现bug或有好的建议欢迎
 [issues](https://github.com/Cuieney/vld/issues/ "悬停显示")
 Email <cuieney@163.com> link.
 
 2.本项目仅作为学习交流使用，API数据内容所有权归原公司所有，请勿用于其他用途
 
-###Preview
+### Preview
 ![media icon](https://github.com/Cuieney/vld/blob/master/image/media.png)
 ![media icon](https://github.com/Cuieney/vld/blob/master/image/media_home.png)
 ![media icon](https://github.com/Cuieney/vld/blob/master/image/media_home_detail.png)
