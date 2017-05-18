@@ -59,9 +59,9 @@ Email <cuieney@163.com> link.
 
 ### Version
 
-<<<<<<< HEAD
 #### V2.0.0
 1.增加essay tab页面，修改了一些bug 更新了app icon(功能并未完善)
+
 
 #### V1.0.0
 1.第一版本提交(功能并未完善)
