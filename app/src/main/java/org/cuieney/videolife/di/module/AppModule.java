@@ -5,6 +5,7 @@ import android.content.Context;
 
 import org.cuieney.videolife.App;
 import org.cuieney.videolife.common.api.KyApiService;
+import org.cuieney.videolife.common.api.OpApiService;
 import org.cuieney.videolife.common.api.WyApiService;
 import org.cuieney.videolife.di.RetrofitHelper;
 
@@ -40,5 +41,11 @@ public class AppModule {
     @Provides
     WyApiService proviesWyService(RetrofitHelper retrofitHelper){
         return retrofitHelper.getWyApiService();
+    }
+
+
+    @Provides
+    OpApiService proviesOpService(RetrofitHelper retrofitHelper){
+        return retrofitHelper.getOpApiService();
     }
 }

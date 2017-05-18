@@ -34,7 +34,7 @@ public class NewstandFragment extends BaseMainFragment {
     public void onLazyInitView(@Nullable Bundle savedInstanceState) {
         super.onLazyInitView(savedInstanceState);
         if (savedInstanceState == null) {
-            loadRootFragment(R.id.fl_first_container, VideoHomeFragment.newInstance());
+            loadRootFragment(R.id.fl_first_container, NewstandHomeFragment.newInstance());
         }
     }
 

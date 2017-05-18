@@ -14,6 +14,7 @@ import org.cuieney.videolife.common.base.SimpleActivity;
 import org.cuieney.videolife.common.component.EventUtil;
 import org.cuieney.videolife.common.base.BaseMainFragment;
 import org.cuieney.videolife.ui.fragment.book.BookFragment;
+import org.cuieney.videolife.ui.fragment.essay.EssayFragment;
 import org.cuieney.videolife.ui.fragment.music.MusicFragment;
 import org.cuieney.videolife.ui.fragment.newstand.NewstandFragment;
 import org.cuieney.videolife.ui.fragment.video.VideoFragment;
@@ -50,8 +51,8 @@ public class MainActivity extends SimpleActivity implements BaseMainFragment.OnB
         mFragments = new ArrayList<>();
         mFragments.add(VideoFragment.newInstance());
         mFragments.add(MusicFragment.newInstance());
-        mFragments.add(BookFragment.newInstance());
-        mFragments.add(NewstandFragment.newInstance());
+        mFragments.add(EssayFragment.newInstance());
+        mFragments.add(VideoFragment.newInstance());
         loadMultipleRootFragment(R.id.act_container, 0
                 , mFragments.get(0)
                 , mFragments.get(1)
@@ -75,7 +76,7 @@ public class MainActivity extends SimpleActivity implements BaseMainFragment.OnB
         mNavigationView
                 .addItem(new BottomNavigationItem(R.drawable.movie_icon, "movie").setActiveColor("#6c4a41").setInActiveColor("#CCCCCC"))
                 .addItem(new BottomNavigationItem(R.drawable.music_icon, "music").setActiveColor("#008867"))
-                .addItem(new BottomNavigationItem(R.drawable.book_icon, "book").setActiveColor("#8b6b64"))
+                .addItem(new BottomNavigationItem(R.drawable.book_icon, "essay").setActiveColor("#8b6b64"))
                 .addItem(new BottomNavigationItem(R.drawable.newspaper_icon, "newstand").setActiveColor("#485A66"))
                 .initialise();
         mNavigationView.setBackgroundStyle(BACKGROUND_STYLE_RIPPLE);

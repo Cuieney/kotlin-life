@@ -42,6 +42,8 @@ public class DateUtil {
         return df.format(new Date());
     }
 
+
+
     /**
      * 获取当前年
      * @return
@@ -142,6 +144,8 @@ public class DateUtil {
         }
         return "未知";
     }
+
+
 
     public static String formatDateTime(String time , boolean haveYear) {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");

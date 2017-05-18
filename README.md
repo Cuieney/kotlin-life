@@ -1,5 +1,5 @@
 # Life
-####App界的一股清流
+#### App界的一股清流
 
 
 Life is a Multimedia information app based on Material Design + MVP + RxJava + Retrofit + Dagger2 + GreenDAO + Glide
@@ -13,27 +13,31 @@ life 是一个多媒体信息app，基于Material Design + MVP + RxJava + Retrof
 
 音乐来自：余音 <http://app.mi.com/details?id=fm.wawa.mg/>文艺骚年专属
 
-###tips
+### tips
 1.本项目目前只是在开发测试阶段，发现bug或有好的建议欢迎
 [issues](https://github.com/Cuieney/vld/issues/ "悬停显示")
 Email <cuieney@163.com> link.
 
 2.本项目仅作为学习交流使用，API数据内容所有权归原公司所有，请勿用于其他用途
 
-###Preview
+### Preview
 ![media icon](https://github.com/Cuieney/vld/blob/master/image/media.png)
 ![media icon](https://github.com/Cuieney/vld/blob/master/image/media_home.png)
 ![media icon](https://github.com/Cuieney/vld/blob/master/image/media_home_detail.png)
 ![media icon](https://github.com/Cuieney/vld/blob/master/image/music.png)
 ![media icon](https://github.com/Cuieney/vld/blob/master/image/music_home.png)
 ![media icon](https://github.com/Cuieney/vld/blob/master/image/music_detail.png)
+![media icon](https://github.com/Cuieney/vld/blob/master/image/essay_home.png)
+![media icon](https://github.com/Cuieney/vld/blob/master/image/essay_detail.png)
+
+
 
 ### Download APK
 (Android 5.0 or above)
 
 [URL](https://github.com/Cuieney/vld/blob/master/image/app-debug.apk "悬停显示")
 
-###Points
+### Points
 	使用Rx家族配合Retrolambda减少代码量
 	使用RxJava配合Retrofit2做网络请求
 	使用Rxlifecycle对订阅的生命周期做管理
@@ -53,18 +57,23 @@ Email <cuieney@163.com> link.
 	包含搜索、收藏、检测更新等功能
 
 
-###Version
+### Version
 
-####V1.0.0
+<<<<<<< HEAD
+#### V2.0.0
+1.增加essay tab页面，修改了一些bug 更新了app icon(功能并未完善)
+
+#### V1.0.0
 1.第一版本提交(功能并未完善)
 
-###Thanks
+### Thanks
 
-####API
+#### API
 
 [开眼](http://www.eyepetizer.net/ "悬停显示") [余音](http://app.mi.com/details?id=fm.wawa.mg/ "悬停显示")
+[一个](http://www.wandoujia.com/apps/one.hh.oneclient/ "悬停显示")
 
-####APP:
+#### APP:
 
 [Material Design](https://material.io/guidelines/components/bottom-navigation.html#bottom-navigation-behavior "悬停显示") 官方提供了部分设计思路
 
@@ -73,7 +82,7 @@ Email <cuieney@163.com> link.
 
 还参考了很多大神的类似作品，感谢大家的开源精神
 
-####RES
+#### RES
 
 [iconfont](http://www.iconfont.cn/plus/search/index "悬停显示")
  提供了icon素材
@@ -82,8 +91,8 @@ Email <cuieney@163.com> link.
  提供了Material Design风格的素材
 
 
-###LIB
-####UI
+### LIB
+#### UI
 
 1. [BottomNavigation](https://github.com/Ashok-Varma/BottomNavigation "悬停显示")
  
@@ -95,7 +104,7 @@ Email <cuieney@163.com> link.
 
 5. [statusbaruitl](https://github.com/laobie/StatusBarUtil "悬停显示")
 
-####RX
+#### RX
 1. [RxJava](https://github.com/ReactiveX/RxJava "悬停显示")
 
 2. [RxAndroid](https://github.com/ReactiveX/RxAndroid "悬停显示")
@@ -104,12 +113,12 @@ Email <cuieney@163.com> link.
 
 4. [RxLifecycle](https://github.com/trello/RxLifecycle "悬停显示")
 
-####VIDEO
+#### VIDEO
 1. [ijkplayer](https://github.com/Bilibili/ijkplayer "悬停显示")
 
 2. [GSYVideoPlayer](https://github.com/CarGuo/GSYVideoPlayer "悬停显示")
 
-####NETWORK
+#### NETWORK
 
 1. [Retrofit](https://github.com/square/retrofit "悬停显示")
 
@@ -119,25 +128,25 @@ Email <cuieney@163.com> link.
 
 4. [Gson](https://github.com/google/gson "悬停显示")
 
-####DI
+#### DI
 1. [Dagger2](https://github.com/google/dagger "悬停显示")
 
 2. [ButterKnife](https://github.com/JakeWharton/butterknife "悬停显示")
 
-####FRAGMENT
+#### FRAGMENT
 1. [Fragmentation](https://github.com/YoKeyword/Fragmentation "悬停显示")
 
-####LOG
+#### LOG
 1. [Logger](https://github.com/orhanobut/logger "悬停显示")
 
-####DB
+#### DB
 1. [greenDAO](https://github.com/greenrobot/greenDAO "悬停显示")
 
-####CANARY
+#### CANARY
 1. [BlockCanary](https://github.com/markzhai/AndroidPerformanceMonitor "悬停显示")
 2. [leakcanary](https://github.com/square/leakcanary "悬停显示") 
 
-##License
+## License
 
 Copyright (c) 2017 cuieney
 

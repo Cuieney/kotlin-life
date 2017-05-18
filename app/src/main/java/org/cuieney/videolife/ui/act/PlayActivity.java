@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.transition.Transition;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -14,6 +15,7 @@ import com.shuyu.gsyvideoplayer.GSYVideoPlayer;
 import com.shuyu.gsyvideoplayer.utils.OrientationUtils;
 
 import org.cuieney.videolife.R;
+import org.cuieney.videolife.common.utils.LogUtil;
 import org.cuieney.videolife.entity.kaiyanBean.DataBean;
 import org.cuieney.videolife.ui.video.OnTransitionListener;
 import org.cuieney.videolife.ui.video.SampleVideo;
@@ -188,6 +190,8 @@ public class PlayActivity extends AppCompatActivity {
                 .openConnection();
         conn.setInstanceFollowRedirects(false);
         conn.setConnectTimeout(5000);
-        return conn.getHeaderField("Location");
+        String headerField = conn.getHeaderField("Location");
+        Log.e("oye",headerField);
+        return headerField;
     }
 }

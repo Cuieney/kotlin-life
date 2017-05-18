@@ -1,5 +1,6 @@
 package org.cuieney.videolife.di;
 
+import org.cuieney.videolife.common.api.OpApiService;
 import org.cuieney.videolife.common.api.UrlManager;
 import org.cuieney.videolife.common.api.KyApiService;
 import org.cuieney.videolife.common.api.WyApiService;
@@ -22,6 +23,7 @@ public class RetrofitHelper {
 
     private KyApiService kyApiService;
     private WyApiService wyApiService;
+    private OpApiService opApiService;
 
     @Inject
     public RetrofitHelper(OkHttpClient client) {
@@ -32,6 +34,7 @@ public class RetrofitHelper {
     private void init() {
         kyApiService = getApiService(UrlManager.KAIYAN_HOST,KyApiService.class);
         wyApiService = getApiService(UrlManager.WANGYI_HOST,WyApiService.class);
+        opApiService = getApiService(UrlManager.YIREN_HOST,OpApiService.class);
 
     }
     private <T> T getApiService(String baseUrl, Class<T> clz) {
@@ -52,4 +55,7 @@ public class RetrofitHelper {
         return wyApiService;
     }
 
+    public OpApiService getOpApiService() {
+        return opApiService;
+    }
 }
