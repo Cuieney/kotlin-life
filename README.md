@@ -3,9 +3,9 @@
 #### App界的一股清流
 
 
-Life is a Multimedia information app based on Material Design + MVP + RxJava + Retrofit + Dagger2 + GreenDAO + Glide
+Life is a Multimedia information app based on Material Design Kotlin + MVP + RxJava + Retrofit + Dagger2 + GreenDAO + Glide
 
-life 是一个多媒体信息app，基于Material Design + MVP + RxJava + Retrofit + Dagger2 + GreenDAO + Glide
+life 是一个多媒体信息app，基于Material Design Kotlin + MVP + RxJava + Retrofit + Dagger2 + GreenDAO + Glide
 
 做这款app主要是出于Android日常开发中或多或少的都会仿着ios的样式来写ui（可能设计师就做了一份ios交互设计，android只能跟着去写相同ui），完全舍弃了MD风格，第一出于学习目的做的，第二出于想写一个完全按照MD风格的App。
 目前包括以下内容：
@@ -61,6 +61,11 @@ Email <cuieney@163.com> link.
 
 
 ### Version
+
+#### V2.1.0
+1.添加kotlin代码块，essay tab 目前项目是kotlin and java 混编
+2.增加kotlin act and fragment 基类 dagger2等 (功能并未完善)
+3.正在更新项目to kotlin
 
 #### V2.0.0
 1.增加essay tab页面，修改了一些bug 更新了app icon(功能并未完善)

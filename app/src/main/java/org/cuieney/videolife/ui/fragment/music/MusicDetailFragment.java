@@ -25,6 +25,7 @@ import com.ms.square.android.expandabletextview.ExpandableTextView;
 
 import org.cuieney.videolife.R;
 import org.cuieney.videolife.common.image.ImageLoader;
+import org.cuieney.videolife.common.utils.DelegatesExt;
 import org.cuieney.videolife.common.utils.LogUtil;
 import org.cuieney.videolife.common.utils.PreferenceUtil;
 import org.cuieney.videolife.entity.MusicListBean;
@@ -43,7 +44,6 @@ public class MusicDetailFragment extends BaseBackFragment {
     FloatingActionButton mFab;
     private CollapsingToolbarLayout collToolBar;
     private XRecyclerView recycler;
-
     private MusicListBean dataBean;
 
     public static MusicDetailFragment newInstance(MusicListBean dataBean) {

@@ -55,6 +55,7 @@ public class MusicHomeFragment extends BaseFragment<MusicHomePresenter> implemen
 
     @Override
     protected void initEventAndData() {
+
         refresh.setProgressViewOffset(false,100,200);
         refresh.setOnRefreshListener(() -> mPresenter.getMusicData("1"));
         GridLayoutManager layout = new GridLayoutManager(getActivity(), 2);

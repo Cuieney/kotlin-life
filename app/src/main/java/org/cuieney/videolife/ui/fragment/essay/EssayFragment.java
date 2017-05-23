@@ -8,8 +8,6 @@ import android.view.ViewGroup;
 
 import org.cuieney.videolife.R;
 import org.cuieney.videolife.common.base.BaseMainFragment;
-import org.cuieney.videolife.ui.fragment.book.BookFragment;
-import org.cuieney.videolife.ui.fragment.music.MusicHomeFragment;
 
 /**
  * Created by cuieney on 2017/5/17.

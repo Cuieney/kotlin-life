@@ -44,6 +44,9 @@ public class DataBean {
     private String share_url;
     private List<TagList> tag_list;
 
+    public DataBean() {
+    }
+
     public List<TagList> getTag_list() {
         return tag_list;
     }

@@ -4,7 +4,9 @@ apply plugin: 'com.neenbedankt.android-apt'
 //retrolambda
 apply plugin: 'me.tatarka.retrolambda'
 project.ext.supportLib = "25.3.1"
-
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
@@ -46,6 +48,10 @@ android {
     configurations.all {
         resolutionStrategy.force 'com.google.code.findbugs:jsr305:1.3.9'
     }
+
+    kapt {
+        generateStubs = true
+    }
 }
 
 dependencies {
@@ -85,12 +91,12 @@ dependencies {
     compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'com.github.bumptech.glide:okhttp3-integration:1.4.0@aar'
     //dagger2
-    apt 'com.google.dagger:dagger-compiler:2.4'
+    kapt 'com.google.dagger:dagger-compiler:2.4'
     compile 'com.google.dagger:dagger:2.4'
     provided 'org.glassfish:javax.annotation:10.0-b28'
     //butterknife
     compile 'com.jakewharton:butterknife:8.2.1'
-    apt "com.jakewharton:butterknife-compiler:8.2.1"
+    kapt "com.jakewharton:butterknife-compiler:8.2.1"
     //rx
     compile 'io.reactivex:rxjava:1.1.0'
     compile 'io.reactivex:rxandroid:1.1.0'
@@ -125,4 +131,7 @@ dependencies {
     compile viewDependencies.ndkbitmap_armv7a
     compile viewDependencies.ndkbitmap_armv5
     compile viewDependencies.ndkbitmap_x86
+
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    compile "org.jetbrains.anko:anko-common:$anko_version"
 }

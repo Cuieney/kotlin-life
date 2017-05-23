@@ -62,6 +62,7 @@ public class VideoHomeFragment extends BaseFragment<VideoHomePresenter> implemen
 
     @Override
     protected void initEventAndData() {
+
         refresh.setProgressViewOffset(false, 100, 200);
         refresh.setOnRefreshListener(() -> {
             mPresenter.getVideoData("");

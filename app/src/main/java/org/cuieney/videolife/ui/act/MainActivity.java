@@ -1,5 +1,6 @@
 package org.cuieney.videolife.ui.act;
 
+import android.app.Activity;
 import android.graphics.Color;
 import android.util.Log;
 import android.view.View;
@@ -13,12 +14,13 @@ import org.cuieney.videolife.R;
 import org.cuieney.videolife.common.base.SimpleActivity;
 import org.cuieney.videolife.common.component.EventUtil;
 import org.cuieney.videolife.common.base.BaseMainFragment;
-import org.cuieney.videolife.ui.fragment.book.BookFragment;
+import org.cuieney.videolife.common.utils.DelegatesExt;
+import org.cuieney.videolife.kotlin.App;
 import org.cuieney.videolife.ui.fragment.essay.EssayFragment;
 import org.cuieney.videolife.ui.fragment.music.MusicFragment;
-import org.cuieney.videolife.ui.fragment.newstand.NewstandFragment;
 import org.cuieney.videolife.ui.fragment.video.VideoFragment;
 import org.greenrobot.eventbus.Subscribe;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,7 +53,7 @@ public class MainActivity extends SimpleActivity implements BaseMainFragment.OnB
         mFragments = new ArrayList<>();
         mFragments.add(VideoFragment.newInstance());
         mFragments.add(MusicFragment.newInstance());
-        mFragments.add(EssayFragment.newInstance());
+        mFragments.add(new org.cuieney.videolife.kotlin.ui.EssayFragment());
         mFragments.add(VideoFragment.newInstance());
         loadMultipleRootFragment(R.id.act_container, 0
                 , mFragments.get(0)
@@ -72,7 +74,6 @@ public class MainActivity extends SimpleActivity implements BaseMainFragment.OnB
 
 
     private void initView() {
-
         mNavigationView
                 .addItem(new BottomNavigationItem(R.drawable.movie_icon, "movie").setActiveColor("#6c4a41").setInActiveColor("#CCCCCC"))
                 .addItem(new BottomNavigationItem(R.drawable.music_icon, "music").setActiveColor("#008867"))
@@ -142,4 +143,3 @@ public class MainActivity extends SimpleActivity implements BaseMainFragment.OnB
         mNavigationView.selectTab(0);
     }
 }
-

@@ -93,6 +93,7 @@ public class EssayHomeFragment extends BaseFragment<EssayHomePresenter> implemen
 
     @Override
     protected void initEventAndData() {
+
         refresh.setProgressViewOffset(false,100,200);
         refresh.setOnRefreshListener(() -> mPresenter.getEssayData(0));
         LinearLayoutManager layout = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
