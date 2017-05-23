@@ -64,7 +64,9 @@ Email <cuieney@163.com> link.
 
 #### V2.1.0
 1.添加kotlin代码块，essay tab 目前项目是kotlin and java 混编
+
 2.增加kotlin act and fragment 基类 dagger2等 (功能并未完善)
+
 3.正在更新项目to kotlin
 
 #### V2.0.0
