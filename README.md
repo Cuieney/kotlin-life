@@ -67,7 +67,7 @@ Email <cuieney@163.com> link.
 
 2.增加kotlin act and fragment 基类 dagger2等 (功能并未完善)
 
-3.正在更新项目to kotlin
+3.持续更新中 （to kotlin）
 
 #### V2.0.0
 1.增加essay tab页面，修改了一些bug 更新了app icon(功能并未完善)
