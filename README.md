@@ -2,6 +2,7 @@
 # Life
 #### App界的一股清流
 
+目前项目持续更新重构中(向kotlin靠拢)
 
 Life is a Multimedia information app based on Material Design Kotlin + MVP + RxJava + Retrofit + Dagger2 + GreenDAO + Glide
 
