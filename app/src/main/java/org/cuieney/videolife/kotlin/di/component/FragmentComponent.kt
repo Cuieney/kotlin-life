@@ -5,8 +5,8 @@ import dagger.Component
 import org.cuieney.videolife.di.PerFragment
 import org.cuieney.videolife.di.component.AppComponent
 import org.cuieney.videolife.kotlin.di.module.FragmentModule
-import org.cuieney.videolife.kotlin.ui.EssayHomeFragment
-import org.cuieney.videolife.ui.fragment.essay.EssayHomeDetailFragment
+import org.cuieney.videolife.kotlin.ui.fragment.EssayHomeDetailFragment
+import org.cuieney.videolife.kotlin.ui.fragment.EssayHomeFragment
 import org.cuieney.videolife.ui.fragment.music.MusicHomeFragment
 import org.cuieney.videolife.ui.fragment.video.VideoHomeFragment
 

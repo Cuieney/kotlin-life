@@ -1,4 +1,4 @@
-package org.cuieney.videolife.kotlin.ui
+package org.cuieney.videolife.kotlin.ui.fragment
 
 import android.os.Build
 import android.support.v7.widget.LinearLayoutManager
@@ -18,7 +18,6 @@ import org.cuieney.videolife.common.base.DetailTransition
 import org.cuieney.videolife.common.component.EventUtil
 import org.cuieney.videolife.kotlin.presenter.contract.EssayHomeContract
 import org.cuieney.videolife.kotlin.ui.adapter.EssayAdapter
-import org.cuieney.videolife.ui.fragment.essay.EssayHomeDetailFragment
 import org.cuieney.videolife.ui.widget.EndLessOnScrollListener
 
 /**
@@ -94,7 +93,9 @@ class EssayHomeFragment : BaseFragment<EssayHomePresenter>(), EssayHomeContract.
 
     private fun startChildFragment(dataBean: DataBean, vh: RecyclerView.ViewHolder) {
         EventUtil.sendEvent(true.toString() + "")
-        val fragment = EssayHomeDetailFragment.newInstance(dataBean.id, dataBean.item_id)
+        var id = dataBean.id
+        var sourceId = dataBean.item_id
+        val fragment = EssayHomeDetailFragment(id, sourceId)
         // 这里是使用SharedElement的用例
 
         // LOLLIPOP(5.0)系统的 SharedElement支持有 系统BUG， 这里判断大于 > LOLLIPOP

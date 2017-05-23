@@ -1,4 +1,4 @@
-package org.cuieney.videolife.kotlin.ui
+package org.cuieney.videolife.kotlin.ui.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
