@@ -22,7 +22,7 @@ import butterknife.Unbinder;
 import me.yokeyword.fragmentation.SupportFragment;
 
  /**
-  * Created by codeest on 2016/8/2.
+  * Created by cuieney on 2016/8/2.
   * MVP Fragment基类
   */
  public abstract class BaseFragment<T extends BasePresenter> extends SupportFragment implements BaseView{

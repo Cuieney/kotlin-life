@@ -65,7 +65,7 @@ class EssayHomeFragment : BaseFragment<EssayHomePresenter>(), EssayHomeContract.
         refresh.setOnRefreshListener {
             getDate()
         }
-        var layout = LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false)
+        val layout = LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false)
         recycler.layoutManager = layout
         recycler.addOnScrollListener(object : EndLessOnScrollListener(layout,1){
             override fun onLoadMore() {

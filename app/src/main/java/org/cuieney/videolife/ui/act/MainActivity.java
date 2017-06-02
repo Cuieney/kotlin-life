@@ -11,11 +11,12 @@ import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.jaeger.library.StatusBarUtil;
 
 import org.cuieney.videolife.R;
+import org.cuieney.videolife.common.base.BaseMainFragment;
 import org.cuieney.videolife.common.base.SimpleActivity;
 import org.cuieney.videolife.common.component.EventUtil;
-import org.cuieney.videolife.common.base.BaseMainFragment;
 import org.cuieney.videolife.common.utils.DelegatesExt;
 import org.cuieney.videolife.kotlin.App;
+import org.cuieney.videolife.kotlin.ui.fragment.video.VideoHomeFragment;
 import org.cuieney.videolife.ui.fragment.essay.EssayFragment;
 import org.cuieney.videolife.ui.fragment.music.MusicFragment;
 import org.cuieney.videolife.ui.fragment.video.VideoFragment;
@@ -51,7 +52,7 @@ public class MainActivity extends SimpleActivity implements BaseMainFragment.OnB
     @Override
     protected void initEventAndData() {
         mFragments = new ArrayList<>();
-        mFragments.add(VideoFragment.newInstance());
+        mFragments.add(new VideoHomeFragment());
         mFragments.add(MusicFragment.newInstance());
         mFragments.add(new org.cuieney.videolife.kotlin.ui.fragment.EssayFragment());
         mFragments.add(VideoFragment.newInstance());

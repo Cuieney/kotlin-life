@@ -11,7 +11,7 @@ import rx.subjects.SerializedSubject;
 import rx.subjects.Subject;
 
 /**
- * Created by codeest on 2016/8/2.
+ * Created by cuieney on 2016/8/2.
  */
 public class RxBus {
     // 主题

@@ -9,7 +9,7 @@ import org.cuieney.videolife.di.module.ActivityModule;
 import dagger.Component;
 
 /**
- * Created by codeest on 16/8/7.
+ * Created by cuieney on 16/8/7.
  */
 
 @PerActivity

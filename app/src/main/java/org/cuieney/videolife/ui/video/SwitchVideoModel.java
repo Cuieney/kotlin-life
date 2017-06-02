@@ -1,7 +1,7 @@
 package org.cuieney.videolife.ui.video;
 
 /**
- * Created by shuyu on 2016/12/7.
+ * Created by cuieney on 2016/12/7.
  */
 
 public class SwitchVideoModel {

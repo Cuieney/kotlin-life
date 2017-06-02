@@ -14,6 +14,7 @@ abstract class BaseBackFragment : SupportFragment() {
         toolbar.setNavigationIcon(R.mipmap.ic_arrow_back_white_24dp)
         toolbar.setNavigationOnClickListener { v -> _mActivity.onBackPressed() }
         toolbar.inflateMenu(R.menu.video_menu)
+
     }
 
     override fun onBackPressedSupport(): Boolean {
@@ -23,6 +24,6 @@ abstract class BaseBackFragment : SupportFragment() {
     }
 
     companion object {
-        protected val ARG_ITEM = "arg_item"
+        val ARG_ITEM = "arg_item"
     }
 }

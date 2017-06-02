@@ -14,7 +14,7 @@ import org.cuieney.videolife.ui.fragment.video.VideoHomeFragment;
 import dagger.Component;
 
 /**
- * Created by codeest on 16/8/7.
+ * Created by cuieney on 16/8/7.
  */
 
 @PerFragment

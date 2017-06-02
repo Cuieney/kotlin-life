@@ -31,7 +31,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * Created by paohaile on 17/2/24.
+ * Created by cuieney on 17/2/24.
  */
 
 public class VideoAdapter extends BaseRecycerViewAdapter<ItemListBean, RecyclerView.ViewHolder> {

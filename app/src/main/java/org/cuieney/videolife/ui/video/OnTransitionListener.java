@@ -6,7 +6,7 @@ import android.transition.Transition;
 
 /**
  * 重载了过渡动画的方法
- * Created by shuyu on 2016/8/15.
+ * Created by cuieney on 2016/8/15.
  */
 
 @TargetApi(Build.VERSION_CODES.KITKAT)

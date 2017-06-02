@@ -16,7 +16,7 @@ import org.cuieney.videolife.ui.act.PlayMusciActivity;
 
 
 /**
- * Created by shuyu on 2016/11/11.
+ * Created by cuieney on 2016/11/11.
  */
 
 public class JumpUtils {

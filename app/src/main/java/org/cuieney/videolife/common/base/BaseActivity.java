@@ -22,7 +22,7 @@ import butterknife.Unbinder;
 import me.yokeyword.fragmentation.SupportActivity;
 
 /**
- * Created by codeest on 2016/8/2.
+ * Created by cuieney on 2016/8/2.
  * MVP activity基类
  */
 public abstract class BaseActivity<T extends BasePresenter> extends SupportActivity implements BaseView{

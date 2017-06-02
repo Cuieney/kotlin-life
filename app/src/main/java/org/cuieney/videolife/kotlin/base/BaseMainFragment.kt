@@ -2,19 +2,21 @@ package org.cuieney.videolife.kotlin.base
 
 import android.content.Context
 import me.yokeyword.fragmentation.SupportFragment
-import org.cuieney.videolife.common.base.BaseMainFragment
-import org.cuieney.videolife.ui.fragment.video.VideoFragment
+import org.cuieney.videolife.kotlin.ui.fragment.video.VideoFragment
 
 /**
  * Created by cuieney on 2017/5/22.
  */
 abstract class BaseMainFragment : SupportFragment() {
-    protected var _mBackToFirstListener: BaseMainFragment.OnBackToFirstListener? = null
+    protected var _mBackToFirstListener: OnBackToFirstListener? = null
 
+    interface OnBackToFirstListener {
+        fun onBackToFirstFragment()
+    }
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        if (context is BaseMainFragment.OnBackToFirstListener) {
-            _mBackToFirstListener = context as BaseMainFragment.OnBackToFirstListener
+        if (context is OnBackToFirstListener) {
+            _mBackToFirstListener = context as OnBackToFirstListener
         } else {
             throw RuntimeException(context.toString() + " must implement OnBackToFirstListener")
         }
@@ -40,6 +42,8 @@ abstract class BaseMainFragment : SupportFragment() {
                 _mBackToFirstListener!!.onBackToFirstFragment()
             }
         }
+
+
         return true
     }
 

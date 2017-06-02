@@ -63,6 +63,11 @@ Email <cuieney@163.com> link.
 
 ### Version
 
+#### V2.2.0
+1.video tab 更新为kotlin代码(功能并未完善)
+
+2.你们的支持就是我最大的动力，持续更新中 （to kotlin）
+
 #### V2.1.0
 1.添加kotlin代码块，essay tab 目前项目是kotlin and java 混编
 
