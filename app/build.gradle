@@ -18,6 +18,8 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
+        vectorDrawables.useSupportLibrary = true
+        vectorDrawables.generatedDensities = ['hdpi','xxhdpi']
     }
 
     //dagger2 和 butterknife冲突

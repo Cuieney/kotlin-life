@@ -8,11 +8,11 @@ import org.cuieney.videolife.di.PerActivity
 /**
  * Created by cuieney on 2017/5/19.
  */
-@dagger.Module class ActivityModule constructor(activity: android.app.Activity){
-    var act : android.app.Activity = activity
+@Module class ActivityModule constructor(activity: Activity){
+    var act : Activity = activity
 
-    @dagger.Provides
-    @org.cuieney.videolife.di.PerActivity
+    @Provides
+    @PerActivity
     fun provideActivity(): android.app.Activity = act
 
 }

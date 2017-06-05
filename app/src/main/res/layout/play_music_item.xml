@@ -34,7 +34,7 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_centerVertical="true"
-                android:src="@drawable/uncollection_icon" />
+                card_view:srcCompat="@drawable/uncollection_icon" />
 
             <ImageView
                 android:id="@+id/download_icon"
@@ -42,7 +42,7 @@
                 android:layout_height="25dp"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:src="@drawable/download_icon" />
+                card_view:srcCompat="@drawable/download_icon" />
 
             <ImageView
                 android:id="@+id/share_icon"
@@ -50,7 +50,7 @@
                 android:layout_height="20dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:src="@drawable/url_icon" />
+                card_view:srcCompat="@drawable/url_icon" />
 
 
         </RelativeLayout>

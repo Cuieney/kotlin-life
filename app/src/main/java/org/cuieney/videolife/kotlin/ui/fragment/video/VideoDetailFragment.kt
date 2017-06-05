@@ -18,7 +18,7 @@ import kotlinx.android.synthetic.main.video_home_detail_fragment.*
 import org.cuieney.videolife.common.image.ImageLoader
 import org.cuieney.videolife.common.utils.DateUtil
 import org.cuieney.videolife.common.utils.LogUtil
-import org.cuieney.videolife.ui.video.JumpUtils
+import org.cuieney.videolife.kotlin.common.utils.JumpUtils
 
 /**
  * Created by cuieney on 2017/6/2.

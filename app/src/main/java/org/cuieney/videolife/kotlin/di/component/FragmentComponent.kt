@@ -3,7 +3,6 @@ package org.cuieney.videolife.kotlin.di.component
 import android.app.Activity
 import dagger.Component
 import org.cuieney.videolife.di.PerFragment
-import org.cuieney.videolife.di.component.AppComponent
 import org.cuieney.videolife.kotlin.di.module.FragmentModule
 import org.cuieney.videolife.kotlin.ui.fragment.EssayHomeDetailFragment
 import org.cuieney.videolife.kotlin.ui.fragment.EssayHomeFragment

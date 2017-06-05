@@ -46,7 +46,7 @@ public class PlayMusciActivity extends SimpleActivity {
     ImageView next;
     @BindView(R.id.share)
     ImageView share;
-    @BindView(R.id.title)
+    @BindView(R.id.headline)
     TextView title;
     @BindView(R.id.name)
     TextView name;

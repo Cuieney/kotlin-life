@@ -63,6 +63,18 @@ Email <cuieney@163.com> link.
 
 ### Version
 
+#### V2.4.0
+1.更新音乐和视频播放页面代码（to kotlin）
+
+2.添加umeng 收集错误
+
+3.你们的支持就是我最大的动力，持续更新中 （to kotlin）
+
+#### V2.3.0
+1.music tab 更新为kotlin代码(功能并未完善)
+
+2.你们的支持就是我最大的动力，持续更新中 （to kotlin）
+
 #### V2.2.0
 1.video tab 更新为kotlin代码(功能并未完善)
 

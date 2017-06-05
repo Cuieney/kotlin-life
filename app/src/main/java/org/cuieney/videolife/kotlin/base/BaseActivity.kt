@@ -30,7 +30,6 @@ abstract class BaseActivity<T : BasePresenter> : SupportActivity(), BaseView {
         mUnBinder = ButterKnife.bind(this)
         mContext = this
         initInject()
-        App.instance.addActivity(this)
         initEventAndData()
     }
 

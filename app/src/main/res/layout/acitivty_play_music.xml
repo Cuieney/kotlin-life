@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#fff"
     android:padding="10dp">
 
@@ -9,17 +10,17 @@
         android:id="@+id/back"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:src="@drawable/arrow_left" />
+        app:srcCompat="@drawable/arrow_left" />
 
     <ImageView
         android:id="@+id/share"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_alignParentRight="true"
-        android:src="@drawable/share_icon" />
+        app:srcCompat="@drawable/share_icon" />
 
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/headline"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -33,7 +34,7 @@
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/title"
+        android:layout_below="@id/headline"
         android:layout_centerHorizontal="true"
         android:ellipsize="marquee"
         android:maxLines="1"
@@ -54,7 +55,7 @@
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_centerVertical="true"
-            android:src="@drawable/random_icon" />
+            app:srcCompat="@drawable/random_icon" />
 
         <ImageView
             android:id="@+id/play_pause"
@@ -62,7 +63,7 @@
             android:layout_height="32dp"
             android:layout_centerInParent="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/pause_msc_icon" />
+            app:srcCompat="@drawable/pause_msc_icon" />
 
         <ProgressBar
             android:id="@+id/progressBar1"
@@ -78,7 +79,7 @@
             android:layout_height="20dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/menu_icon" />
+            app:srcCompat="@drawable/menu_icon" />
 
 
     </RelativeLayout>

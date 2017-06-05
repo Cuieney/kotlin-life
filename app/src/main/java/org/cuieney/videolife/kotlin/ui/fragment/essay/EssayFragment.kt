@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import org.cuieney.videolife.R
 import org.cuieney.videolife.kotlin.base.BaseMainFragment
-import org.cuieney.videolife.ui.fragment.essay.EssayHomeFragment
+import org.cuieney.videolife.kotlin.ui.fragment.EssayHomeFragment
 
 /**
  * Created by cuieney on 2017/5/22.

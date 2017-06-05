@@ -17,15 +17,14 @@ import com.konifar.fab_transformation.FabTransformation
 import com.ms.square.android.expandabletextview.ExpandableTextView
 import org.cuieney.videolife.R
 import org.cuieney.videolife.common.image.ImageLoader
-import org.cuieney.videolife.common.utils.DelegatesExt
 import org.cuieney.videolife.common.utils.DelegatesExt.preference
 import org.cuieney.videolife.entity.MusicListBean
-import org.cuieney.videolife.entity.kaiyanBean.DataBean
 import org.cuieney.videolife.kotlin.base.BaseBackFragment
-import org.cuieney.videolife.ui.adapter.MusicItemAdapter
-import org.cuieney.videolife.ui.video.JumpUtils
 import kotlinx.android.synthetic.main.music_home_detail_fragment.*
 import org.cuieney.videolife.common.utils.LogUtil
+import org.cuieney.videolife.entity.wyBean.TracksBean
+import org.cuieney.videolife.kotlin.ui.adapter.MusicItemAdapter
+import org.cuieney.videolife.kotlin.common.utils.JumpUtils
 
 /**
  * Created by cuieney on 2017/6/5.
@@ -56,23 +55,23 @@ class MusicDetailFragment(dataBean: MusicListBean) : BaseBackFragment() {
     }
 
     fun initView() {
-        recycler.setLayoutManager(LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false))
+        recycler.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         initColor()
         toolbar.title = ""
         initToolbarNav(toolbar)
         ImageLoader.loadAll(activity, dataBean.ophoto, img_detail)
         recycler.setLoadingMoreEnabled(false)
         recycler.setPullRefreshEnabled(false)
-        recycler.setAdapter(MusicItemAdapter(activity, dataBean.tracks))
+        recycler.adapter = MusicItemAdapter(dataBean.tracks as ArrayList<TracksBean>)
         initHeadView()
 
         fab.setOnClickListener({ v ->
-            if (fab.getVisibility() == View.VISIBLE) {
+            if (fab.visibility == View.VISIBLE) {
                 FabTransformation.with(fab).setListener(object : FabTransformation.OnTransformListener {
                     override fun onStartTransform() {}
 
                     override fun onEndTransform() {
-                        JumpUtils.goToMusicPlayer(activity, img_detail, dataBean)
+                        JumpUtils.goToMusicPlayer(activity,img_detail, dataBean)
                     }
                 }).transformTo(img_detail)
             }
@@ -101,7 +100,7 @@ class MusicDetailFragment(dataBean: MusicListBean) : BaseBackFragment() {
                     }
 
                     toolbar_layout.setContentScrimColor(color)
-                    fab.setBackgroundTintList(ColorStateList(arrayOf(IntArray(0)), intArrayOf(color)))
+                    fab.backgroundTintList = ColorStateList(arrayOf(IntArray(0)), intArrayOf(color))
 
                 }
 

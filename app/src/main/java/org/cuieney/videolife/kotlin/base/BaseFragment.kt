@@ -40,7 +40,7 @@ abstract class BaseFragment<T:BasePresenter> : SupportFragment(),BaseView{
     protected fun getFragmentComponent(): FragmentComponent {
 
         return DaggerFragmentComponent.builder()
-                .appComponent(org.cuieney.videolife.App.getInstance().appComponent)
+                .appComponent(App.instance.getAppComponent())
                 .fragmentModule(getFragmentModule())
                 .build()
     }

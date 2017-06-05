@@ -1,8 +1,18 @@
 package org.cuieney.videolife.common.utils
 
+import android.app.Activity
 import android.content.Context
+import android.content.Intent
+import android.os.Bundle
+import android.support.v4.app.ActivityCompat
+import android.support.v4.app.ActivityOptionsCompat
+import android.support.v4.util.Pair
+import android.view.View
 import android.widget.Toast
+import org.cuieney.videolife.R
+import org.cuieney.videolife.entity.MusicListBean
 import org.cuieney.videolife.kotlin.App
+import org.cuieney.videolife.kotlin.ui.act.PlayMusicActivity
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
 
@@ -12,9 +22,10 @@ import kotlin.reflect.KProperty
 object DelegatesExt {
     fun <T : Any> preference(context: Context, name: String, default: T)
             = Preference(context, name, default)
+
     fun Context.getMainComponent() = App.instance
 
-    fun Context.toast(msg:String, length:Int = Toast.LENGTH_SHORT){
+    fun Context.toast(msg: String, length: Int = Toast.LENGTH_SHORT) {
         Toast.makeText(this, msg, length).show()
     }
 
@@ -79,3 +90,4 @@ class Preference<T>(val context: Context, val name: String, val default: T)
 
 
 }
+

@@ -2,12 +2,15 @@ package org.cuieney.videolife.kotlin.base
 
 import android.app.Activity
 import android.os.Bundle
+import android.support.v7.app.AppCompatDelegate
 import android.support.v7.widget.Toolbar
 import android.view.View
 import butterknife.ButterKnife
 import butterknife.Unbinder
 import me.yokeyword.fragmentation.SupportActivity
-import org.cuieney.videolife.App
+import android.support.v7.app.AppCompatDelegate.setCompatVectorFromResourcesEnabled
+import org.cuieney.videolife.kotlin.App
+
 
 /**
  * Created by cuieney on 2017/5/22.
@@ -15,14 +18,13 @@ import org.cuieney.videolife.App
 abstract class SimpleActivity : SupportActivity() {
 
     lateinit var mContext: Activity
-    lateinit var mUnBinder: Unbinder
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
         super.onCreate(savedInstanceState)
         setContentView(layout)
-        mUnBinder = ButterKnife.bind(this)
         mContext = this
-        App.getInstance().addActivity(this)
         initEventAndData()
     }
 
@@ -36,8 +38,6 @@ abstract class SimpleActivity : SupportActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        App.getInstance().removeActivity(this)
-        mUnBinder.unbind()
     }
 
     protected abstract val layout: Int

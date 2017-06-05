@@ -1,3 +1,4 @@
+@file:JvmName("App")
 package org.cuieney.videolife.kotlin
 
 import android.app.Activity
@@ -19,7 +20,6 @@ class App : Application() {
 
     companion object {
         var instance: App by Delegates.notNull()
-        var allActivities: MutableList<Activity> by Delegates.notNull<MutableList<Activity>>()
         lateinit var appComponent:AppComponent
     }
     init {
@@ -39,20 +39,9 @@ class App : Application() {
         super.onCreate()
     }
 
-    fun addActivity(act:Activity){
-        allActivities.add(act)
-    }
 
-    fun removeActivity(act:Activity){
-        allActivities.remove(act)
-    }
-
-    fun exitApp(){
-        for(act in allActivities){
-            act.finish()
-        }
-        android.os.Process.killProcess(android.os.Process.myPid())
-        System.exit(0)
+    fun getAppComponent():AppComponent{
+        return appComponent
     }
 
 
