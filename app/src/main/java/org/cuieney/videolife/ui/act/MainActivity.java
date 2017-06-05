@@ -54,7 +54,7 @@ public class MainActivity extends SimpleActivity implements BaseMainFragment.OnB
         mFragments = new ArrayList<>();
         mFragments.add(new VideoHomeFragment());
         mFragments.add(MusicFragment.newInstance());
-        mFragments.add(new org.cuieney.videolife.kotlin.ui.fragment.EssayFragment());
+        mFragments.add(new EssayFragment());
         mFragments.add(VideoFragment.newInstance());
         loadMultipleRootFragment(R.id.act_container, 0
                 , mFragments.get(0)

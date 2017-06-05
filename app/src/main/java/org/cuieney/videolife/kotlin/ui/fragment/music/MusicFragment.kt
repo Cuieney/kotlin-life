@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import org.cuieney.videolife.R
 import org.cuieney.videolife.kotlin.base.BaseMainFragment
-import org.cuieney.videolife.ui.fragment.music.MusicHomeFragment
 
 /**
  * Created by cuieney on 2017/6/2.
@@ -21,7 +20,7 @@ class MusicFragment : BaseMainFragment() {
     override fun onLazyInitView(savedInstanceState: Bundle?) {
         super.onLazyInitView(savedInstanceState)
         if (savedInstanceState == null) {
-            loadRootFragment(R.id.fl_first_container, MusicHomeFragment.newInstance())
+            loadRootFragment(R.id.fl_first_container, MusicHomeFragment())
         }
     }
 }

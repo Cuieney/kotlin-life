@@ -7,8 +7,8 @@ import org.cuieney.videolife.di.component.AppComponent
 import org.cuieney.videolife.kotlin.di.module.FragmentModule
 import org.cuieney.videolife.kotlin.ui.fragment.EssayHomeDetailFragment
 import org.cuieney.videolife.kotlin.ui.fragment.EssayHomeFragment
+import org.cuieney.videolife.kotlin.ui.fragment.music.MusicHomeFragment
 import org.cuieney.videolife.kotlin.ui.fragment.video.VideoHomeFragment
-import org.cuieney.videolife.ui.fragment.music.MusicHomeFragment
 
 /**
  * Created by cuieney on 2017/5/22.

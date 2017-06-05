@@ -40,7 +40,7 @@ class EssayAdapter(item:ArrayList<DataBean>): RecyclerView.Adapter<RecyclerView.
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         if (holder is EssayHomeHolder) {
-            holder.bindData(items[position])
+            holder.bindData(items[position],position)
             holder.itemView.setOnClickListener {
                 clickListener.onItemClick(position,it,holder)
             }
@@ -67,7 +67,7 @@ class EssayAdapter(item:ArrayList<DataBean>): RecyclerView.Adapter<RecyclerView.
     }
 
     class EssayHomeHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        fun bindData(dataBean:DataBean){
+        fun bindData(dataBean:DataBean,position: Int){
             ImageLoader.loadAll(itemView.context, dataBean.getImg_url(),itemView.image)
             ViewCompat.setTransitionName(itemView.image, position.toString() + "_image")
             itemView.title.text = dataBean.title

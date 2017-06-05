@@ -15,7 +15,7 @@ import me.yokeyword.fragmentation.helper.FragmentLifecycleCallbacks
 import org.cuieney.videolife.common.component.EventUtil
 import org.cuieney.videolife.kotlin.base.BaseMainFragment
 import org.cuieney.videolife.kotlin.base.SimpleActivity
-import org.cuieney.videolife.kotlin.ui.fragment.EssayFragment
+import org.cuieney.videolife.kotlin.ui.fragment.essay.EssayFragment
 import org.cuieney.videolife.kotlin.ui.fragment.music.MusicFragment
 import org.cuieney.videolife.kotlin.ui.fragment.video.VideoFragment
 import org.greenrobot.eventbus.Subscribe
@@ -24,7 +24,7 @@ import java.util.ArrayList
 /**
  * Created by cuieney on 2017/6/2.
  */
-class MainActivity : SimpleActivity(), BaseMainFragment.OnBackToFirstListener {
+open class MainActivity : SimpleActivity(), BaseMainFragment.OnBackToFirstListener {
     override val layout: Int = R.layout.design_layout
 
 

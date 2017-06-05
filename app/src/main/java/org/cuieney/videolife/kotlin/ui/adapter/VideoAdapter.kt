@@ -21,7 +21,7 @@ class VideoAdapter(t: List<ItemListBean>) : BaseAdapter<ItemListBean>(t) {
 
     override fun getBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         if (holder is MyHolder) {
-            holder.bindData(items[position])
+            holder.bindData(items[position],position)
             holder.itemView.setOnClickListener({ v ->
                 if (clickListener != null) {
                     clickListener?.onItemClick(position, v, holder)
@@ -52,7 +52,7 @@ class VideoAdapter(t: List<ItemListBean>) : BaseAdapter<ItemListBean>(t) {
     }
 
     class MyHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bindData(data: ItemListBean) {
+        fun bindData(data: ItemListBean,position: Int) {
             ImageLoader.loadAll(itemView.context, data.data.cover.detail, itemView.img)
             ViewCompat.setTransitionName(itemView.img, position.toString() + "_image")
             itemView.title.text = data.data.title
