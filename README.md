@@ -63,6 +63,12 @@ Email <cuieney@163.com> link.
 
 ### Version
 
+#### V2.5.0
+1.增加vr模块panorama liveview 代码（to kotlin）
+
+2.你们的支持就是我最大的动力，持续更新中 （to kotlin）
+
+
 #### V2.4.0
 1.更新音乐和视频播放页面代码（to kotlin）
 

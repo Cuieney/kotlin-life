@@ -15,10 +15,11 @@ import kotlinx.android.synthetic.main.veer_detail_fragment.*
 import org.cuieney.videolife.R
 import org.cuieney.videolife.entity.KuulaImageBean
 import org.cuieney.videolife.kotlin.base.BaseActivity
+import org.cuieney.videolife.kotlin.base.BaseVrActivity
 import org.cuieney.videolife.kotlin.presenter.KuulaImagePresenter
 import org.cuieney.videolife.kotlin.presenter.contract.KuulaImageContract
 
-class VrActivity : BaseActivity<KuulaImagePresenter>(),KuulaImageContract.View {
+class VrActivity : BaseVrActivity<KuulaImagePresenter>(),KuulaImageContract.View {
     lateinit var mVRLibrary: MDVRLibrary
     override fun showContent(kuulaImageBean: KuulaImageBean) {
 
@@ -38,7 +39,6 @@ class VrActivity : BaseActivity<KuulaImagePresenter>(),KuulaImageContract.View {
                 .pinchEnabled(true)
                 .build(myGLSurfaceView)
         glSurfaceView.addView(myGLSurfaceView)
-
     }
 
     override fun error(throwable: Throwable) {
@@ -145,19 +145,8 @@ class VrActivity : BaseActivity<KuulaImagePresenter>(),KuulaImageContract.View {
         animator!!.start()
     }
 
-    override fun onResume() {
-        super.onResume()
-        mVRLibrary.onResume(this)
-    }
-
-    override fun onPause() {
-        super.onPause()
-        mVRLibrary.onPause(this)
-    }
-
     override fun onDestroy() {
         super.onDestroy()
         mVRLibrary.onDestroy()
     }
-
 }

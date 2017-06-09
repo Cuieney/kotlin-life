@@ -40,11 +40,6 @@ open class MainActivity : SimpleActivity(), BaseMainFragment.OnBackToFirstListen
         loadMultipleRootFragment(R.id.act_container, 0, mFragments[0], mFragments[1], mFragments[2], mFragments[3])
 
         initView()
-        registerFragmentLifecycleCallbacks(object : FragmentLifecycleCallbacks() {
-            override fun onFragmentSupportVisible(fragment: SupportFragment?) {
-                Log.i("MainActivity", "onFragmentSupportVisible--->" + fragment!!.javaClass.simpleName)
-            }
-        })
     }
 
 

@@ -92,7 +92,7 @@ class VideoDetailFragment(dataBean: DataBean) :BaseBackFragment(){
                     try {
                         color = palette.darkMutedSwatch!!.rgb
                     } catch (e: Exception) {
-                        LogUtil.d(e.message)
+//                        LogUtil.d(e.message)
                     }
 
                     toolbar_layout.setContentScrimColor(color)

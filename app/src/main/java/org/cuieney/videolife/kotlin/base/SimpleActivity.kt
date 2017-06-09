@@ -11,6 +11,7 @@ import butterknife.Unbinder
 import me.yokeyword.fragmentation.SupportActivity
 import android.support.v7.app.AppCompatDelegate.setCompatVectorFromResourcesEnabled
 import com.jaeger.library.StatusBarUtil
+import me.yokeyword.fragmentation.Fragmentation
 import org.cuieney.videolife.kotlin.App
 
 
@@ -30,6 +31,7 @@ abstract class SimpleActivity : SupportActivity() {
 //        requestedOrientation = SCREEN_ORIENTATION_REVERSE_PORTRAIT
 //        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
         super.onCreate(savedInstanceState)
+
         setContentView(layout)
         mContext = this
         initEventAndData()
