@@ -3,9 +3,7 @@ package org.cuieney.videolife.kotlin.di.module
 import android.content.Context
 import dagger.Module
 import dagger.Provides
-import org.cuieney.videolife.common.api.KyApiService
-import org.cuieney.videolife.common.api.OpApiService
-import org.cuieney.videolife.common.api.WyApiService
+import org.cuieney.videolife.common.api.*
 import org.cuieney.videolife.kotlin.App
 import org.cuieney.videolife.kotlin.di.RetrofitHelper
 import javax.inject.Singleton
@@ -38,6 +36,19 @@ import javax.inject.Singleton
     @Singleton
     fun proviesOpService(retrofitHelper: RetrofitHelper): OpApiService {
         return retrofitHelper.getOpApiService()
+    }
+
+    @Provides
+    @Singleton
+    fun proviesVeerService(retrofitHelper: RetrofitHelper): VeerApiService {
+        return retrofitHelper.getVeerApiService()
+    }
+
+
+    @Provides
+    @Singleton
+    fun proviesKuulaService(retrofitHelper: RetrofitHelper): KuulaApiService {
+        return retrofitHelper.getKuulaApiService()
     }
 
 }

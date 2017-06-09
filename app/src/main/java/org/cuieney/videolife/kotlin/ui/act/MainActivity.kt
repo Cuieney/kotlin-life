@@ -13,10 +13,12 @@ import kotlinx.android.synthetic.main.design_layout.*
 import me.yokeyword.fragmentation.SupportFragment
 import me.yokeyword.fragmentation.helper.FragmentLifecycleCallbacks
 import org.cuieney.videolife.common.component.EventUtil
+import org.cuieney.videolife.common.component.RxBus
 import org.cuieney.videolife.kotlin.base.BaseMainFragment
 import org.cuieney.videolife.kotlin.base.SimpleActivity
 import org.cuieney.videolife.kotlin.ui.fragment.essay.EssayFragment
 import org.cuieney.videolife.kotlin.ui.fragment.music.MusicFragment
+import org.cuieney.videolife.kotlin.ui.fragment.veer.VeerFragment
 import org.cuieney.videolife.kotlin.ui.fragment.video.VideoFragment
 import org.greenrobot.eventbus.Subscribe
 import java.util.ArrayList
@@ -34,7 +36,7 @@ open class MainActivity : SimpleActivity(), BaseMainFragment.OnBackToFirstListen
         mFragments.add(VideoFragment())
         mFragments.add(MusicFragment())
         mFragments.add(EssayFragment())
-        mFragments.add(VideoFragment())
+        mFragments.add(VeerFragment())
         loadMultipleRootFragment(R.id.act_container, 0, mFragments[0], mFragments[1], mFragments[2], mFragments[3])
 
         initView()
@@ -51,7 +53,7 @@ open class MainActivity : SimpleActivity(), BaseMainFragment.OnBackToFirstListen
                 .addItem(BottomNavigationItem(R.drawable.movie_icon, "movie").setActiveColor("#6c4a41").setInActiveColor("#CCCCCC"))
                 .addItem(BottomNavigationItem(R.drawable.music_icon, "music").setActiveColor("#008867"))
                 .addItem(BottomNavigationItem(R.drawable.book_icon, "essay").setActiveColor("#8b6b64"))
-                .addItem(BottomNavigationItem(R.drawable.newspaper_icon, "newstand").setActiveColor("#485A66"))
+                .addItem(BottomNavigationItem(R.drawable.panorama_icon, "panorama").setActiveColor("#485A66"))
                 .initialise()
         bottom_navigation_bar.setBackgroundStyle(BACKGROUND_STYLE_RIPPLE)
         bottom_navigation_bar.setMode(MODE_FIXED)
@@ -80,8 +82,14 @@ open class MainActivity : SimpleActivity(), BaseMainFragment.OnBackToFirstListen
     fun hide(isHide: String) {
         if (isHide == "true") {
             floating_search_view.setVisibility(View.GONE)
-        } else {
+        } else if(isHide == "false"){
             floating_search_view.setVisibility(View.VISIBLE)
+        } else if(isHide == "tab_false"){
+            floating_search_view.setVisibility(View.VISIBLE)
+            bottom_navigation_bar.setVisibility(View.VISIBLE)
+        }else if(isHide == "tab_true"){
+            floating_search_view.setVisibility(View.GONE)
+            bottom_navigation_bar.setVisibility(View.GONE)
         }
     }
 

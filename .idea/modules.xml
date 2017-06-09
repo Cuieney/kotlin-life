@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/gsyVideoPlayer/gsyVideoPlayer.iml" filepath="$PROJECT_DIR$/gsyVideoPlayer/gsyVideoPlayer.iml" />
       <module fileurl="file://$PROJECT_DIR$/kotlin-life.iml" filepath="$PROJECT_DIR$/kotlin-life.iml" />
       <module fileurl="file://$PROJECT_DIR$/vld.iml" filepath="$PROJECT_DIR$/vld.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vrlib/vrlib.iml" filepath="$PROJECT_DIR$/vrlib/vrlib.iml" />
     </modules>
   </component>
 </project>

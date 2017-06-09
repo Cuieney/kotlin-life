@@ -1,10 +1,7 @@
 package org.cuieney.videolife.kotlin.di
 
 import okhttp3.OkHttpClient
-import org.cuieney.videolife.common.api.KyApiService
-import org.cuieney.videolife.common.api.OpApiService
-import org.cuieney.videolife.common.api.UrlManager
-import org.cuieney.videolife.common.api.WyApiService
+import org.cuieney.videolife.common.api.*
 import org.cuieney.videolife.common.utils.DelegatesExt
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory
@@ -39,5 +36,13 @@ class RetrofitHelper @Inject constructor(client: OkHttpClient) {
 
     fun getOpApiService(): OpApiService{
         return getApiService(UrlManager.YIREN_HOST, OpApiService::class.java)
+    }
+
+    fun getVeerApiService():VeerApiService{
+        return getApiService(UrlManager.VEER_HOST, VeerApiService::class.java)
+    }
+
+    fun getKuulaApiService():KuulaApiService{
+        return getApiService(UrlManager.KUULA_HOST, KuulaApiService::class.java)
     }
 }

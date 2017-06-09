@@ -2,6 +2,7 @@ package org.cuieney.videolife.kotlin.di.module
 
 import android.app.Activity
 import android.support.v4.app.Fragment
+import android.support.v4.app.FragmentActivity
 import dagger.Module
 import dagger.Provides
 import org.cuieney.videolife.di.PerFragment
@@ -14,6 +15,6 @@ import org.cuieney.videolife.di.PerFragment
 
     @Provides
     @PerFragment
-    fun provideActivity(): Activity = mFragment.activity
+    fun provideActivity(): FragmentActivity = mFragment.activity
 
 }

@@ -1,4 +1,5 @@
 @file:JvmName("App")
+
 package org.cuieney.videolife.kotlin
 
 import android.app.Activity

@@ -49,11 +49,12 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Translucent" />
-        <activity android:name=".kotlin.ui.act.PlayActivity"
+        <activity
+            android:name=".kotlin.ui.act.PlayActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Translucent"
-            />
+            android:theme="@style/Theme.AppCompat.Translucent" />
+        <activity android:name=".kotlin.ui.act.VrActivity"></activity>
     </application>
 
 </manifest>
