@@ -7,36 +7,29 @@
     android:layout_height="match_parent">
 
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/glSurfaceView"
-        android:layout_width="0dp"
-        android:orientation="vertical"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </LinearLayout>
-
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 
     <ImageView
         android:id="@+id/sensor"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_margin="20dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_margin="35dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/unsensor_icon"
+        app:srcCompat="@drawable/reset_scene"
         />
+
 
     <TextView
         android:id="@+id/mode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="鱼眼"
-        android:layout_marginRight="10dp"
+        android:layout_marginRight="20dp"
         app:layout_constraintRight_toLeftOf="@id/sensor"
         app:layout_constraintTop_toBottomOf="@id/sensor"
         app:layout_constraintBottom_toTopOf="@id/sensor"
@@ -74,11 +67,13 @@
 
 
     <org.cuieney.videolife.ui.widget.likeanimation.LikeButtonView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:id="@+id/like_icon"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
         app:layout_constraintLeft_toLeftOf="@+id/collect"
         app:layout_constraintRight_toRightOf="@+id/collect"
         app:layout_constraintTop_toTopOf="@+id/guideline"
+        android:visibility="invisible"
         app:srcCompat="@drawable/like_icon" />
 
     <TextView
@@ -100,6 +95,7 @@
         android:layout_marginRight="10dp"
         android:layout_marginTop="15dp"
         android:src="@mipmap/comment"
+        android:visibility="invisible"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/like_number" />
 
@@ -137,6 +133,15 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/user_name" />
 
+    <org.cuieney.videolife.ui.widget.SmileyLoadingView
+        android:id="@+id/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 
 
 </android.support.constraint.ConstraintLayout>

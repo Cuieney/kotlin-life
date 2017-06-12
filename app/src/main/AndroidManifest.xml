@@ -54,7 +54,7 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Translucent" />
-        <activity android:name=".kotlin.ui.act.VrActivity"></activity>
+        <activity android:name=".kotlin.ui.act.VrActivity"/>
     </application>
 
 </manifest>

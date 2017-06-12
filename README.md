@@ -25,6 +25,8 @@ Email <cuieney@163.com> link.
 2.本项目仅作为学习交流使用，API数据内容所有权归原公司所有，请勿用于其他用途
 
 ### Preview
+![media icon](https://github.com/Cuieney/vld/blob/master/image/pano.gif)
+![media icon](https://github.com/Cuieney/vld/blob/master/image/pano.png)
 ![media icon](https://github.com/Cuieney/vld/blob/master/image/media.png)
 ![media icon](https://github.com/Cuieney/vld/blob/master/image/media_home.png)
 ![media icon](https://github.com/Cuieney/vld/blob/master/image/media_home_detail.png)
@@ -66,7 +68,9 @@ Email <cuieney@163.com> link.
 #### V2.5.0
 1.增加vr模块panorama liveview 代码（to kotlin）
 
-2.你们的支持就是我最大的动力，持续更新中 （to kotlin）
+2.类似于insta360 全景图片预览
+
+3.你们的支持就是我最大的动力，持续更新中 （to kotlin）
 
 
 #### V2.4.0

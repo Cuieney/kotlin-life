@@ -141,8 +141,5 @@ dependencies {
 
     //umeng
     compile 'com.umeng.analytics:analytics:latest.integration'
-    //recyclervpg
-    compile 'com.github.lsjwzh.RecyclerViewPager:lib:v1.1.2@aar'
-
 
 }

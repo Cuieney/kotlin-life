@@ -5,6 +5,7 @@ import android.animation.ValueAnimator
 import android.graphics.Bitmap
 import android.opengl.GLSurfaceView
 import android.util.Log
+import android.view.View
 import com.asha.vrlib.MDDirectorCamUpdate
 import com.asha.vrlib.MDVRLibrary
 import com.asha.vrlib.texture.MD360BitmapTexture
@@ -14,7 +15,6 @@ import com.bumptech.glide.request.target.SimpleTarget
 import kotlinx.android.synthetic.main.veer_detail_fragment.*
 import org.cuieney.videolife.R
 import org.cuieney.videolife.entity.KuulaImageBean
-import org.cuieney.videolife.kotlin.base.BaseActivity
 import org.cuieney.videolife.kotlin.base.BaseVrActivity
 import org.cuieney.videolife.kotlin.presenter.KuulaImagePresenter
 import org.cuieney.videolife.kotlin.presenter.contract.KuulaImageContract
@@ -22,23 +22,14 @@ import org.cuieney.videolife.kotlin.presenter.contract.KuulaImageContract
 class VrActivity : BaseVrActivity<KuulaImagePresenter>(),KuulaImageContract.View {
     lateinit var mVRLibrary: MDVRLibrary
     override fun showContent(kuulaImageBean: KuulaImageBean) {
-
+        comment.visibility = View.VISIBLE
+        like_icon.visibility = View.VISIBLE
         like_number.text = kuulaImageBean.payload.wholiked.size.toString()
         comment_number.text = kuulaImageBean.payload.comments.toString()
         user_name.text = kuulaImageBean.payload.user.name.toString()
         description.text = kuulaImageBean.payload.description.toString()
         val photos = kuulaImageBean.payload.photos[0].urls[1]
-        myGLSurfaceView = GLSurfaceView(this)
-        mVRLibrary = MDVRLibrary.with(this)
-                .displayMode(MDVRLibrary.DISPLAY_MODE_NORMAL)
-                .interactiveMode(MDVRLibrary.INTERACTIVE_MODE_MOTION_WITH_TOUCH)
-                .asBitmap { callback ->
-                    loadImage(photos, callback)
-                }
-                .listenTouchPick { hitHotspot, ray -> }
-                .pinchEnabled(true)
-                .build(myGLSurfaceView)
-        glSurfaceView.addView(myGLSurfaceView)
+        loadImage(photos, callback)
     }
 
     override fun error(throwable: Throwable) {
@@ -54,6 +45,19 @@ class VrActivity : BaseVrActivity<KuulaImagePresenter>(),KuulaImageContract.View
     lateinit var id: String
     override fun initEventAndData() {
         id = intent.getStringExtra("id")
+        loading.start()
+        myGLSurfaceView = GLSurfaceView(this)
+        mVRLibrary = MDVRLibrary.with(this)
+                .displayMode(MDVRLibrary.DISPLAY_MODE_NORMAL)
+                .interactiveMode(MDVRLibrary.INTERACTIVE_MODE_MOTION_WITH_TOUCH)
+                .asBitmap { callback ->
+                    this.callback = callback
+                }
+                .listenTouchPick { hitHotspot, ray -> }
+                .pinchEnabled(true)
+                .build(myGLSurfaceView)
+        glSurfaceView.addView(myGLSurfaceView)
+
         getData(id)
         mode.setOnClickListener {
             if (isNormal) {
@@ -69,17 +73,17 @@ class VrActivity : BaseVrActivity<KuulaImagePresenter>(),KuulaImageContract.View
             if (!sensorOpen) {
                 sensorOpen = true
                 mVRLibrary.switchInteractiveMode(this, MDVRLibrary.INTERACTIVE_MODE_MOTION_WITH_TOUCH)
-                sensor.setImageResource(R.drawable.sensor_icon)
+//                sensor.setImageResource(R.drawable.sensor_icon)
             }else{
                 sensorOpen = false
                 mVRLibrary.switchInteractiveMode(this, MDVRLibrary.INTERACTIVE_MODE_TOUCH)
-                sensor.setImageResource(R.drawable.unsensor_icon)
+//                sensor.setImageResource(R.drawable.unsensor_icon)
             }
 
         }
 
     }
-
+    lateinit var callback: MD360BitmapTexture.Callback
     private fun loadImage(photos: String, callback: MD360BitmapTexture.Callback) {
         Glide.with(this)
                 .load(photos)
@@ -89,6 +93,8 @@ class VrActivity : BaseVrActivity<KuulaImagePresenter>(),KuulaImageContract.View
                     override fun onResourceReady(bitmap: Bitmap, glideAnimation: GlideAnimation<in Bitmap>) {
                         getVRLibrary().onTextureResize(bitmap.getWidth().toFloat(), bitmap.getHeight().toFloat())
                         callback.texture(bitmap)
+                        loading.stop()
+                        loading.visibility = View.GONE
                     }
                 })
 
