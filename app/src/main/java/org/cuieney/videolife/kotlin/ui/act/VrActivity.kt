@@ -151,6 +151,18 @@ class VrActivity : BaseVrActivity<KuulaImagePresenter>(),KuulaImageContract.View
         animator!!.start()
     }
 
+
+    override fun onResume() {
+        super.onResume()
+        mVRLibrary.onResume(this)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        mVRLibrary.onPause(this)
+    }
+
+
     override fun onDestroy() {
         super.onDestroy()
         mVRLibrary.onDestroy()
