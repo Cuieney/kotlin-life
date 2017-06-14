@@ -26,6 +26,8 @@ Email <cuieney@163.com> link.
 
 2.本项目仅作为学习交流使用，API数据内容所有权归原公司所有，请勿用于其他用途
 
+3.目前项目几乎已经转型到kotlin了，代码所在目录 [dir](https://github.com/Cuieney/kotlin-life/tree/master/app/src/main/java/org/cuieney/videolife/kotlin "悬停显示")
+
 ### Preview
 ![media icon](https://github.com/Cuieney/vld/blob/master/image/pano.gif)
 
