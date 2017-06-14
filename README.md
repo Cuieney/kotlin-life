@@ -17,6 +17,8 @@ life 是一个多媒体信息app，基于Material Design Kotlin + MVP + RxJava +
 
 文章来自：余音 <http://www.wufazhuce.com/>韩寒主编和监制
 
+全景图片来自：kuula <https://kuula.co/>主要是图片质量很高
+
 ### tips
 1.本项目目前只是在开发测试阶段，发现bug或有好的建议欢迎
 [issues](https://github.com/Cuieney/vld/issues/ "悬停显示")
@@ -112,6 +114,7 @@ Email <cuieney@163.com> link.
 
 [开眼](http://www.eyepetizer.net/ "悬停显示") [余音](http://app.mi.com/details?id=fm.wawa.mg/ "悬停显示")
 [一个](http://www.wandoujia.com/apps/one.hh.oneclient/ "悬停显示")
+[kuula](https://kuula.co/ "悬停显示")
 
 #### APP:
 
@@ -194,7 +197,6 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
 
