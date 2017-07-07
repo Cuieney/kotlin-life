@@ -28,6 +28,8 @@ Email <cuieney@163.com> link.
 
 3.目前项目几乎已经转型到kotlin了，代码所在目录 [dir](https://github.com/Cuieney/kotlin-life/tree/master/app/src/main/java/org/cuieney/videolife/kotlin "悬停显示")
 
+4.针对第一次拉代码安装apk闪退（ClassNotFoundException），再次运行一下就好
+
 ### Preview
 ![media icon](https://github.com/Cuieney/vld/blob/master/image/pano.gif)
 
