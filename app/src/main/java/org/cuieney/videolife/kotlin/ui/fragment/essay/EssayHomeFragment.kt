@@ -107,11 +107,16 @@ class EssayHomeFragment : BaseFragment<EssayHomePresenter>(), EssayHomeContract.
 
             // 25.1.0以下的support包,Material过渡动画只有在进栈时有,返回时没有;
             // 25.1.0+的support包，SharedElement正常
-            fragment.transaction()
+//            fragment.transaction()
+//                    .addSharedElement((vh as EssayAdapter.EssayHomeHolder).itemView.image, getString(R.string.image_transition))
+//                    .commit<SupportFragment>()
+
+            extraTransaction()
                     .addSharedElement((vh as EssayAdapter.EssayHomeHolder).itemView.image, getString(R.string.image_transition))
-                    .commit<SupportFragment>()
+                    .start(fragment)
+        }else{
+            start(fragment)
         }
-        start(fragment)
     }
 
 }

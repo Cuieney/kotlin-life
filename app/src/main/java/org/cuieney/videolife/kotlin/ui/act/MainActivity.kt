@@ -11,8 +11,8 @@ import com.jaeger.library.StatusBarUtil
 import org.cuieney.videolife.R
 import kotlinx.android.synthetic.main.design_layout.*
 import me.yokeyword.fragmentation.SupportFragment
-import me.yokeyword.fragmentation.helper.FragmentLifecycleCallbacks
 import org.cuieney.videolife.common.component.EventUtil
+
 import org.cuieney.videolife.common.component.RxBus
 import org.cuieney.videolife.kotlin.base.BaseMainFragment
 import org.cuieney.videolife.kotlin.base.SimpleActivity

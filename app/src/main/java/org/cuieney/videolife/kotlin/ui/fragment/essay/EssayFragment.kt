@@ -20,7 +20,7 @@ class EssayFragment: BaseMainFragment() {
 
     override fun onLazyInitView(savedInstanceState: Bundle?) {
         super.onLazyInitView(savedInstanceState)
-        if (savedInstanceState == null) {
+        if (findChildFragment(EssayHomeFragment::class.java) == null) {
             loadRootFragment(R.id.fl_first_container, EssayHomeFragment())
         }
     }

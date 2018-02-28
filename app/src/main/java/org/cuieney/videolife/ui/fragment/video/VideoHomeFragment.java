@@ -120,10 +120,10 @@ public class VideoHomeFragment extends BaseFragment<VideoHomePresenter> implemen
 
             // 25.1.0以下的support包,Material过渡动画只有在进栈时有,返回时没有;
             // 25.1.0+的support包，SharedElement正常
-            fragment.transaction()
-                    .addSharedElement(vh.imageView, getString(R.string.image_transition))
-//                        .addSharedElement(((VideoAdapter.MyHolder) vh).textView,"tv")
-                    .commit();
+//            fragment.transaction()
+//                    .addSharedElement(vh.imageView, getString(R.string.image_transition))
+////                        .addSharedElement(((VideoAdapter.MyHolder) vh).textView,"tv")
+//                    .commit();
         }
         start(fragment);
     }

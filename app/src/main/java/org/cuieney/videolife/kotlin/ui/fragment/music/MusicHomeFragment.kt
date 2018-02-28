@@ -98,11 +98,12 @@ class MusicHomeFragment : BaseFragment<MusicHomePresenter>(), MusicHomeContract.
 
             // 25.1.0以下的support包,Material过渡动画只有在进栈时有,返回时没有;
             // 25.1.0+的support包，SharedElement正常
-            fragment.transaction()
+            extraTransaction()
                     .addSharedElement((vh as MusicAdapter.MyViewHoler).itemView.img, getString(R.string.image_transition))
-                    .commit<SupportFragment>()
+                    .start(fragment)
+        }else{
+            start(fragment)
         }
-        start(fragment)
     }
 
 }

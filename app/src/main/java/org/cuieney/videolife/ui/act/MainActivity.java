@@ -28,7 +28,6 @@ import java.util.List;
 
 import butterknife.BindView;
 import me.yokeyword.fragmentation.SupportFragment;
-import me.yokeyword.fragmentation.helper.FragmentLifecycleCallbacks;
 
 import static com.ashokvarma.bottomnavigation.BottomNavigationBar.BACKGROUND_STYLE_RIPPLE;
 import static com.ashokvarma.bottomnavigation.BottomNavigationBar.MODE_FIXED;
@@ -65,12 +64,6 @@ public class MainActivity extends SimpleActivity implements BaseMainFragment.OnB
         );
 
         initView();
-        registerFragmentLifecycleCallbacks(new FragmentLifecycleCallbacks() {
-            @Override
-            public void onFragmentSupportVisible(SupportFragment fragment) {
-                Log.i("MainActivity", "onFragmentSupportVisible--->" + fragment.getClass().getSimpleName());
-            }
-        });
     }
 
 

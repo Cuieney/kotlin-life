@@ -128,9 +128,9 @@ public class EssayHomeFragment extends BaseFragment<EssayHomePresenter> implemen
 
             // 25.1.0以下的support包,Material过渡动画只有在进栈时有,返回时没有;
             // 25.1.0+的support包，SharedElement正常
-            fragment.transaction()
-                    .addSharedElement(((EssayAdapter.EssayHolder) vh).image, getString(R.string.image_transition))
-                    .commit();
+//            fragment.transaction()
+//                    .addSharedElement(((EssayAdapter.EssayHolder) vh).image, getString(R.string.image_transition))
+//                    .commit();
         }
         start(fragment);
     }

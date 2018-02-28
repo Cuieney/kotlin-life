@@ -2,20 +2,23 @@ apply plugin: 'com.android.library'
 
 android {
 
-    def globalConfiguration = rootProject.extensions.getByName("ext")
-    compileSdkVersion globalConfiguration.androidCompileSdkVersion
-    buildToolsVersion globalConfiguration.androidBuildToolsVersion
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
 
     defaultConfig {
 
-        minSdkVersion globalConfiguration.androidMinSdkVersion
-        targetSdkVersion globalConfiguration.androidTargetSdkVersion
+        minSdkVersion 19
+        targetSdkVersion 26
 
         versionCode 1
         versionName "1.0"
 
     }
     buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
