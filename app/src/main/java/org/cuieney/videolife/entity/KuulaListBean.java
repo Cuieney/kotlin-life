@@ -8,6 +8,13 @@ import java.util.List;
 
 public class KuulaListBean {
 
+    /**
+     * status : 0
+     * payload : {"posts":[{"id":"7PccT","uuid":"5b50-bac2-8494-1169","description":"Yellow Dandelions in Alta Badia | DOLOMITI","cover":"01","privacy":"public","views":"1326","tiny":"2","flat":"0","featured":"0","created":"1532017580","comments":"2","likes":"4","user":{"id":"34709","name":"phlucavisciani","displayname":"Ph_lucavisciani","picture":"1","type":"0"}},{"id":"7PXWm","uuid":"5b4d-ca1e-6dd7-8119","description":"Piaza de San Pietro.jpg","cover":"01","privacy":"public","views":"11158","tiny":"1","flat":"0","featured":"0","created":"1531824727","comments":"0","likes":"9","user":{"id":"34505","name":"IgnacioBorregoPolanco","displayname":"Ignacio Borrego Polanco","picture":"1","type":"0"}},{"id":"7PJ2l","uuid":"5b47-be59-ddde-2101","description":"Ziemia Lubaczowska\r\nwww.lubaczow360.pl\r\n","cover":"01","privacy":"public","views":"11572","tiny":"1","flat":"0","featured":"0","created":"1531428590","comments":"4","likes":"16","user":{"id":"208","name":"Tomasz","displayname":"Tomasz Mielnik","picture":"1","type":"1"}},{"id":"7PJjB","uuid":"5b47-9a77-c348-7166","description":"View from Tower Bridge: Tamesis river and HMS Belfast.\r\n\r\nLondon, England.\r\n\r\nBy:\r\nFernando Del Valle R.\r\nwww.fdelvalle.com\r\n© 2018\r\n\r\nEquipment:\r\nCanon 70D\r\nOpteka 6.5mm\r\n\r\n#fernando #fdelvalle #pano360 #reflex #canon #70D #fisheye #londonbridge #towerbridge #london #uk","cover":"01","privacy":"public","views":"10871","tiny":"1","flat":"0","featured":"0","created":"1531419330","comments":"0","likes":"5","user":{"id":"27680","name":"fdelvallephoto","displayname":"Fernando Del Valle Reynoso","picture":"1","type":"0"}},{"id":"7PJGB","uuid":"5b44-f70f-a57d-d110","description":"Torriglia, Liguria, northern Italy.\r\nView of the village from the ruins of the medieval castle, dating back to around 1100.","cover":"01","privacy":"public","views":"11528","tiny":"1","flat":"0","featured":"0","created":"1531246745","comments":"2","likes":"12","user":{"id":"2571","name":"Roberto","displayname":"Enjoy360","picture":"1","type":"1"}},{"id":"7P4fH","uuid":"5afa-ee52-59de-3102","description":"Visite du parc","cover":"01","privacy":"public","views":"10627","tiny":"1","flat":"0","featured":"0","created":"1526394494","comments":"0","likes":"7","user":{"id":"27845","name":"MAUMONT","displayname":"MAUMONT","picture":"1","type":"0"}},{"id":"7P9Z6","uuid":"5b3c-4922-2671-5390","description":"jardinlaguna.jpg","cover":"01","privacy":"public","views":"10435","tiny":"1","flat":"0","featured":"0","created":"1530677607","comments":"1","likes":"10","user":{"id":"33346","name":"andreafernandez","displayname":"Andrea Fernandez","picture":"1","type":"0"}},{"id":"7PqJH","uuid":"5b32-1627-1cd5-b141","description":"Waikiki Coast from Hale Koa","cover":"01","privacy":"public","views":"17157","tiny":"1","flat":"0","featured":"0","created":"1530009182","comments":"4","likes":"16","user":{"id":"1471","name":"HawaiiResolution","displayname":"Hawaii Resolution","picture":"1","type":"1"}},{"id":"7PqWH","uuid":"5b34-142e-0f9c-4118","description":"Anusan Night Market in Chiang Mai, Thailand","cover":"01","privacy":"public","views":"14224","tiny":"2","flat":"0","featured":"0","created":"1530140042","comments":"5","likes":"16","user":{"id":"1823","name":"panoramiceye","displayname":"Jim Newberry","picture":"1","type":"0"}},{"id":"7PY6P","uuid":"5b28-09c2-356f-0145","description":"Aberdeen Dragon Boat Racing(香港仔龍舟賽), HK.\r\nDragon Boat Festival#\r\n","cover":"01","privacy":"public","views":"10226","tiny":"1","flat":"0","featured":"0","created":"1529350628","comments":"2","likes":"9","user":{"id":"7171","name":"Chuen","displayname":null,"picture":"0","type":"0"}},{"id":"7PqZT","uuid":"5b32-6e54-aa0b-d139","description":"After the Storm. Visby, Gotland, Sweden. Visby is a must visit. Visby is a beautiful medieval walled market town with a rich history, the streets are narrow and here in the old town you don't need a car.","cover":"01","privacy":"public","views":"9510","tiny":"2","flat":"0","featured":"0","created":"1530032477","comments":"1","likes":"18","user":{"id":"14720","name":"Mirador360","displayname":"Pentti Sairanen","picture":"1","type":"0"}},{"id":"7PkGm","uuid":"5b2a-de61-edad-8183","description":"\r\n\"Judicial Perspective \" drawing360\r\n\r\n#streetart #sketchers #sketching #sketch# #sketch360 #comic360 #artinthestreets #eduardorelero #relero #drawing360 #globalstreetart #dibujo360","cover":"01","privacy":"public","views":"10161","tiny":"1","flat":"0","featured":"0","created":"1529536167","comments":"2","likes":"22","user":{"id":"24709","name":"eduardorelero","displayname":"Eduardo Relero","picture":"1","type":"0"}}],"page":{"total":1232,"size":12,"index":0,"start":0,"end":12,"hasPrev":false,"hasNext":true,"nextIndex":1}}
+     * action : explore
+     * exectime : 613
+     */
+
     private int status;
     private PayloadBean payload;
     private String action;
@@ -47,8 +54,8 @@ public class KuulaListBean {
 
     public static class PayloadBean {
         /**
-         * posts : [{},{},{},{},{},{},{},{},{},{},{},{"id":"7lpzg","uuid":"5931-c1fb-81fd-a405","description":"Angkok Ta Prohm (吳哥窟塔普倫廟1), Cambodia. ancient architecture# hindu temples# cultural heritage#","cover":"01","privacy":"public","views":"99","tiny":"0","featured":"0","created":"1496433325","comments":"0","likes":"8","user":{"id":"7171","name":"Chuen","displayname":null,"picture":"0","type":"0"}}]
-         * page : {"total":854,"size":12,"index":0,"start":0,"end":12,"hasPrev":false,"hasNext":true,"nextIndex":1}
+         * posts : [{"id":"7PccT","uuid":"5b50-bac2-8494-1169","description":"Yellow Dandelions in Alta Badia | DOLOMITI","cover":"01","privacy":"public","views":"1326","tiny":"2","flat":"0","featured":"0","created":"1532017580","comments":"2","likes":"4","user":{"id":"34709","name":"phlucavisciani","displayname":"Ph_lucavisciani","picture":"1","type":"0"}},{"id":"7PXWm","uuid":"5b4d-ca1e-6dd7-8119","description":"Piaza de San Pietro.jpg","cover":"01","privacy":"public","views":"11158","tiny":"1","flat":"0","featured":"0","created":"1531824727","comments":"0","likes":"9","user":{"id":"34505","name":"IgnacioBorregoPolanco","displayname":"Ignacio Borrego Polanco","picture":"1","type":"0"}},{"id":"7PJ2l","uuid":"5b47-be59-ddde-2101","description":"Ziemia Lubaczowska\r\nwww.lubaczow360.pl\r\n","cover":"01","privacy":"public","views":"11572","tiny":"1","flat":"0","featured":"0","created":"1531428590","comments":"4","likes":"16","user":{"id":"208","name":"Tomasz","displayname":"Tomasz Mielnik","picture":"1","type":"1"}},{"id":"7PJjB","uuid":"5b47-9a77-c348-7166","description":"View from Tower Bridge: Tamesis river and HMS Belfast.\r\n\r\nLondon, England.\r\n\r\nBy:\r\nFernando Del Valle R.\r\nwww.fdelvalle.com\r\n© 2018\r\n\r\nEquipment:\r\nCanon 70D\r\nOpteka 6.5mm\r\n\r\n#fernando #fdelvalle #pano360 #reflex #canon #70D #fisheye #londonbridge #towerbridge #london #uk","cover":"01","privacy":"public","views":"10871","tiny":"1","flat":"0","featured":"0","created":"1531419330","comments":"0","likes":"5","user":{"id":"27680","name":"fdelvallephoto","displayname":"Fernando Del Valle Reynoso","picture":"1","type":"0"}},{"id":"7PJGB","uuid":"5b44-f70f-a57d-d110","description":"Torriglia, Liguria, northern Italy.\r\nView of the village from the ruins of the medieval castle, dating back to around 1100.","cover":"01","privacy":"public","views":"11528","tiny":"1","flat":"0","featured":"0","created":"1531246745","comments":"2","likes":"12","user":{"id":"2571","name":"Roberto","displayname":"Enjoy360","picture":"1","type":"1"}},{"id":"7P4fH","uuid":"5afa-ee52-59de-3102","description":"Visite du parc","cover":"01","privacy":"public","views":"10627","tiny":"1","flat":"0","featured":"0","created":"1526394494","comments":"0","likes":"7","user":{"id":"27845","name":"MAUMONT","displayname":"MAUMONT","picture":"1","type":"0"}},{"id":"7P9Z6","uuid":"5b3c-4922-2671-5390","description":"jardinlaguna.jpg","cover":"01","privacy":"public","views":"10435","tiny":"1","flat":"0","featured":"0","created":"1530677607","comments":"1","likes":"10","user":{"id":"33346","name":"andreafernandez","displayname":"Andrea Fernandez","picture":"1","type":"0"}},{"id":"7PqJH","uuid":"5b32-1627-1cd5-b141","description":"Waikiki Coast from Hale Koa","cover":"01","privacy":"public","views":"17157","tiny":"1","flat":"0","featured":"0","created":"1530009182","comments":"4","likes":"16","user":{"id":"1471","name":"HawaiiResolution","displayname":"Hawaii Resolution","picture":"1","type":"1"}},{"id":"7PqWH","uuid":"5b34-142e-0f9c-4118","description":"Anusan Night Market in Chiang Mai, Thailand","cover":"01","privacy":"public","views":"14224","tiny":"2","flat":"0","featured":"0","created":"1530140042","comments":"5","likes":"16","user":{"id":"1823","name":"panoramiceye","displayname":"Jim Newberry","picture":"1","type":"0"}},{"id":"7PY6P","uuid":"5b28-09c2-356f-0145","description":"Aberdeen Dragon Boat Racing(香港仔龍舟賽), HK.\r\nDragon Boat Festival#\r\n","cover":"01","privacy":"public","views":"10226","tiny":"1","flat":"0","featured":"0","created":"1529350628","comments":"2","likes":"9","user":{"id":"7171","name":"Chuen","displayname":null,"picture":"0","type":"0"}},{"id":"7PqZT","uuid":"5b32-6e54-aa0b-d139","description":"After the Storm. Visby, Gotland, Sweden. Visby is a must visit. Visby is a beautiful medieval walled market town with a rich history, the streets are narrow and here in the old town you don't need a car.","cover":"01","privacy":"public","views":"9510","tiny":"2","flat":"0","featured":"0","created":"1530032477","comments":"1","likes":"18","user":{"id":"14720","name":"Mirador360","displayname":"Pentti Sairanen","picture":"1","type":"0"}},{"id":"7PkGm","uuid":"5b2a-de61-edad-8183","description":"\r\n\"Judicial Perspective \" drawing360\r\n\r\n#streetart #sketchers #sketching #sketch# #sketch360 #comic360 #artinthestreets #eduardorelero #relero #drawing360 #globalstreetart #dibujo360","cover":"01","privacy":"public","views":"10161","tiny":"1","flat":"0","featured":"0","created":"1529536167","comments":"2","likes":"22","user":{"id":"24709","name":"eduardorelero","displayname":"Eduardo Relero","picture":"1","type":"0"}}]
+         * page : {"total":1232,"size":12,"index":0,"start":0,"end":12,"hasPrev":false,"hasNext":true,"nextIndex":1}
          */
 
         private PageBean page;
@@ -72,7 +79,7 @@ public class KuulaListBean {
 
         public static class PageBean {
             /**
-             * total : 854
+             * total : 1232
              * size : 12
              * index : 0
              * start : 0
@@ -158,18 +165,19 @@ public class KuulaListBean {
 
         public static class PostsBean {
             /**
-             * id : 7lpzg
-             * uuid : 5931-c1fb-81fd-a405
-             * description : Angkok Ta Prohm (吳哥窟塔普倫廟1), Cambodia. ancient architecture# hindu temples# cultural heritage#
+             * id : 7PccT
+             * uuid : 5b50-bac2-8494-1169
+             * description : Yellow Dandelions in Alta Badia | DOLOMITI
              * cover : 01
              * privacy : public
-             * views : 99
-             * tiny : 0
+             * views : 1326
+             * tiny : 2
+             * flat : 0
              * featured : 0
-             * created : 1496433325
-             * comments : 0
-             * likes : 8
-             * user : {"id":"7171","name":"Chuen","displayname":null,"picture":"0","type":"0"}
+             * created : 1532017580
+             * comments : 2
+             * likes : 4
+             * user : {"id":"34709","name":"phlucavisciani","displayname":"Ph_lucavisciani","picture":"1","type":"0"}
              */
 
             private String id;
@@ -179,6 +187,7 @@ public class KuulaListBean {
             private String privacy;
             private String views;
             private String tiny;
+            private String flat;
             private String featured;
             private String created;
             private String comments;
@@ -241,6 +250,14 @@ public class KuulaListBean {
                 this.tiny = tiny;
             }
 
+            public String getFlat() {
+                return flat;
+            }
+
+            public void setFlat(String flat) {
+                this.flat = flat;
+            }
+
             public String getFeatured() {
                 return featured;
             }
@@ -283,16 +300,16 @@ public class KuulaListBean {
 
             public static class UserBean {
                 /**
-                 * id : 7171
-                 * name : Chuen
-                 * displayname : null
-                 * picture : 0
+                 * id : 34709
+                 * name : phlucavisciani
+                 * displayname : Ph_lucavisciani
+                 * picture : 1
                  * type : 0
                  */
 
                 private String id;
                 private String name;
-                private Object displayname;
+                private String displayname;
                 private String picture;
                 private String type;
 
@@ -312,11 +329,11 @@ public class KuulaListBean {
                     this.name = name;
                 }
 
-                public Object getDisplayname() {
+                public String getDisplayname() {
                     return displayname;
                 }
 
-                public void setDisplayname(Object displayname) {
+                public void setDisplayname(String displayname) {
                     this.displayname = displayname;
                 }
 

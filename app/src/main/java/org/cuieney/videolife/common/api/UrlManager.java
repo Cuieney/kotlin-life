@@ -10,4 +10,8 @@ public class UrlManager {
     public static String getKuulaCover(String uuid){
         return "https://storage.kuula.co/"+uuid+"/01-cover.jpg";
     }
+
+    public static String getVeerImg(String uuid,String size){
+        return "https://files.kuula.io/"+uuid+"/01-"+size+".jpg";
+    }
 }

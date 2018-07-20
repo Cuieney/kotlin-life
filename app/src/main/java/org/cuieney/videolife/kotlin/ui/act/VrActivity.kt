@@ -14,6 +14,7 @@ import com.bumptech.glide.request.animation.GlideAnimation
 import com.bumptech.glide.request.target.SimpleTarget
 import kotlinx.android.synthetic.main.veer_detail_fragment.*
 import org.cuieney.videolife.R
+import org.cuieney.videolife.common.api.UrlManager
 import org.cuieney.videolife.entity.KuulaImageBean
 import org.cuieney.videolife.kotlin.base.BaseVrActivity
 import org.cuieney.videolife.kotlin.presenter.KuulaImagePresenter
@@ -28,7 +29,7 @@ class VrActivity : BaseVrActivity<KuulaImagePresenter>(),KuulaImageContract.View
         comment_number.text = kuulaImageBean.payload.comments.toString()
         user_name.text = kuulaImageBean.payload.user.name.toString()
         description.text = kuulaImageBean.payload.description.toString()
-        val photos = kuulaImageBean.payload.photos[0].urls[1]
+        val photos = UrlManager.getVeerImg(kuulaImageBean.payload.uuid,kuulaImageBean.payload.photos[0].sizes[0])
         loadImage(photos, callback)
     }
 

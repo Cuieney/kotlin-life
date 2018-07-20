@@ -11,9 +11,9 @@ public class KuulaImageBean {
 
     /**
      * status : 0
-     * payload : {"id":"7l0mZ","uuid":"5936-8b2f-bc74-0719","description":"Outdoor Basement","cover":"01","views":69,"privacy":"public","featured":"41717","tiny":"0","created":"1496746859","user":{"id":"7742","name":"motasemaltwair","type":"0","displayname":"Motasem Al Twair","picture":"1","website":"","settings":null,"url":"https://kuula.co/profile/motasemaltwair"},"n":"41717","photos":[{"id":"41719","name":"01","sizes":["5000","4096"],"options":{"heading":1.5707963267949,"roll":0,"pitch":0,"zoom":0,"lensflare":false,"glare":0.1,"sunIntensity":0.1,"tinyRot":0,"tinyScale":0.5,"tinyBulge":0.5,"tinyInvert":0,"tinyOffsetX":0,"tinyOffsetY":0,"tinySaved":false,"sun":null,"filter":"none","filterintensity":1,"format":"jpg"},"urls":["https://files.kuula.io/5936-8b2f-bc74-0719/01-5000.jpg","https://files.kuula.io/5936-8b2f-bc74-0719/01-4096.jpg"]}],"likes":4,"comments":1,"wholiked":[{"name":"3rddimensionstudio","displayname":"3rdDimensionStudio"},{"name":"magda","displayname":"Magda"},{"name":"FPG","displayname":"FPG"},{"name":"bartek","displayname":"Bartek Drozdz"}]}
+     * payload : {"id":"7PXWm","uuid":"5b4d-ca1e-6dd7-8119","description":"Piaza de San Pietro.jpg","cover":"01","views":11148,"privacy":"public","featured":"1531867752","tiny":"1","created":"1531824727","user":{"id":"34505","name":"IgnacioBorregoPolanco","type":"0","displayname":"Ignacio Borrego Polanco","picture":"1","website":"http://www.ignacioborregopolanco.com","settings":null,"url":"https://kuula.co/profile/IgnacioBorregoPolanco"},"n":"216732","photos":[{"id":"216802","name":"01","sizes":["8000","4096"],"options":{"heading":1.5707963267949,"roll":0,"pitch":0,"crop":false,"flat":false,"orientation":0,"zoom":0,"pitchLimit":0,"lensflare":0,"glare":0.1,"sunIntensity":0.1,"tinyRot":0,"tinyScale":0.5,"tinyBulge":0.5,"tinyInvert":0,"tinyOffsetX":0,"tinyOffsetY":0,"tinySaved":false,"sun":null,"filter":"none","filterintensity":1,"format":"jpg","showInfo":false,"showLocation":false,"location":null,"latlng":null,"info":null,"original":{"width":8000,"height":4000}},"addons":"[]","xmp":"<x:xmpmeta xmlns:x=\"adobe:ns:meta/\" x:xmptk=\"Adobe XMP Core 5.6-c142 79.160924, 2017/07/13-01:06:39        \"> <rdf:RDF xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"> <rdf:Description rdf:about=\"\" xmlns:GPano=\"http://ns.google.com/photos/1.0/panorama/\" xmlns:xmp=\"http://ns.adobe.com/xap/1.0/\" xmlns:photoshop=\"http://ns.adobe.com/photoshop/1.0/\" xmlns:xmpMM=\"http://ns.adobe.com/xap/1.0/mm/\" xmlns:stEvt=\"http://ns.adobe.com/xap/1.0/sType/ResourceEvent#\" xmlns:dc=\"http://purl.org/dc/elements/1.1/\" GPano:ProjectionType=\"equirectangular\" GPano:UsePanoramaViewer=\"True\" GPano:CroppedAreaImageWidthPixels=\"8000\" GPano:CroppedAreaImageHeightPixels=\"4000\" GPano:FullPanoWidthPixels=\"8000\" GPano:FullPanoHeightPixels=\"4000\" GPano:CroppedAreaLeftPixels=\"0\" GPano:CroppedAreaTopPixels=\"0\" GPano:StitchingSoftware=\"PTGui Pro 10.0.17 (www.ptgui.com)\" xmp:CreatorTool=\"Adobe Photoshop CC (Windows)\" xmp:ModifyDate=\"2018-03-18T18:08:23+01:00\" xmp:CreateDate=\"2018-03-13T19:47:25\" xmp:MetadataDate=\"2018-03-18T18:08:23+01:00\" photoshop:DateCreated=\"2018-03-13T19:47:25\" photoshop:LegacyIPTCDigest=\"9A8C4B7273792BCEA0C9DA9A9772B609\" photoshop:ColorMode=\"3\" photoshop:ICCProfile=\"sRGB IEC61966-2.1\" xmpMM:DocumentID=\"adobe:docid:photoshop:69e02a8f-e6e5-c446-abf2-6338591d15a4\" xmpMM:InstanceID=\"xmp.iid:3d41387f-303a-f34b-9e96-1da72a08b60d\" xmpMM:OriginalDocumentID=\"588EB24D627B2A444B82A34C8B34F86E\" dc:format=\"image/jpeg\"> <photoshop:DocumentAncestors> <rdf:Bag> <rdf:li>D2B1EABB8328F8D914AE65E16063D1D0<\/rdf:li> <\/rdf:Bag> <\/photoshop:DocumentAncestors> <xmpMM:History> <rdf:Seq> <rdf:li stEvt:action=\"saved\" stEvt:instanceID=\"xmp.iid:c0ad3cea-3b14-cf4e-b4da-38a164a86853\" stEvt:when=\"2018-03-18T18:07:05+01:00\" stEvt:softwareAgent=\"Adobe Photoshop CC (Windows)\" stEvt:changed=\"/\"/> <rdf:li stEvt:action=\"saved\" stEvt:instanceID=\"xmp.iid:3d41387f-303a-f34b-9e96-1da72a08b60d\" stEvt:when=\"2018-03-18T18:08:23+01:00\" stEvt:softwareAgent=\"Adobe Photoshop CC (Windows)\" stEvt:changed=\"/\"/> <\/rdf:Seq> <\/xmpMM:History> <\/rdf:Description> <\/rdf:RDF> <\/x:xmpmeta>"}],"likes":9,"comments":0,"wholiked":[{"name":"fdelvallephoto","displayname":"Fernando Del Valle Reynoso"},{"name":"leandrobello","displayname":"Leandro Bello"},{"name":"Palodya53","displayname":"Palodya53"},{"name":"samaanbotros","displayname":"Samaan Botros"},{"name":"TheSmithDroneian","displayname":"The SmithDroneian"},{"name":"Mirador360","displayname":"Pentti Sairanen"},{"name":"frreenk","displayname":"frreenk"},{"name":"magda","displayname":"Magda"},{"name":"bartek","displayname":" Bartek Drozdz"}]}
      * action : get
-     * exectime : 826
+     * exectime : 892
      */
 
     private int status;
@@ -55,21 +55,21 @@ public class KuulaImageBean {
 
     public static class PayloadBean {
         /**
-         * id : 7l0mZ
-         * uuid : 5936-8b2f-bc74-0719
-         * description : Outdoor Basement
+         * id : 7PXWm
+         * uuid : 5b4d-ca1e-6dd7-8119
+         * description : Piaza de San Pietro.jpg
          * cover : 01
-         * views : 69
+         * views : 11148
          * privacy : public
-         * featured : 41717
-         * tiny : 0
-         * created : 1496746859
-         * user : {"id":"7742","name":"motasemaltwair","type":"0","displayname":"Motasem Al Twair","picture":"1","website":"","settings":null,"url":"https://kuula.co/profile/motasemaltwair"}
-         * n : 41717
-         * photos : [{"id":"41719","name":"01","sizes":["5000","4096"],"options":{"heading":1.5707963267949,"roll":0,"pitch":0,"zoom":0,"lensflare":false,"glare":0.1,"sunIntensity":0.1,"tinyRot":0,"tinyScale":0.5,"tinyBulge":0.5,"tinyInvert":0,"tinyOffsetX":0,"tinyOffsetY":0,"tinySaved":false,"sun":null,"filter":"none","filterintensity":1,"format":"jpg"},"urls":["https://files.kuula.io/5936-8b2f-bc74-0719/01-5000.jpg","https://files.kuula.io/5936-8b2f-bc74-0719/01-4096.jpg"]}]
-         * likes : 4
-         * comments : 1
-         * wholiked : [{"name":"3rddimensionstudio","displayname":"3rdDimensionStudio"},{"name":"magda","displayname":"Magda"},{"name":"FPG","displayname":"FPG"},{"name":"bartek","displayname":"Bartek Drozdz"}]
+         * featured : 1531867752
+         * tiny : 1
+         * created : 1531824727
+         * user : {"id":"34505","name":"IgnacioBorregoPolanco","type":"0","displayname":"Ignacio Borrego Polanco","picture":"1","website":"http://www.ignacioborregopolanco.com","settings":null,"url":"https://kuula.co/profile/IgnacioBorregoPolanco"}
+         * n : 216732
+         * photos : [{"id":"216802","name":"01","sizes":["8000","4096"],"options":{"heading":1.5707963267949,"roll":0,"pitch":0,"crop":false,"flat":false,"orientation":0,"zoom":0,"pitchLimit":0,"lensflare":0,"glare":0.1,"sunIntensity":0.1,"tinyRot":0,"tinyScale":0.5,"tinyBulge":0.5,"tinyInvert":0,"tinyOffsetX":0,"tinyOffsetY":0,"tinySaved":false,"sun":null,"filter":"none","filterintensity":1,"format":"jpg","showInfo":false,"showLocation":false,"location":null,"latlng":null,"info":null,"original":{"width":8000,"height":4000}},"addons":"[]","xmp":"<x:xmpmeta xmlns:x=\"adobe:ns:meta/\" x:xmptk=\"Adobe XMP Core 5.6-c142 79.160924, 2017/07/13-01:06:39        \"> <rdf:RDF xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"> <rdf:Description rdf:about=\"\" xmlns:GPano=\"http://ns.google.com/photos/1.0/panorama/\" xmlns:xmp=\"http://ns.adobe.com/xap/1.0/\" xmlns:photoshop=\"http://ns.adobe.com/photoshop/1.0/\" xmlns:xmpMM=\"http://ns.adobe.com/xap/1.0/mm/\" xmlns:stEvt=\"http://ns.adobe.com/xap/1.0/sType/ResourceEvent#\" xmlns:dc=\"http://purl.org/dc/elements/1.1/\" GPano:ProjectionType=\"equirectangular\" GPano:UsePanoramaViewer=\"True\" GPano:CroppedAreaImageWidthPixels=\"8000\" GPano:CroppedAreaImageHeightPixels=\"4000\" GPano:FullPanoWidthPixels=\"8000\" GPano:FullPanoHeightPixels=\"4000\" GPano:CroppedAreaLeftPixels=\"0\" GPano:CroppedAreaTopPixels=\"0\" GPano:StitchingSoftware=\"PTGui Pro 10.0.17 (www.ptgui.com)\" xmp:CreatorTool=\"Adobe Photoshop CC (Windows)\" xmp:ModifyDate=\"2018-03-18T18:08:23+01:00\" xmp:CreateDate=\"2018-03-13T19:47:25\" xmp:MetadataDate=\"2018-03-18T18:08:23+01:00\" photoshop:DateCreated=\"2018-03-13T19:47:25\" photoshop:LegacyIPTCDigest=\"9A8C4B7273792BCEA0C9DA9A9772B609\" photoshop:ColorMode=\"3\" photoshop:ICCProfile=\"sRGB IEC61966-2.1\" xmpMM:DocumentID=\"adobe:docid:photoshop:69e02a8f-e6e5-c446-abf2-6338591d15a4\" xmpMM:InstanceID=\"xmp.iid:3d41387f-303a-f34b-9e96-1da72a08b60d\" xmpMM:OriginalDocumentID=\"588EB24D627B2A444B82A34C8B34F86E\" dc:format=\"image/jpeg\"> <photoshop:DocumentAncestors> <rdf:Bag> <rdf:li>D2B1EABB8328F8D914AE65E16063D1D0<\/rdf:li> <\/rdf:Bag> <\/photoshop:DocumentAncestors> <xmpMM:History> <rdf:Seq> <rdf:li stEvt:action=\"saved\" stEvt:instanceID=\"xmp.iid:c0ad3cea-3b14-cf4e-b4da-38a164a86853\" stEvt:when=\"2018-03-18T18:07:05+01:00\" stEvt:softwareAgent=\"Adobe Photoshop CC (Windows)\" stEvt:changed=\"/\"/> <rdf:li stEvt:action=\"saved\" stEvt:instanceID=\"xmp.iid:3d41387f-303a-f34b-9e96-1da72a08b60d\" stEvt:when=\"2018-03-18T18:08:23+01:00\" stEvt:softwareAgent=\"Adobe Photoshop CC (Windows)\" stEvt:changed=\"/\"/> <\/rdf:Seq> <\/xmpMM:History> <\/rdf:Description> <\/rdf:RDF> <\/x:xmpmeta>"}]
+         * likes : 9
+         * comments : 0
+         * wholiked : [{"name":"fdelvallephoto","displayname":"Fernando Del Valle Reynoso"},{"name":"leandrobello","displayname":"Leandro Bello"},{"name":"Palodya53","displayname":"Palodya53"},{"name":"samaanbotros","displayname":"Samaan Botros"},{"name":"TheSmithDroneian","displayname":"The SmithDroneian"},{"name":"Mirador360","displayname":"Pentti Sairanen"},{"name":"frreenk","displayname":"frreenk"},{"name":"magda","displayname":"Magda"},{"name":"bartek","displayname":" Bartek Drozdz"}]
          */
 
         private String id;
@@ -210,14 +210,14 @@ public class KuulaImageBean {
 
         public static class UserBean {
             /**
-             * id : 7742
-             * name : motasemaltwair
+             * id : 34505
+             * name : IgnacioBorregoPolanco
              * type : 0
-             * displayname : Motasem Al Twair
+             * displayname : Ignacio Borrego Polanco
              * picture : 1
-             * website :
+             * website : http://www.ignacioborregopolanco.com
              * settings : null
-             * url : https://kuula.co/profile/motasemaltwair
+             * url : https://kuula.co/profile/IgnacioBorregoPolanco
              */
 
             private String id;
@@ -296,18 +296,20 @@ public class KuulaImageBean {
 
         public static class PhotosBean {
             /**
-             * id : 41719
+             * id : 216802
              * name : 01
-             * sizes : ["5000","4096"]
-             * options : {"heading":1.5707963267949,"roll":0,"pitch":0,"zoom":0,"lensflare":false,"glare":0.1,"sunIntensity":0.1,"tinyRot":0,"tinyScale":0.5,"tinyBulge":0.5,"tinyInvert":0,"tinyOffsetX":0,"tinyOffsetY":0,"tinySaved":false,"sun":null,"filter":"none","filterintensity":1,"format":"jpg"}
-             * urls : ["https://files.kuula.io/5936-8b2f-bc74-0719/01-5000.jpg","https://files.kuula.io/5936-8b2f-bc74-0719/01-4096.jpg"]
+             * sizes : ["8000","4096"]
+             * options : {"heading":1.5707963267949,"roll":0,"pitch":0,"crop":false,"flat":false,"orientation":0,"zoom":0,"pitchLimit":0,"lensflare":0,"glare":0.1,"sunIntensity":0.1,"tinyRot":0,"tinyScale":0.5,"tinyBulge":0.5,"tinyInvert":0,"tinyOffsetX":0,"tinyOffsetY":0,"tinySaved":false,"sun":null,"filter":"none","filterintensity":1,"format":"jpg","showInfo":false,"showLocation":false,"location":null,"latlng":null,"info":null,"original":{"width":8000,"height":4000}}
+             * addons : []
+             * xmp : <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c142 79.160924, 2017/07/13-01:06:39        "> <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"> <rdf:Description rdf:about="" xmlns:GPano="http://ns.google.com/photos/1.0/panorama/" xmlns:xmp="http://ns.adobe.com/xap/1.0/" xmlns:photoshop="http://ns.adobe.com/photoshop/1.0/" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stEvt="http://ns.adobe.com/xap/1.0/sType/ResourceEvent#" xmlns:dc="http://purl.org/dc/elements/1.1/" GPano:ProjectionType="equirectangular" GPano:UsePanoramaViewer="True" GPano:CroppedAreaImageWidthPixels="8000" GPano:CroppedAreaImageHeightPixels="4000" GPano:FullPanoWidthPixels="8000" GPano:FullPanoHeightPixels="4000" GPano:CroppedAreaLeftPixels="0" GPano:CroppedAreaTopPixels="0" GPano:StitchingSoftware="PTGui Pro 10.0.17 (www.ptgui.com)" xmp:CreatorTool="Adobe Photoshop CC (Windows)" xmp:ModifyDate="2018-03-18T18:08:23+01:00" xmp:CreateDate="2018-03-13T19:47:25" xmp:MetadataDate="2018-03-18T18:08:23+01:00" photoshop:DateCreated="2018-03-13T19:47:25" photoshop:LegacyIPTCDigest="9A8C4B7273792BCEA0C9DA9A9772B609" photoshop:ColorMode="3" photoshop:ICCProfile="sRGB IEC61966-2.1" xmpMM:DocumentID="adobe:docid:photoshop:69e02a8f-e6e5-c446-abf2-6338591d15a4" xmpMM:InstanceID="xmp.iid:3d41387f-303a-f34b-9e96-1da72a08b60d" xmpMM:OriginalDocumentID="588EB24D627B2A444B82A34C8B34F86E" dc:format="image/jpeg"> <photoshop:DocumentAncestors> <rdf:Bag> <rdf:li>D2B1EABB8328F8D914AE65E16063D1D0</rdf:li> </rdf:Bag> </photoshop:DocumentAncestors> <xmpMM:History> <rdf:Seq> <rdf:li stEvt:action="saved" stEvt:instanceID="xmp.iid:c0ad3cea-3b14-cf4e-b4da-38a164a86853" stEvt:when="2018-03-18T18:07:05+01:00" stEvt:softwareAgent="Adobe Photoshop CC (Windows)" stEvt:changed="/"/> <rdf:li stEvt:action="saved" stEvt:instanceID="xmp.iid:3d41387f-303a-f34b-9e96-1da72a08b60d" stEvt:when="2018-03-18T18:08:23+01:00" stEvt:softwareAgent="Adobe Photoshop CC (Windows)" stEvt:changed="/"/> </rdf:Seq> </xmpMM:History> </rdf:Description> </rdf:RDF> </x:xmpmeta>
              */
 
             private String id;
             private String name;
             private OptionsBean options;
+            private String addons;
+            private String xmp;
             private List<String> sizes;
-            private List<String> urls;
 
             public String getId() {
                 return id;
@@ -333,6 +335,22 @@ public class KuulaImageBean {
                 this.options = options;
             }
 
+            public String getAddons() {
+                return addons;
+            }
+
+            public void setAddons(String addons) {
+                this.addons = addons;
+            }
+
+            public String getXmp() {
+                return xmp;
+            }
+
+            public void setXmp(String xmp) {
+                this.xmp = xmp;
+            }
+
             public List<String> getSizes() {
                 return sizes;
             }
@@ -341,21 +359,17 @@ public class KuulaImageBean {
                 this.sizes = sizes;
             }
 
-            public List<String> getUrls() {
-                return urls;
-            }
-
-            public void setUrls(List<String> urls) {
-                this.urls = urls;
-            }
-
             public static class OptionsBean {
                 /**
                  * heading : 1.5707963267949
                  * roll : 0
                  * pitch : 0
+                 * crop : false
+                 * flat : false
+                 * orientation : 0
                  * zoom : 0
-                 * lensflare : false
+                 * pitchLimit : 0
+                 * lensflare : 0
                  * glare : 0.1
                  * sunIntensity : 0.1
                  * tinyRot : 0
@@ -369,26 +383,42 @@ public class KuulaImageBean {
                  * filter : none
                  * filterintensity : 1
                  * format : jpg
+                 * showInfo : false
+                 * showLocation : false
+                 * location : null
+                 * latlng : null
+                 * info : null
+                 * original : {"width":8000,"height":4000}
                  */
 
                 private double heading;
-                private double roll;
-                private double pitch;
-                private double zoom;
-                private boolean lensflare;
+                private int roll;
+                private int pitch;
+                private boolean crop;
+                private boolean flat;
+                private int orientation;
+                private int zoom;
+                private int pitchLimit;
+                private int lensflare;
                 private double glare;
                 private double sunIntensity;
-                private double tinyRot;
+                private int tinyRot;
                 private double tinyScale;
                 private double tinyBulge;
-                private double tinyInvert;
-                private double tinyOffsetX;
-                private double tinyOffsetY;
+                private int tinyInvert;
+                private int tinyOffsetX;
+                private int tinyOffsetY;
                 private boolean tinySaved;
                 private Object sun;
                 private String filter;
-                private double filterintensity;
+                private int filterintensity;
                 private String format;
+                private boolean showInfo;
+                private boolean showLocation;
+                private Object location;
+                private Object latlng;
+                private Object info;
+                private OriginalBean original;
 
                 public double getHeading() {
                     return heading;
@@ -398,35 +428,67 @@ public class KuulaImageBean {
                     this.heading = heading;
                 }
 
-                public double getRoll() {
+                public int getRoll() {
                     return roll;
                 }
 
-                public void setRoll(double roll) {
+                public void setRoll(int roll) {
                     this.roll = roll;
                 }
 
-                public double getPitch() {
+                public int getPitch() {
                     return pitch;
                 }
 
-                public void setPitch(double pitch) {
+                public void setPitch(int pitch) {
                     this.pitch = pitch;
                 }
 
-                public double getZoom() {
+                public boolean isCrop() {
+                    return crop;
+                }
+
+                public void setCrop(boolean crop) {
+                    this.crop = crop;
+                }
+
+                public boolean isFlat() {
+                    return flat;
+                }
+
+                public void setFlat(boolean flat) {
+                    this.flat = flat;
+                }
+
+                public int getOrientation() {
+                    return orientation;
+                }
+
+                public void setOrientation(int orientation) {
+                    this.orientation = orientation;
+                }
+
+                public int getZoom() {
                     return zoom;
                 }
 
-                public void setZoom(double zoom) {
+                public void setZoom(int zoom) {
                     this.zoom = zoom;
                 }
 
-                public boolean isLensflare() {
+                public int getPitchLimit() {
+                    return pitchLimit;
+                }
+
+                public void setPitchLimit(int pitchLimit) {
+                    this.pitchLimit = pitchLimit;
+                }
+
+                public int getLensflare() {
                     return lensflare;
                 }
 
-                public void setLensflare(boolean lensflare) {
+                public void setLensflare(int lensflare) {
                     this.lensflare = lensflare;
                 }
 
@@ -446,11 +508,11 @@ public class KuulaImageBean {
                     this.sunIntensity = sunIntensity;
                 }
 
-                public double getTinyRot() {
+                public int getTinyRot() {
                     return tinyRot;
                 }
 
-                public void setTinyRot(double tinyRot) {
+                public void setTinyRot(int tinyRot) {
                     this.tinyRot = tinyRot;
                 }
 
@@ -470,27 +532,27 @@ public class KuulaImageBean {
                     this.tinyBulge = tinyBulge;
                 }
 
-                public double getTinyInvert() {
+                public int getTinyInvert() {
                     return tinyInvert;
                 }
 
-                public void setTinyInvert(double tinyInvert) {
+                public void setTinyInvert(int tinyInvert) {
                     this.tinyInvert = tinyInvert;
                 }
 
-                public double getTinyOffsetX() {
+                public int getTinyOffsetX() {
                     return tinyOffsetX;
                 }
 
-                public void setTinyOffsetX(double tinyOffsetX) {
+                public void setTinyOffsetX(int tinyOffsetX) {
                     this.tinyOffsetX = tinyOffsetX;
                 }
 
-                public double getTinyOffsetY() {
+                public int getTinyOffsetY() {
                     return tinyOffsetY;
                 }
 
-                public void setTinyOffsetY(double tinyOffsetY) {
+                public void setTinyOffsetY(int tinyOffsetY) {
                     this.tinyOffsetY = tinyOffsetY;
                 }
 
@@ -518,11 +580,11 @@ public class KuulaImageBean {
                     this.filter = filter;
                 }
 
-                public double getFilterintensity() {
+                public int getFilterintensity() {
                     return filterintensity;
                 }
 
-                public void setFilterintensity(double filterintensity) {
+                public void setFilterintensity(int filterintensity) {
                     this.filterintensity = filterintensity;
                 }
 
@@ -533,13 +595,87 @@ public class KuulaImageBean {
                 public void setFormat(String format) {
                     this.format = format;
                 }
+
+                public boolean isShowInfo() {
+                    return showInfo;
+                }
+
+                public void setShowInfo(boolean showInfo) {
+                    this.showInfo = showInfo;
+                }
+
+                public boolean isShowLocation() {
+                    return showLocation;
+                }
+
+                public void setShowLocation(boolean showLocation) {
+                    this.showLocation = showLocation;
+                }
+
+                public Object getLocation() {
+                    return location;
+                }
+
+                public void setLocation(Object location) {
+                    this.location = location;
+                }
+
+                public Object getLatlng() {
+                    return latlng;
+                }
+
+                public void setLatlng(Object latlng) {
+                    this.latlng = latlng;
+                }
+
+                public Object getInfo() {
+                    return info;
+                }
+
+                public void setInfo(Object info) {
+                    this.info = info;
+                }
+
+                public OriginalBean getOriginal() {
+                    return original;
+                }
+
+                public void setOriginal(OriginalBean original) {
+                    this.original = original;
+                }
+
+                public static class OriginalBean {
+                    /**
+                     * width : 8000
+                     * height : 4000
+                     */
+
+                    private int width;
+                    private int height;
+
+                    public int getWidth() {
+                        return width;
+                    }
+
+                    public void setWidth(int width) {
+                        this.width = width;
+                    }
+
+                    public int getHeight() {
+                        return height;
+                    }
+
+                    public void setHeight(int height) {
+                        this.height = height;
+                    }
+                }
             }
         }
 
         public static class WholikedBean {
             /**
-             * name : 3rddimensionstudio
-             * displayname : 3rdDimensionStudio
+             * name : fdelvallephoto
+             * displayname : Fernando Del Valle Reynoso
              */
 
             private String name;

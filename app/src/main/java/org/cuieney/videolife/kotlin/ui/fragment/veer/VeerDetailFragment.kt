@@ -23,6 +23,7 @@ import org.cuieney.videolife.kotlin.base.BaseFragment
 import org.cuieney.videolife.kotlin.presenter.KuulaImagePresenter
 import org.cuieney.videolife.kotlin.presenter.contract.KuulaImageContract
 import kotlinx.android.synthetic.main.veer_detail_fragment.*
+import org.cuieney.videolife.common.api.UrlManager
 import org.cuieney.videolife.common.component.EventUtil
 
 /**
@@ -44,12 +45,13 @@ class VeerDetailFragment(id: String) : BaseFragment<KuulaImagePresenter>(), Kuul
 
     lateinit var mVRLibrary: MDVRLibrary
     override fun showContent(kuulaImageBean: KuulaImageBean) {
+        Log.d("oye","VeerDetailFragment"+kuulaImageBean.toString())
 
         like_number.text = kuulaImageBean.payload.wholiked.size.toString()
         comment_number.text = kuulaImageBean.payload.comments.toString()
         user_name.text = kuulaImageBean.payload.user.name.toString()
         description.text = kuulaImageBean.payload.description.toString()
-        val photos = kuulaImageBean.payload.photos[0].urls[1]
+        val photos = UrlManager.getVeerImg(kuulaImageBean.payload.uuid,kuulaImageBean.payload.photos[0].sizes[0])
         myGLSurfaceView = GLSurfaceView(mActivity)
         mVRLibrary = MDVRLibrary.with(mActivity)
                 .displayMode(MDVRLibrary.DISPLAY_MODE_NORMAL)
@@ -65,7 +67,7 @@ class VeerDetailFragment(id: String) : BaseFragment<KuulaImagePresenter>(), Kuul
     }
 
     override fun error(throwable: Throwable) {
-        Log.e("oye",throwable.message)
+        Log.e("oye","VeerDetailFragment"+throwable.message)
     }
 
     override fun initInject() {
