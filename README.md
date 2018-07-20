@@ -73,6 +73,10 @@ Email <cuieney@163.com> link.
 
 ### Version
 
+#### V2.6.0
+1.修复vr tab 不能展示vr 图片功能
+
+
 #### V2.5.0
 1.增加vr模块panorama liveview 代码（to kotlin）
 
