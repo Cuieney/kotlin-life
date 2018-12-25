@@ -73,6 +73,9 @@ Email <cuieney@163.com> link.
 
 ### Version
 
+#### V2.7.0
+1.修复视频不能播放 vr 不能展示 音乐播放问题待修复
+
 #### V2.6.0
 1.修复vr tab 不能展示vr 图片功能
 
