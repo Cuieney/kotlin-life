@@ -51,7 +51,7 @@ class PlayActivity : AppCompatActivity() {
         Thread {
             try {
                 list!!.add(SwitchVideoModel("普通", getRedirectUrl(dataBean!!.playUrl)))
-                list!!.add(SwitchVideoModel("高清", getRedirectUrl(dataBean!!.playInfo[1].url)))
+//                list!!.add(SwitchVideoModel("高清", getRedirectUrl(dataBean!!.playInfo[1].url)))
                 video_player.setUp(list, true, "")
             } catch (e: Exception) {
                 e.printStackTrace()

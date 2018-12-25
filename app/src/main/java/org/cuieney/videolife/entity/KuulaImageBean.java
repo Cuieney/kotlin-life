@@ -16,16 +16,16 @@ public class KuulaImageBean {
      * exectime : 892
      */
 
-    private int status;
+    private double status;
     private PayloadBean payload;
     private String action;
-    private int exectime;
+    private double exectime;
 
-    public int getStatus() {
+    public double getStatus() {
         return status;
     }
 
-    public void setStatus(int status) {
+    public void setStatus(double status) {
         this.status = status;
     }
 
@@ -45,11 +45,11 @@ public class KuulaImageBean {
         this.action = action;
     }
 
-    public int getExectime() {
+    public double getExectime() {
         return exectime;
     }
 
-    public void setExectime(int exectime) {
+    public void setExectime(double exectime) {
         this.exectime = exectime;
     }
 
@@ -76,15 +76,15 @@ public class KuulaImageBean {
         private String uuid;
         private String description;
         private String cover;
-        private int views;
+        private double views;
         private String privacy;
         private String featured;
         private String tiny;
         private String created;
         private UserBean user;
         private String n;
-        private int likes;
-        private int comments;
+        private double likes;
+        private double comments;
         private List<PhotosBean> photos;
         private List<WholikedBean> wholiked;
 
@@ -120,11 +120,11 @@ public class KuulaImageBean {
             this.cover = cover;
         }
 
-        public int getViews() {
+        public double getViews() {
             return views;
         }
 
-        public void setViews(int views) {
+        public void setViews(double views) {
             this.views = views;
         }
 
@@ -176,19 +176,19 @@ public class KuulaImageBean {
             this.n = n;
         }
 
-        public int getLikes() {
+        public double getLikes() {
             return likes;
         }
 
-        public void setLikes(int likes) {
+        public void setLikes(double likes) {
             this.likes = likes;
         }
 
-        public int getComments() {
+        public double getComments() {
             return comments;
         }
 
-        public void setComments(int comments) {
+        public void setComments(double comments) {
             this.comments = comments;
         }
 
@@ -392,26 +392,26 @@ public class KuulaImageBean {
                  */
 
                 private double heading;
-                private int roll;
-                private int pitch;
+                private double roll;
+                private double pitch;
                 private boolean crop;
                 private boolean flat;
-                private int orientation;
-                private int zoom;
-                private int pitchLimit;
-                private int lensflare;
+                private double orientation;
+                private double zoom;
+                private double pitchLimit;
+                private double lensflare;
                 private double glare;
                 private double sunIntensity;
-                private int tinyRot;
+                private double tinyRot;
                 private double tinyScale;
                 private double tinyBulge;
-                private int tinyInvert;
-                private int tinyOffsetX;
-                private int tinyOffsetY;
+                private double tinyInvert;
+                private double tinyOffsetX;
+                private double tinyOffsetY;
                 private boolean tinySaved;
                 private Object sun;
                 private String filter;
-                private int filterintensity;
+                private double filterintensity;
                 private String format;
                 private boolean showInfo;
                 private boolean showLocation;
@@ -428,19 +428,19 @@ public class KuulaImageBean {
                     this.heading = heading;
                 }
 
-                public int getRoll() {
+                public double getRoll() {
                     return roll;
                 }
 
-                public void setRoll(int roll) {
+                public void setRoll(double roll) {
                     this.roll = roll;
                 }
 
-                public int getPitch() {
+                public double getPitch() {
                     return pitch;
                 }
 
-                public void setPitch(int pitch) {
+                public void setPitch(double pitch) {
                     this.pitch = pitch;
                 }
 
@@ -460,35 +460,35 @@ public class KuulaImageBean {
                     this.flat = flat;
                 }
 
-                public int getOrientation() {
+                public double getOrientation() {
                     return orientation;
                 }
 
-                public void setOrientation(int orientation) {
+                public void setOrientation(double orientation) {
                     this.orientation = orientation;
                 }
 
-                public int getZoom() {
+                public double getZoom() {
                     return zoom;
                 }
 
-                public void setZoom(int zoom) {
+                public void setZoom(double zoom) {
                     this.zoom = zoom;
                 }
 
-                public int getPitchLimit() {
+                public double getPitchLimit() {
                     return pitchLimit;
                 }
 
-                public void setPitchLimit(int pitchLimit) {
+                public void setPitchLimit(double pitchLimit) {
                     this.pitchLimit = pitchLimit;
                 }
 
-                public int getLensflare() {
+                public double getLensflare() {
                     return lensflare;
                 }
 
-                public void setLensflare(int lensflare) {
+                public void setLensflare(double lensflare) {
                     this.lensflare = lensflare;
                 }
 
@@ -508,11 +508,11 @@ public class KuulaImageBean {
                     this.sunIntensity = sunIntensity;
                 }
 
-                public int getTinyRot() {
+                public double getTinyRot() {
                     return tinyRot;
                 }
 
-                public void setTinyRot(int tinyRot) {
+                public void setTinyRot(double tinyRot) {
                     this.tinyRot = tinyRot;
                 }
 
@@ -532,27 +532,27 @@ public class KuulaImageBean {
                     this.tinyBulge = tinyBulge;
                 }
 
-                public int getTinyInvert() {
+                public double getTinyInvert() {
                     return tinyInvert;
                 }
 
-                public void setTinyInvert(int tinyInvert) {
+                public void setTinyInvert(double tinyInvert) {
                     this.tinyInvert = tinyInvert;
                 }
 
-                public int getTinyOffsetX() {
+                public double getTinyOffsetX() {
                     return tinyOffsetX;
                 }
 
-                public void setTinyOffsetX(int tinyOffsetX) {
+                public void setTinyOffsetX(double tinyOffsetX) {
                     this.tinyOffsetX = tinyOffsetX;
                 }
 
-                public int getTinyOffsetY() {
+                public double getTinyOffsetY() {
                     return tinyOffsetY;
                 }
 
-                public void setTinyOffsetY(int tinyOffsetY) {
+                public void setTinyOffsetY(double tinyOffsetY) {
                     this.tinyOffsetY = tinyOffsetY;
                 }
 
@@ -580,11 +580,11 @@ public class KuulaImageBean {
                     this.filter = filter;
                 }
 
-                public int getFilterintensity() {
+                public double getFilterintensity() {
                     return filterintensity;
                 }
 
-                public void setFilterintensity(int filterintensity) {
+                public void setFilterintensity(double filterintensity) {
                     this.filterintensity = filterintensity;
                 }
 
@@ -650,22 +650,22 @@ public class KuulaImageBean {
                      * height : 4000
                      */
 
-                    private int width;
-                    private int height;
+                    private double width;
+                    private double height;
 
-                    public int getWidth() {
+                    public double getWidth() {
                         return width;
                     }
 
-                    public void setWidth(int width) {
+                    public void setWidth(double width) {
                         this.width = width;
                     }
 
-                    public int getHeight() {
+                    public double getHeight() {
                         return height;
                     }
 
-                    public void setHeight(int height) {
+                    public void setHeight(double height) {
                         this.height = height;
                     }
                 }
